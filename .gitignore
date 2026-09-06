@@ -1,0 +1,55 @@
+# Prerrequisitos
+*.d
+
+# Archivos de objetos compilados
+*.o
+*.obj
+
+# Archivos de bibliotecas dinámicas y estáticas
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Archivos ejecutables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+
+# Directorios de compilación generados automáticamente
+build/
+bin/
+out/
+cmake-build-*/
+
+# Archivos de depuración / Profiling
+*.gcov
+*.gcda
+*.gcno
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Configuración de Entornos de Desarrollo (IDEs)
+.idea/
+.vscode/
+*.sln
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+
+# Archivos del Sistema Operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
