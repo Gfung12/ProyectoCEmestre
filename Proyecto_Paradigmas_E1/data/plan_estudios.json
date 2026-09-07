@@ -1,0 +1,1185 @@
+[
+    {
+    "code": "MA0101",
+    "name": "Matemática General",
+    "credits": 2,
+    "semester": 0,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1101",
+    "name": "Introducción A La Programación",
+    "credits": 3,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1120},
+          {"day": 3, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1104",
+    "name": "Fundamentos De Sistemas Computacionales",
+    "credits": 3,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": ["CE1101"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 1120},
+          {"day": 4, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MA1102",
+    "name": "Cálculo Diferencial E Integral",
+    "credits": 4,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["MA0101"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 1300, "end_time": 1650},
+          {"day": 3, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MA1403",
+    "name": "Matemática Discreta",
+    "credits": 4,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1650},
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU1102",
+    "name": "Laboratorio De Química Básica I",
+    "credits": 1,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": ["QU1106"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU1106",
+    "name": "Química Básica I",
+    "credits": 3,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": ["QU1102"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SE1100",
+    "name": "Actividad Cultural I",
+    "credits": 0,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+    {
+    "code": "SE1200",
+    "name": "Actividad Deportiva I",
+    "credits": 0,
+    "semester": 1,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1103",
+    "name": "Algoritmos Y Estructuras De Datos I",
+    "credits": 4,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1101", "CE1104", "MA1403"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1120},
+          {"day": 3, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1105",
+    "name": "Principios De Modelado En Ingeniería",
+    "credits": 3,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1104"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+    {
+    "code": "CI1407",
+    "name": "Habilidades De Comunicación En Ingeniería",
+    "credits": 2,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CS1502",
+    "name": "Introducción A La Técnica Ciencia Y Tecnología",
+    "credits": 1,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 920}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FI1101",
+    "name": "Física General I",
+    "credits": 3,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["MA1102"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FI1201",
+    "name": "Laboratorio Física General I",
+    "credits": 1,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": ["FI1101"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MA1103",
+    "name": "Cálculo Y Álgebra Lineal",
+    "credits": 4,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["MA1102"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+    {
+    "code": "SE1400",
+    "name": "Actividad Cultural-Deportiva",
+    "credits": 0,
+    "semester": 2,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE2103",
+    "name": "Algoritmos Y Estructuras De Datos II",
+    "credits": 4,
+    "semester": 3,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1103", "CE1105"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+    {
+    "code": "CS2101",
+    "name": "Ambiente Humano",
+    "credits": 2,
+    "semester": 3,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "EL2113",
+    "name": "Circuitos Eléctricos En Corriente Continua",
+    "credits": 4,
+    "semester": 3,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["FI1101", "MA1102"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+    {
+    "code": "FH1000",
+    "name": "Centros De Formación Humanística",
+    "credits": 0,
+    "semester": 3,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 920}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FI1102",
+    "name": "Física General II",
+    "credits": 3,
+    "semester": 3,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["FI1101"],
+    "corequisites": ["MA1102"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FI1202",
+    "name": "Laboratorio Física General II",
+    "credits": 1,
+    "semester": 3,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["FI1201"],
+    "corequisites": ["FI1102"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 920}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MA2104",
+    "name": "Cálculo Superior",
+    "credits": 4,
+    "semester": 3,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["MA1103"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1106",
+    "name": "Paradigmas De Programación",
+    "credits": 3,
+    "semester": 4,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE2103"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE2201",
+    "name": "Laboratorio De Circuitos Eléctricos",
+    "credits": 1,
+    "semester": 4,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["FI1202"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "EL2114",
+    "name": "Circuitos Eléctricos En Corriente Alterna",
+    "credits": 4,
+    "semester": 4,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["EL2113"],
+    "corequisites": ["EL2207"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "EL2207",
+    "name": "Elementos Activos",
+    "credits": 4,
+    "semester": 4,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["EL2113"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "PI2609",
+    "name": "Probabilidad Y Estadística",
+    "credits": 2,
+    "semester": 4,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["MA2104"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SO4604",
+    "name": "Seguridad Y Salud Ocupacional",
+    "credits": 3,
+    "semester": 4,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["FI1102"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+    {
+    "code": "CI0200",
+    "name": "Examen Diagnóstico",
+    "credits": 0,
+    "semester": 0,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+      {
+    "code": "CI0202",
+    "name": "Inglés Básico",
+    "credits": 2,
+    "semester": 0,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BI1101",
+    "name": "Biología General",
+    "credits": 3,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": ["BI1102"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BI1102",
+    "name": "Laboratorio De Biología General",
+    "credits": 1,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": ["BI1101"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CI1106",
+    "name": "Comunicación Escrita",
+    "credits": 2,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 920}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CS1502",
+    "name": "Introducción A La Técnica Ciencia Y Tecnología",
+    "credits": 1,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 920}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FI1105",
+    "name": "Física Para Biotecnología",
+    "credits": 3,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB1601",
+    "name": "Introducción A La Biotecnología",
+    "credits": 2,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": ["BI1101", "BI1102"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MA0101",
+    "name": "Matemática General",
+    "credits": 2,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU1102",
+    "name": "Laboratorio De Química Básica I",
+    "credits": 1,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": ["QU1106"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU1106",
+    "name": "Química Básica I",
+    "credits": 3,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": ["QU1102"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SE1100",
+    "name": "Actividad Cultural I",
+    "credits": 0,
+    "semester": 1,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CI1107",
+    "name": "Comunicación Oral",
+    "credits": 1,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CI1202",
+    "name": "Inglés Para Biotecnología I",
+    "credits": 2,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["CI0200", "CI0202"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2113",
+    "name": "Análisis Estadístico Para Biotecnología",
+    "credits": 3,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["MA0101"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2203",
+    "name": "Anatomía Vegetal",
+    "credits": 3,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["BI1101", "BI1102"],
+    "corequisites": ["IB2204"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2204",
+    "name": "Laboratorio De Anatomía Vegetal",
+    "credits": 1,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["BI1101", "BI1102"],
+    "corequisites": ["IB2203"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MA1102",
+    "name": "Cálculo Diferencial E Integral",
+    "credits": 4,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["MA0101"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU1104",
+    "name": "Laboratorio De Química Básica II",
+    "credits": 1,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["QU1102", "QU1106"],
+    "corequisites": ["QU1107"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU1107",
+    "name": "Química Básica II",
+    "credits": 3,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["QU1102", "QU1106"],
+    "corequisites": ["QU1104"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SE1200",
+    "name": "Actividad Deportiva I",
+    "credits": 0,
+    "semester": 2,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CI1203",
+    "name": "Inglés Para Biotecnología II",
+    "credits": 2,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["CI1202"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CS3301",
+    "name": "Derecho Ambiental Y Biotecnológico",
+    "credits": 2,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["CI1107"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 920}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2205",
+    "name": "Fisiología Vegetal",
+    "credits": 3,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2203", "IB2204"],
+    "corequisites": ["IB2211"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2211",
+    "name": "Laboratorio De Fisiología Vegetal",
+    "credits": 2,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2203", "IB2204"],
+    "corequisites": ["IB2205"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2302",
+    "name": "Laboratorio De Genética",
+    "credits": 1,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["BI1101", "BI1102"],
+    "corequisites": ["IB2304"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2304",
+    "name": "Genética",
+    "credits": 3,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["BI1101", "BI1102"],
+    "corequisites": ["IB2302"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU2403",
+    "name": "Química Orgánica",
+    "credits": 3,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["QU1107"],
+    "corequisites": ["QU2404"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "QU2404",
+    "name": "Laboratorio De Química Orgánica",
+    "credits": 2,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["QU1104"],
+    "corequisites": ["QU2403"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SE1400",
+    "name": "Actividad Cultural-Deportiva",
+    "credits": 0,
+    "semester": 3,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FH1000",
+    "name": "Centros De Formación Humanística",
+    "credits": 0,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": [],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 730, "end_time": 920}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2021",
+    "name": "Sistemas Bioinformáticos",
+    "credits": 2,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2113", "IB2304"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3210",
+    "name": "Sistemas Ecológicos",
+    "credits": 3,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2113"],
+    "corequisites": ["IB2021"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3302",
+    "name": "Mejoramiento Genético",
+    "credits": 3,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2302", "IB2304"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3404",
+    "name": "Aplicación De Sistemas De Producción Agrícola",
+    "credits": 3,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2205", "IB2211"],
+    "corequisites": ["IB3405"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1020}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3405",
+    "name": "Laboratorio Aplicación De Sistemas De Producción Agrícola",
+    "credits": 2,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2205", "IB2211"],
+    "corequisites": ["IB3404"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3601",
+    "name": "Bioquímica",
+    "credits": 3,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["QU2403", "QU2404"],
+    "corequisites": ["IB3603"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3603",
+    "name": "Laboratorio De Bioquímica",
+    "credits": 1,
+    "semester": 4,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["QU2403", "QU2404"],
+    "corequisites": ["IB3601"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  }
+]
