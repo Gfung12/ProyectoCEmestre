@@ -39,6 +39,7 @@ typedef struct {
     int group_count;
     
     //Flags exigidos para la salida
+    bool is_approved;            //True si el estudiante ya la pasó
     bool has_any_schedule_clash; //True si el curso choca con al menos otro curso/grupo
     bool is_eligible; //True si el estudiante cumple sus requisitos
 } Course;
