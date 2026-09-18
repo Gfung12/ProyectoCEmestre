@@ -5,6 +5,7 @@
 #include "../include/prereq_checker.h"
 #include "../include/schedule_checker.h"
 #include "../include/exporter.h"
+#include "../include/validator.h"
 
 int main(void) {
     //Inicializamos las estructuras principales del catálogo y el historial
@@ -16,6 +17,14 @@ int main(void) {
         fprintf(stderr, "Error al cargar el catálogo de cursos.\n");
         return 1;
     }
+
+    printf("Revisando la integridad de los datos del plan de estudios...\n");
+    if (!validate_catalog(&catalog)) {
+        fprintf(stderr, "La validación falló. Arregle las erorres en el JSON antes de continuar.\n");
+        free_catalog(&catalog);
+        return 1;
+    }
+    printf("Datos validados correctamente. Todo en orden.\n");
 
     if (!load_student_history("data/historial_estudiante.json", &history)) {
         fprintf(stderr, "Error al cargar el historial del estudiante.\n");
