@@ -9,6 +9,6 @@
 #include "struct_definitions.h"
 
 // Función que revisa todo el catálogo buscando inconsistencias del usuario
-bool validate_catalog(const Catalog *catalog);
+bool validate_catalog(Catalog *catalog);
 
 #endif //PROYECTOCEMESTRE_VALIDATOR_H

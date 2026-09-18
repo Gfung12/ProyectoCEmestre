@@ -9,14 +9,12 @@
 #include "../include/struct_definitions.h"
 #include "../include/validator.h"
 
-// 1. Revisa que el código solo tenga caracteres alfanuméricos válidos
-// Rechaza si tiene comas, puntos, espacios intermedios, etc.
+// Revisa que el código solo tenga letras y números (sin comas, espacios, etc.)
 bool is_valid_code_format(const char *code) {
     if (!code || strlen(code) == 0) return false;
 
     for (int i = 0; code[i] != '\0'; i++) {
         unsigned char c = (unsigned char)code[i];
-        // Si no es ni letra ni dígito, es un caracter no deseado (coma, punto, espacio, etc.)
         if (!isalnum(c)) {
             return false;
         }
@@ -24,7 +22,7 @@ bool is_valid_code_format(const char *code) {
     return true;
 }
 
-// 2. Limpia el código: quita espacios a los bordes y pasa todo a MAYÚSCULAS
+// Limpia el código: quita espacios en blanco de extremos y pasa a MAYÚSCULAS
 void sanitize_code(char *code) {
     if (!code) return;
 
@@ -34,7 +32,6 @@ void sanitize_code(char *code) {
         start++;
     }
 
-    // Si toda la cadena eran espacios
     if (*start == '\0') {
         code[0] = '\0';
         return;
@@ -57,18 +54,18 @@ void sanitize_code(char *code) {
     code[i] = '\0';
 }
 
-// Función auxiliar privada (solo sirve en este archivo)
-// Busca secuencialmente si un código X existe como materia oficial en el catálogo
+// Busca secuencialmente si un código X existe en el catálogo
 static bool course_exists_in_catalog(const char *code, const Catalog *catalog) {
     for (int i = 0; i < catalog->course_count; i++) {
         if (strcmp(catalog->courses[i].code, code) == 0) {
-            return true; // El código sí pertenece a una materia real
+            return true;
         }
     }
-    return false; // El código es un invento
+    return false;
 }
 
-bool validate_catalog(const Catalog *catalog) {
+// OJO: Sin 'const' para permitir que sanitize_code arregle los strings en sitio
+bool validate_catalog(Catalog *catalog) {
     if (!catalog || catalog->course_count == 0) {
         printf("Error fatal: El catálogo está vacío o nulo.\n");
         return false;
@@ -76,36 +73,63 @@ bool validate_catalog(const Catalog *catalog) {
 
     bool all_good = true;
 
+    // PASADA 1: Sanitizar absolutamente todos los códigos primero
+    for (int i = 0; i < catalog->course_count; i++) {
+        Course *c = &catalog->courses[i];
+        sanitize_code(c->code);
+
+        for (int j = 0; j < c->prereq_count; j++) {
+            sanitize_code(c->prerequisites[j]);
+        }
+        for (int j = 0; j < c->coreq_count; j++) {
+            sanitize_code(c->corequisites[j]);
+        }
+    }
+
+    // PASADA 2: Validar formatos y relaciones de negocio
     for (int i = 0; i < catalog->course_count; i++) {
         Course *c = &catalog->courses[i];
 
-        // Primero saneamos (quitamos espacios de bordes y pasamos a mayúsculas)
-        sanitize_code(c->code);
-
-        // Ahora verificamos que no tenga comas, puntos o símbolos raros
+        // 1. Formato del código del curso
         if (!is_valid_code_format(c->code)) {
-            printf("Error: El código de curso '%s' tiene formato inválido (contiene espacios internos, puntos, comas o símbolos).\n", c->code);
+            printf("Error [Índice %d]: El código '%s' tiene formato inválido o caracteres prohibidos.\n", i, c->code);
             all_good = false;
         }
 
-        // Lo mismo para cada uno de sus prerrequisitos
+        // 2. Créditos lógicos
+        if (c->credits < 0 || c->credits > 10) {
+            printf("Error [%s]: Créditos inválidos (%d). Deben estar entre 0 y 10.\n", c->code, c->credits);
+            all_good = false;
+        }
+
+        // 3. Semestre válido (0 a 4 según el alcance de la etapa)
+        if (c->semester < 0 || c->semester > 4) {
+            printf("Error [%s]: Semestre fuera del alcance del proyecto (%d).\n", c->code, c->semester);
+            all_good = false;
+        }
+
+        // 4. Prerrequisitos válidos y existentes
         for (int j = 0; j < c->prereq_count; j++) {
-            sanitize_code(c->prerequisites[j]);
             if (!is_valid_code_format(c->prerequisites[j])) {
-                printf("Error [%s]: El prerrequisito '%s' tiene caracteres inválidos.\n", c->code, c->prerequisites[j]);
+                printf("Error [%s]: Prerrequisito '%s' con caracteres inválidos.\n", c->code, c->prerequisites[j]);
+                all_good = false;
+            } else if (!course_exists_in_catalog(c->prerequisites[j], catalog)) {
+                printf("Error [%s]: Pide prerrequisito fantasma '%s' que no existe en el catálogo.\n", c->code, c->prerequisites[j]);
                 all_good = false;
             }
         }
 
-        // Lo mismo para cada uno de sus correquisitos
+        // 5. Correquisitos válidos y existentes
         for (int j = 0; j < c->coreq_count; j++) {
-            sanitize_code(c->corequisites[j]);
             if (!is_valid_code_format(c->corequisites[j])) {
-                printf("Error [%s]: El correquisito '%s' tiene caracteres inválidos.\n", c->code, c->corequisites[j]);
+                printf("Error [%s]: Correquisito '%s' con caracteres inválidos.\n", c->code, c->corequisites[j]);
+                all_good = false;
+            } else if (!course_exists_in_catalog(c->corequisites[j], catalog)) {
+                printf("Error [%s]: Pide correquisito fantasma '%s' que no existe en el catálogo.\n", c->code, c->corequisites[j]);
                 all_good = false;
             }
         }
     }
 
-    return all_good; // Retorna true solo si sobrevivió a todas las pruebas sin tirar errores
+    return all_good;
 }
