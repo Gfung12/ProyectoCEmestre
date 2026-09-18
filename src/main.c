@@ -18,18 +18,24 @@ int main(void) {
         return 1;
     }
 
-    printf("Revisando la integridad de los datos del plan de estudios...\n");
-    if (!validate_catalog(&catalog)) {
-        fprintf(stderr, "La validación falló. Arregle las erorres en el JSON antes de continuar.\n");
-        free_catalog(&catalog);
-        return 1;
-    }
-    printf("Datos validados correctamente. Todo en orden.\n");
-
     if (!load_student_history("data/historial_estudiante.json", &history)) {
         fprintf(stderr, "Error al cargar el historial del estudiante.\n");
         return 1;
     }
+
+    // --- NUEVO: FASE DE VALIDACIÓN ANTIESTUPIDEZ ---
+    if (!validate_catalog(&catalog)) {
+        fprintf(stderr, "Fallo crítico: El plan de estudios contiene datos erróneos. Proceso abortado.\n");
+        free_catalog(&catalog);
+        return 1;
+    }
+
+    if (!validate_student_history(&history, &catalog)) {
+        fprintf(stderr, "Fallo crítico: El historial del estudiante contiene datos erróneos. Proceso abortado.\n");
+        free_catalog(&catalog);
+        return 1;
+    }
+    // ----------------------------------------------
 
     //Procesar la elegibilidad de cada curso basándose en el historial
     for (int i = 0; i < catalog.course_count; i++) {

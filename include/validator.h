@@ -8,7 +8,10 @@
 #include <stdbool.h>
 #include "struct_definitions.h"
 
-// Función que revisa todo el catálogo buscando inconsistencias del usuario
+// Sanea y valida el catálogo completo del plan de estudios
 bool validate_catalog(Catalog *catalog);
+
+// Valida que el historial del estudiante no tenga materias repetidas ni inventadas
+bool validate_student_history(StudentHistory *history, const Catalog *catalog);
 
 #endif //PROYECTOCEMESTRE_VALIDATOR_H
