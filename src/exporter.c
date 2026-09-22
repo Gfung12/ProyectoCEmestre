@@ -37,8 +37,9 @@ bool export_catalog_to_json(const char *filename, const Catalog *catalog) {
         fprintf(file, "    \"semester\": %d,\n", c->semester);
         
         //Convertimos los booleanos de C a literales "true" o "false" para JSON
+        fprintf(file, "    \"is_approved\": %s,\n", c->is_approved ? "true" : "false");
         fprintf(file, "    \"is_eligible\": %s,\n", c->is_eligible ? "true" : "false");
-        fprintf(file, "    \"has_any_schedule_clash\": %s\n", c->has_any_schedule_clash ? "true" : "false");
+        fprintf(file, "    \"has_any_schedule_clash\": %s,\n", c->has_any_schedule_clash ? "true" : "false");
 
         // Arreglos de requisitos
         fprintf(file, "    \"prerequisites\": [");
@@ -47,7 +48,7 @@ bool export_catalog_to_json(const char *filename, const Catalog *catalog) {
             // Si aún no es el último requisito ponemos coma
             if (p < c->prereq_count - 1) fprintf(file, ", ");
         }
-        fprintf(file, "]\n"); // Cerramos el arreglo de requisitos
+        fprintf(file, "],\n"); // Cerramos el arreglo de requisitos
 
         // Arreglos de correquisitos
         fprintf(file, "    \"corequisites\": [");

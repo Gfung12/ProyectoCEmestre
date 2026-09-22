@@ -40,6 +40,7 @@ int main(void) {
     //Procesar la elegibilidad de cada curso basándose en el historial
     for (int i = 0; i < catalog.course_count; i++) {
         Course *course = &catalog.courses[i];
+        course->is_approved = is_course_approved(course->code, &history);
         course->is_eligible = can_take_course(course, &history, &catalog);
     }
 
