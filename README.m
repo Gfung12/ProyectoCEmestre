@@ -154,3 +154,32 @@ Fallo de I/O (Entrada/Salida): Si el sistema operativo deniega la lectura de los
 Corrupción Semántica y Lógica (Validador): Si se detectan dependencias a materias fantasma (prerrequisitos que no existen), horas de finalización anteriores a las horas de inicio (cronología ilógica), créditos fuera del rango permitido (0 a 10), o ciclos de auto-dependencia (un curso pidiéndose a sí mismo).
 
 Límites Estrictos de Memoria: Si los JSON de entrada exceden los topes de dimensionamiento estático definidos en config.h (por ejemplo, declarar más de 200 cursos o más de 10 grupos para un mismo curso), el parser truncará la lectura de forma defensiva para evitar la sobreescritura de memoria, y el validador procesará únicamente la información íntegra capturada hasta el límite.
+
+---
+
+## 6. Funciones Auxiliares, de Saneamiento y Control de Versiones
+
+Para asegurar la robustez interna y la mantenibilidad del código, los módulos implementan rutinas auxiliares privadas (estáticas) que gestionan las operaciones de bajo nivel, complementadas con la configuración de control de versiones del repositorio.
+
+### 6.1. Rutinas Auxiliares por Módulo
+
+* **Deserialización Segura (`src/parser.c`):**
+  * `read_file_to_string`: Abre el archivo en modo binario, calcula su longitud mediante `fseek`/`ftell`, reserva memoria dinámica exacta e incorpora un byte nulo (`\0`) como candado de seguridad final[cite: 13].
+  * `get_json_string_val` / `get_json_int_val`: Buscan patrones de claves mediante `strstr`, localizan delimitadores de asignación y extraen cadenas o enteros protegiéndose contra desbordamientos de búfer con `max_len`[cite: 13].
+  * `get_json_array_strings`: Itera sobre arreglos delimitados por corchetes (`[...]`) extrayendo códigos alfanuméricos de forma acotada a las capacidades máximas definidas en `config.h`[cite: 3, 13].
+  * `parse_groups_and_schedules`: Implementa un algoritmo de seguimiento de profundidad de llaves (`{` y `}`) para aislar dinámicamente bloques anidados de grupos y horarios sin errores de segmentación[cite: 13].
+
+* **Saneamiento e Integridad (`src/validator.c`):**
+  * `sanitize_code`: Elimina espacios en blanco iniciales/finales y convierte de manera uniforme todos los caracteres alfanuméricos a mayúsculas para evitar falsos positivos por formato[cite: 16].
+  * `is_valid_code_format`: Verifica que los códigos de curso cumplan estipulaciones estrictas de contenido alfanumérico puro[cite: 16].
+  * `course_exists_in_catalog`: Realiza búsquedas lineales en memoria para certificar la existencia real de los cursos referenciados, erradicando dependencias fantasma[cite: 16].
+  * `is_valid_military_time` & `blocks_clash`: Validan la corrección de horas bajo formato militar (0000 a 2359) y evalúan traslapes internos dentro de un mismo grupo académico[cite: 16].
+
+* **Evaluación Temporal y de Bloques (`src/schedule_checker.c`):**
+  * `blocks_overlap`: Comprueba la intersección exacta entre dos bloques individuales de horario evaluando coincidencia de día y solapamiento estricto de intervalos de tiempo ($b_1.\text{start} < b_2.\text{end} \land b_2.\text{start} < b_1.\text{end}$)[cite: 15].
+
+### 6.2. Configuración del Entorno y Control de Versiones
+
+* **Automatización de Compilación (`Makefile`):** Centraliza las reglas de construcción incremental del proyecto utilizando el compilador `gcc` bajo directrices rigurosas de depuración y compatibilidad (`-Wall -Wextra -std=c99 -Iinclude`). Gestiona la compilación separada de archivos objeto (`.o`) y provee la regla `clean` para la purga de binarios temporales y del ejecutable principal (`curso_app`)[cite: 19].
+* **Higiene del Repositorio (`.gitignore`):** Excluye automáticamente archivos de objetos compilados, bibliotecas estáticas/dinámicas, binarios ejecutables, archivos de depuración, carpetas de configuración de entornos de desarrollo (como VS Code o CLion) y archivos transitorios de salida (`data/output_schedule.json`)[cite: 18].
+* **Normalización Multiplataforma (`.gitattributes`):** Configura la detección automática de archivos de texto aplicando normalización de saltos de línea a formato estándar `LF`, previniendo conflictos de codificación al colaborar entre sistemas operativos Windows y Unix/Linux[cite: 17].
