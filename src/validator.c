@@ -99,13 +99,17 @@ bool validate_catalog(Catalog *catalog) {
         }
     }
 
-    // PASADA 2: Validar cursos duplicados en el mismo catálogo
+    // PASADA 2: Validar cursos duplicados en la misma carrera
     for (int i = 0; i < catalog->course_count; i++) {
         for (int j = i + 1; j < catalog->course_count; j++) {
-            if (strcmp(catalog->courses[i].code, catalog->courses[j].code) == 0) {
-                fprintf(stderr, "Error: El curso '%s' está duplicado en el catálogo.\n", catalog->courses[i].code);
+            // Un curso es duplicado solo si coinciden el código Y la carrera
+            if (strcmp(catalog->courses[i].code, catalog->courses[j].code) == 0 &&
+                strcmp(catalog->courses[i].career, catalog->courses[j].career) == 0) {
+
+                fprintf(stderr, "Error: El curso '%s' de '%s' está duplicado en el catálogo.\n",
+                        catalog->courses[i].code, catalog->courses[i].career);
                 all_good = false;
-            }
+                }
         }
     }
 
