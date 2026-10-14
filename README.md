@@ -64,64 +64,36 @@
 <h2 id="arquitectura-y-flujo-del-pipeline">Arquitectura y Flujo del Pipeline</h2>
 <p>El núcleo en C opera como un motor de extracción, transformación y validación de datos (ETL) que produce el contrato JSON consumido por Racket:</p>
 <pre class=" language-text"><code class="prism  language-text">
-[ data/plan_estudios.json ] [ data/historial_estudiante.json ]
-
-│ │
-
-▼ ▼
-
-[ parser.c ] [ parser.c ]
-
-│ │
-
-└───────────────────┬────────────────────┘
-
-▼
-
-[ Catalog ] y [ StudentHistory ]
-
-│
-
-▼
-
-[ validator.c ] ──(Fallo semántico)──► Aborta proceso (stderr)
-
-│
-
-(Datos conformes)
-
-▼
-
-[ prereq_checker.c ]
-
-(Elegibilidad + Correquisitos)
-
-│
-
-▼
-
-[ schedule_checker.c ]
-
-(Detección de traslapes)
-
-│
-
-▼
-
-[ exporter.c ]
-
-│
-
-▼
-
-[ data/output_schedule.json ]
-
-│
-
-▼ (Entrada Etapa 2)
-
-[ parte2_racket / Typed Racket ] ◄── [ data/preferencias.json ]
-
+```text
+[ data/plan_estudios.json ]        [ data/historial_estudiante.json ]
+          │                                        │
+          ▼                                        ▼
+   [ parser.c ]                             [ parser.c ]
+          │                                        │
+          └───────────────────┬────────────────────┘
+                              ▼
+                 [ Catalog ] y [ StudentHistory ]
+                              │
+                              ▼
+                       [ validator.c ] ──(Fallo semántico)──► Aborta proceso (stderr)
+                              │
+                      (Datos conformes)
+                              ▼
+                     [ prereq_checker.c ]
+               (Elegibilidad + Correquisitos)
+                              │
+                              ▼
+                    [ schedule_checker.c ]
+                 (Detección de traslapes)
+                              │
+                              ▼
+                       [ exporter.c ]
+                              │
+                              ▼
+                 [ data/output_schedule.json ]
+                              │
+                              ▼  (Entrada Etapa 2)
+              [ parte2_racket / Typed Racket ] ◄── [ data/preferencias.json ]
 </code></pre>
 <h3 id="fases-de-ejecución">Fases de Ejecución</h3>
 <ol>
@@ -145,58 +117,32 @@
 <h2 id="estructura-de-directorios">Estructura de Directorios</h2>
 <pre class=" language-text"><code class="prism  language-text">
 ProyectoCEmestre/
-
-├── data/ # Almacenamiento de esquemas JSON
-
-│ ├── historial_estudiante.json # Materias aprobadas por el estudiante
-
-│ ├── plan_estudios.json # Catálogo oficial (Semestres 0 al 6)
-
-│ ├── preferencias.json # Cursos de interés y rango de créditos
-
-│ └── output_schedule.json # Salida procesada generada por C
-
-├── etapa1_c/ # Implementación del motor en C99
-
-│ ├── Makefile # Script de compilación automatizada
-
-│ ├── include/ # Cabeceras y contratos de tipos
-
-│ │ ├── config.h # Constantes de dimensionamiento
-
-│ │ ├── exporter.h # Declaración del serializador JSON
-
-│ │ ├── parser.h # Declaración del parser de entrada
-
-│ │ ├── prereq_checker.h # Declaración del verificador de requisitos
-
-│ │ ├── schedule_checker.h # Declaración del evaluador de horarios
-
-│ │ ├── struct_definitions.h # Modelado de structs imperativos
-
-│ │ └── validator.h # Declaración del saneador de integridad
-
-│ └── src/ # Código fuente modular
-
-│ ├── exporter.c # Escritor del JSON formateado
-
-│ ├── main.c # Orquestador del flujo
-
-│ ├── parser.c # Lector seguro de cadenas JSON
-
-│ ├── prereq_checker.c # Lógica de prerrequisitos y correquisitos
-
-│ ├── schedule_checker.c # Comparador de traslapes en bloques temporales
-
-│ └── validator.c # Validador semántico y anti-corrupción
-
-└── parte2_racket/ # Implementación funcional (Etapa 2)
-
-├── types.rkt # Tipos inmutables en Typed Racket
-
-├── parser.rkt # Ingesta funcional y cruce de datos
-
-└── filters.rkt # Abstracciones con polimorfismo paramétrico
+├── data/                                 # Almacenamiento de esquemas JSON
+│   ├── historial_estudiante.json         # Materias aprobadas por el estudiante
+│   ├── plan_estudios.json                # Catálogo oficial (Semestres 0 al 6)
+│   ├── preferencias.json                 # Cursos de interés y rango de créditos
+│   └── output_schedule.json              # Salida procesada generada por C
+├── etapa1_c/                             # Implementación del motor en C99
+│   ├── Makefile                          # Script de compilación automatizada
+│   ├── include/                          # Cabeceras y contratos de tipos
+│   │   ├── config.h                      # Constantes de dimensionamiento
+│   │   ├── exporter.h                    # Declaración del serializador JSON
+│   │   ├── parser.h                      # Declaración del parser de entrada
+│   │   ├── prereq_checker.h              # Declaración del verificador de requisitos
+│   │   ├── schedule_checker.h            # Declaración del evaluador de horarios
+│   │   ├── struct_definitions.h          # Modelado de structs imperativos
+│   │   └── validator.h                   # Declaración del saneador de integridad
+│   └── src/                              # Código fuente modular
+│       ├── exporter.c                    # Escritor del JSON formateado
+│       ├── main.c                        # Orquestador del flujo
+│       ├── parser.c                      # Lector seguro de cadenas JSON
+│       ├── prereq_checker.c              # Lógica de prerrequisitos y correquisitos
+│       ├── schedule_checker.c            # Comparador de traslapes en bloques temporales
+│       └── validator.c                   # Validador semántico y anti-corrupción
+└── parte2_racket/                        # Implementación funcional (Etapa 2)
+    ├── types.rkt                         # Tipos inmutables en Typed Racket
+    ├── parser.rkt                        # Ingesta funcional y cruce de datos
+    └── filters.rkt                       # Abstracciones con polimorfismo paramétrico
 
 </code></pre>
 <hr>
