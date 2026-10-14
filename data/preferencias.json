@@ -1,0 +1,31 @@
+{
+  "min_credits": 8,
+  "max_credits": 16,
+  "interested_courses": [
+    {
+      "code": "CE1107",
+      "career": "Ingeniería en Computadores",
+      "groups": [1, 2]
+    },
+    {
+      "code": "MA1102",
+      "career": "Ingeniería en Computadores",
+      "groups": [1]
+    },
+    {
+      "code": "MA1403",
+      "career": "Ingeniería en Computadores",
+      "groups": [1]
+    },
+    {
+      "code": "CE1105",
+      "career": "Ingeniería en Computadores",
+      "groups": [1]
+    },
+    {
+      "code": "CS1502",
+      "career": "Ingeniería en Computadores",
+      "groups": [1]
+    }
+  ]
+}

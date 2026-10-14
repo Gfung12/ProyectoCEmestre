@@ -1,5 +1,5 @@
 [
-    {
+  {
     "code": "MA0101",
     "name": "Matemática General",
     "credits": 2,
@@ -139,7 +139,7 @@
       }
     ]
   },
-    {
+  {
     "code": "SE1200",
     "name": "Actividad Deportiva I",
     "credits": 0,
@@ -191,7 +191,7 @@
       }
     ]
   },
-    {
+  {
     "code": "CI1407",
     "name": "Habilidades De Comunicación En Ingeniería",
     "credits": 2,
@@ -276,7 +276,7 @@
       }
     ]
   },
-    {
+  {
     "code": "SE1400",
     "name": "Actividad Cultural-Deportiva",
     "credits": 0,
@@ -310,7 +310,7 @@
       }
     ]
   },
-    {
+  {
     "code": "CS2101",
     "name": "Ambiente Humano",
     "credits": 2,
@@ -344,7 +344,7 @@
       }
     ]
   },
-    {
+  {
     "code": "FH1000",
     "name": "Centros De Formación Humanística",
     "credits": 0,
@@ -514,29 +514,292 @@
       }
     ]
   },
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-    {
+  {
+    "code": "CE1107",
+    "name": "Fundamentos De Arquitectura De Computadores",
+    "credits": 4,
+    "semester": 5,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1104"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1450},
+          {"day": 4, "start_time": 1300, "end_time": 1450}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 2, "start_time": 930, "end_time": 1120},
+          {"day": 4, "start_time": 930, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1108",
+    "name": "Compiladores E Intérpretes",
+    "credits": 4,
+    "semester": 5,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1106"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 930, "end_time": 1120},
+          {"day": 4, "start_time": 930, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1450},
+          {"day": 5, "start_time": 1300, "end_time": 1450}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1109",
+    "name": "Circuitos Analógicos",
+    "credits": 4,
+    "semester": 5,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["EL2114", "EL2207"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1700, "end_time": 1850},
+          {"day": 4, "start_time": 1700, "end_time": 1850}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 2, "start_time": 1700, "end_time": 1850},
+          {"day": 4, "start_time": 1700, "end_time": 1850}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE3101",
+    "name": "Bases De Datos",
+    "credits": 4,
+    "semester": 5,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE2103"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1900, "end_time": 2050},
+          {"day": 5, "start_time": 1900, "end_time": 2050}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 2, "start_time": 1900, "end_time": 2050},
+          {"day": 4, "start_time": 1900, "end_time": 2050}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 3, "start_time": 1900, "end_time": 2050},
+          {"day": 5, "start_time": 1900, "end_time": 2050}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE3201",
+    "name": "Taller De Diseño Digital",
+    "credits": 4,
+    "semester": 5,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1104", "EL2207"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 930, "end_time": 1120},
+          {"day": 5, "start_time": 930, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450},
+          {"day": 6, "start_time": 830, "end_time": 1020}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1450},
+          {"day": 6, "start_time": 1030, "end_time": 1220}
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1450},
+          {"day": 6, "start_time": 830, "end_time": 1020}
+        ]
+      },
+      {
+        "group_number": 5,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1450},
+          {"day": 6, "start_time": 1030, "end_time": 1220}
+        ]
+      },
+      {
+        "group_number": 6,
+        "schedules": [
+          {"day": 2, "start_time": 930, "end_time": 1120},
+          {"day": 4, "start_time": 930, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1110",
+    "name": "Análisis De Señales Mixtas",
+    "credits": 4,
+    "semester": 6,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1109"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 930, "end_time": 1120},
+          {"day": 5, "start_time": 930, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 930, "end_time": 1120},
+          {"day": 5, "start_time": 930, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1111",
+    "name": "Análisis Numérico Para La Ingeniería",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1101", "MA2104"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 930, "end_time": 1120},
+          {"day": 4, "start_time": 930, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 2, "start_time": 930, "end_time": 1120},
+          {"day": 4, "start_time": 930, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE1112",
+    "name": "Taller De Señales Mixtas",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1109", "CE3201"],
+    "corequisites": ["CE1110"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1500, "end_time": 1650},
+          {"day": 5, "start_time": 1500, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 1500, "end_time": 1650},
+          {"day": 5, "start_time": 1500, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE4301",
+    "name": "Arquitectura De Computadores I",
+    "credits": 4,
+    "semester": 6,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1107", "CE3201"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1500, "end_time": 1650},
+          {"day": 5, "start_time": 1500, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 1500, "end_time": 1650},
+          {"day": 5, "start_time": 1500, "end_time": 1650}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CE4303",
+    "name": "Principios De Sistemas Operativos",
+    "credits": 4,
+    "semester": 6,
+    "career": "Ingeniería en Computadores",
+    "prerequisites": ["CE1107", "CE1108"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1500, "end_time": 1650},
+          {"day": 4, "start_time": 1500, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 1700, "end_time": 1850},
+          {"day": 5, "start_time": 1700, "end_time": 1850}
+        ]
+      }
+    ]
+  },
+  {
     "code": "CI0200",
     "name": "Examen Diagnóstico",
     "credits": 0,
@@ -553,7 +816,7 @@
       }
     ]
   },
-      {
+  {
     "code": "CI0202",
     "name": "Inglés Básico",
     "credits": 2,
@@ -1178,6 +1441,401 @@
         "group_number": 1,
         "schedules": [
           {"day": 3, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2105",
+    "name": "Microbiología Aplicada",
+    "credits": 3,
+    "semester": 5,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["BI1101", "BI1102", "IB3601"],
+    "corequisites": ["IB2106"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 830, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2106",
+    "name": "Laboratorio De Microbiología Aplicada",
+    "credits": 2,
+    "semester": 5,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["BI1101", "BI1102", "IB3603"],
+    "corequisites": ["IB2105"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1550}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 1600, "end_time": 1850}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 3, "start_time": 830, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {"day": 4, "start_time": 1600, "end_time": 1850}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2503",
+    "name": "Biotecnología Y Genética Humana",
+    "credits": 3,
+    "semester": 5,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2302", "IB2304"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1550}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3202",
+    "name": "Cultivos De Tejidos I",
+    "credits": 3,
+    "semester": 5,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2205", "IB2211"],
+    "corequisites": ["IB3203"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 1800, "end_time": 2050}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3203",
+    "name": "Laboratorio De Cultivo De Tejidos I",
+    "credits": 2,
+    "semester": 5,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2205", "IB2211"],
+    "corequisites": ["IB3202"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 4, "start_time": 1700, "end_time": 2050}
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 5,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 6,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3204",
+    "name": "Ingeniería Bioquímica",
+    "credits": 4,
+    "semester": 5,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB3601", "IB3603"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 2, "start_time": 1700, "end_time": 2050}
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {"day": 2, "start_time": 730, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 5,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 6,
+        "schedules": [
+          {"day": 2, "start_time": 1700, "end_time": 2050}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3101",
+    "name": "Seminario Taller De Formulación, Evaluación Y Gestación De Proyectos",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB3404", "IB3405"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 1300, "end_time": 1550}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3107",
+    "name": "Microbiología Industrial",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2105", "IB2106"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 3, "start_time": 830, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 3, "start_time": 1300, "end_time": 1550}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 3, "start_time": 1600, "end_time": 1850}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3802",
+    "name": "Manejo Biotecnológico De Cultivos",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB3404", "IB3405"],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 830, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 5, "start_time": 830, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 5, "start_time": 830, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4101",
+    "name": "Biología Molecular Aplicada",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2105", "IB3601"],
+    "corequisites": ["IB4106"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 2, "start_time": 830, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4106",
+    "name": "Laboratorio De Biología Molecular Aplicada",
+    "credits": 2,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB2106", "IB3603"],
+    "corequisites": ["IB4101"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 4, "start_time": 1700, "end_time": 2050}
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 5,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4201",
+    "name": "Cultivo De Tejidos II",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB3202", "IB3203"],
+    "corequisites": ["IB4202"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 1, "start_time": 830, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 1, "start_time": 830, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 1, "start_time": 830, "end_time": 1120}
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4202",
+    "name": "Laboratorio De Cultivo De Tejidos II",
+    "credits": 2,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "prerequisites": ["IB3202", "IB3203"],
+    "corequisites": ["IB4201"],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {"day": 5, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {"day": 4, "start_time": 1700, "end_time": 2050}
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {"day": 5, "start_time": 730, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1650}
+        ]
+      },
+      {
+        "group_number": 5,
+        "schedules": [
+          {"day": 4, "start_time": 730, "end_time": 1120}
+        ]
+      },
+      {
+        "group_number": 6,
+        "schedules": [
+          {"day": 4, "start_time": 1300, "end_time": 1650}
         ]
       }
     ]

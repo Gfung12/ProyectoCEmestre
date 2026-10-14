@@ -41,7 +41,6 @@ static void sanitize_code(char *code) {
 // Verifica que el codigo solo tenga letras y numeros (sin espacios, comas ni signos)
 static bool is_valid_code_format(const char *code) {
     if (!code || strlen(code) == 0) return false;
-
     for (int i = 0; code[i] != '\0'; i++) {
         if (!isalnum((unsigned char)code[i])) {
             return false;
@@ -77,7 +76,6 @@ static bool blocks_clash(const ScheduleBlock *b1, const ScheduleBlock *b2) {
 // -------------------------------------------------------------
 // VALIDACION DEL CATALOGO
 // -------------------------------------------------------------
-
 bool validate_catalog(Catalog *catalog) {
     if (!catalog || catalog->course_count == 0) {
         fprintf(stderr, "Error fatal: El catalogo esta vacio o no se pudo cargar.\n");
@@ -90,7 +88,6 @@ bool validate_catalog(Catalog *catalog) {
     for (int i = 0; i < catalog->course_count; i++) {
         Course *c = &catalog->courses[i];
         sanitize_code(c->code);
-
         for (int j = 0; j < c->prereq_count; j++) {
             sanitize_code(c->prerequisites[j]);
         }
@@ -105,11 +102,10 @@ bool validate_catalog(Catalog *catalog) {
             // Un curso es duplicado solo si coinciden el codigo Y la carrera
             if (strcmp(catalog->courses[i].code, catalog->courses[j].code) == 0 &&
                 strcmp(catalog->courses[i].career, catalog->courses[j].career) == 0) {
-
                 fprintf(stderr, "Error: El curso '%s' de '%s' esta duplicado en el catalogo.\n",
                         catalog->courses[i].code, catalog->courses[i].career);
                 all_good = false;
-                }
+            }
         }
     }
 
@@ -123,14 +119,20 @@ bool validate_catalog(Catalog *catalog) {
             all_good = false;
         }
 
+        // 1.5 Presencia del campo obligatorio career
+        if (strlen(c->career) == 0) {
+            fprintf(stderr, "Error [%s]: El curso no tiene una carrera asignada.\n", c->code);
+            all_good = false;
+        }
+
         // 2. Creditos validos (0 a 10)
         if (c->credits < 0 || c->credits > 10) {
             fprintf(stderr, "Error [%s]: Cantidad de creditos invalida (%d).\n", c->code, c->credits);
             all_good = false;
         }
 
-        // 3. Semestre valido (primeros 4 semestres del plan, semestres 0 al 4)
-        if (c->semester < 0 || c->semester > 4) {
+        // 3. Semestre valido (primeros 6 semestres del plan, semestres 0 al 6)
+        if (c->semester < 0 || c->semester > MAX_SEMESTER) {
             fprintf(stderr, "Error [%s]: Semestre fuera del alcance del proyecto (%d).\n", c->code, c->semester);
             all_good = false;
         }
@@ -138,7 +140,6 @@ bool validate_catalog(Catalog *catalog) {
         // 4. Validacion de prerrequisitos
         for (int j = 0; j < c->prereq_count; j++) {
             const char *prereq = c->prerequisites[j];
-
             if (!is_valid_code_format(prereq)) {
                 fprintf(stderr, "Error [%s]: Prerrequisito '%s' tiene formato invalido.\n", c->code, prereq);
                 all_good = false;
@@ -146,13 +147,11 @@ bool validate_catalog(Catalog *catalog) {
                 fprintf(stderr, "Error [%s]: Pide prerrequisito fantasma '%s' que no existe en el catalogo.\n", c->code, prereq);
                 all_good = false;
             }
-
             // Auto-requisito
             if (strcmp(c->code, prereq) == 0) {
                 fprintf(stderr, "Error [%s]: El curso se pide a si mismo como prerrequisito.\n", c->code);
                 all_good = false;
             }
-
             // Duplicados en la misma lista de prerrequisitos
             for (int k = j + 1; k < c->prereq_count; k++) {
                 if (strcmp(prereq, c->prerequisites[k]) == 0) {
@@ -165,7 +164,6 @@ bool validate_catalog(Catalog *catalog) {
         // 5. Validacion de correquisitos
         for (int j = 0; j < c->coreq_count; j++) {
             const char *coreq = c->corequisites[j];
-
             if (!is_valid_code_format(coreq)) {
                 fprintf(stderr, "Error [%s]: Correquisito '%s' tiene formato invalido.\n", c->code, coreq);
                 all_good = false;
@@ -173,13 +171,11 @@ bool validate_catalog(Catalog *catalog) {
                 fprintf(stderr, "Error [%s]: Pide correquisito fantasma '%s' que no existe en el catalogo.\n", c->code, coreq);
                 all_good = false;
             }
-
             // Auto-requisito
             if (strcmp(c->code, coreq) == 0) {
                 fprintf(stderr, "Error [%s]: El curso se pide a si mismo como correquisito.\n", c->code);
                 all_good = false;
             }
-
             // Duplicados en la misma lista de correquisitos
             for (int k = j + 1; k < c->coreq_count; k++) {
                 if (strcmp(coreq, c->corequisites[k]) == 0) {
@@ -187,7 +183,6 @@ bool validate_catalog(Catalog *catalog) {
                     all_good = false;
                 }
             }
-
             // Conflicto: No puede ser prerrequisito y correquisito a la vez
             for (int p = 0; p < c->prereq_count; p++) {
                 if (strcmp(coreq, c->prerequisites[p]) == 0) {
@@ -201,10 +196,8 @@ bool validate_catalog(Catalog *catalog) {
         if (c->group_count == 0) {
             fprintf(stderr, "Advertencia [%s]: El curso no tiene grupos asignados.\n", c->code);
         }
-
         for (int g = 0; g < c->group_count; g++) {
             Group *grp = &c->groups[g];
-
             for (int s = 0; s < grp->schedule_count; s++) {
                 ScheduleBlock *blk = &grp->schedules[s];
 
@@ -213,19 +206,16 @@ bool validate_catalog(Catalog *catalog) {
                     fprintf(stderr, "Error [%s, Grupo %d]: Dia de la semana invalido (%d).\n", c->code, grp->group_number, blk->day);
                     all_good = false;
                 }
-
                 // Sintaxis de horas militares
                 if (!is_valid_military_time(blk->start_time) || !is_valid_military_time(blk->end_time)) {
                     fprintf(stderr, "Error [%s, Grupo %d]: Hora militar ilogica (Inicio: %d, Fin: %d).\n", c->code, grp->group_number, blk->start_time, blk->end_time);
                     all_good = false;
                 }
-
                 // Secuencia cronologica
                 if (blk->start_time >= blk->end_time) {
                     fprintf(stderr, "Error [%s, Grupo %d]: La hora de inicio (%d) debe ser menor a la hora de fin (%d).\n", c->code, grp->group_number, blk->start_time, blk->end_time);
                     all_good = false;
                 }
-
                 // Choque interno dentro del mismo grupo
                 for (int s2 = s + 1; s2 < grp->schedule_count; s2++) {
                     if (blocks_clash(blk, &grp->schedules[s2])) {
@@ -243,7 +233,6 @@ bool validate_catalog(Catalog *catalog) {
 // -------------------------------------------------------------
 // VALIDACION DEL HISTORIAL DEL ESTUDIANTE
 // -------------------------------------------------------------
-
 bool validate_student_history(StudentHistory *history, const Catalog *catalog) {
     if (!history || !catalog) return false;
 
