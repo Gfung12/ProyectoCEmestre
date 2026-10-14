@@ -1,16 +1,14 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99 -Iinclude
-SRC = src/main.c src/parser.c src/prereq_checker.c src/schedule_checker.c src/exporter.c src/validator.c
-OBJ = $(SRC:.c=.o)
-TARGET = curso_app
-
+CFLAGS = -Wall -Wextra -I./include
+SRCS = src/main.c src/parser.c src/exporter.c src/prereq_checker.c src/schedule_checker.c src/validator.c
+TARGET = cemestre_c
 all: $(TARGET)
 
-$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+$(TARGET): $(SRCS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS)
 
-src/%.o: src/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
-	rm -f src/*.o $(TARGET)
+	rm -f $(TARGET)

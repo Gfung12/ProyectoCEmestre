@@ -13,12 +13,12 @@ int main(void) {
     StudentHistory history = {0};
 
     //Cargar datos desde los archivos JSON de entrada
-    if (!load_catalog("data/plan_estudios.json", &catalog)) {
+    if (!load_catalog("../data/plan_estudios.json", &catalog)) {
         fprintf(stderr, "Error al cargar el catálogo de cursos.\n");
         return 1;
     }
 
-    if (!load_student_history("data/historial_estudiante.json", &history)) {
+    if (!load_student_history("../data/historial_estudiante.json", &history)) {
         fprintf(stderr, "Error al cargar el historial del estudiante.\n");
         return 1;
     }
@@ -48,8 +48,8 @@ int main(void) {
     check_schedule_clashes(&catalog);
 
     //Exportar los resultados procesados al archivo JSON de salida
-    if (export_catalog_to_json("data/output_schedule.json", &catalog)) {
-        printf("Proceso completado con éxito. Resultados guardados en data/output_schedule.json\n");
+    if (export_catalog_to_json("../data/output_schedule.json", &catalog)) {
+        printf("Proceso completado con éxito. Resultados guardados en ../data/output_schedule.json\n");
     } else {
         fprintf(stderr, "Error al generar el archivo de salida.\n");
         free_catalog(&catalog);
