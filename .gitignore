@@ -1,7 +1,7 @@
 # Prerrequisitos
 *.d
 
-# Archivos de objetos compilados
+# Archivos de objetos compilados (C)
 *.o
 *.obj
 
@@ -21,12 +21,24 @@
 *.x86_64
 *.hex
 *.bin
+cemestre_c
 
 # Directorios de compilación generados automáticamente
 build/
 bin/
 out/
 cmake-build-*/
+
+# ==========================================================
+# Archivos temporales y compilados de Racket / DrRacket
+# ==========================================================
+compiled/
+*/compiled/
+*.bak
+*.zo
+*.dep
+*~
+.#*
 
 # Archivos de depuración / Profiling
 *.gcov
