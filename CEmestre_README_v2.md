@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Etapa%201-Imperativo-1f6feb?style=for-the-badge" alt="Etapa 1" />
   <img src="https://img.shields.io/badge/Etapa%202-Funcional-8957e5?style=for-the-badge" alt="Etapa 2" />
   <img src="https://img.shields.io/badge/Lenguajes-C99%20%7C%20Typed%20Racket-blueviolet?style=for-the-badge" alt="Lenguajes" />
-  <img src="https://img.shields.io/badge/Estado-Etapa%201%20Completa%20%2F%20Fase%202%20En%20Curso-success?style=for-the-badge" alt="Estado" />
+  <img src="https://img.shields.io/badge/Estado-Etapa%201%20%26%202%20Completas-success?style=for-the-badge" alt="Estado" />
 </p>
 
 <p align="center">
@@ -197,6 +197,7 @@ ProyectoCEmestre/
     ├── filters.rkt                       # Funciones con polimorfismo paramétrico
     ├── json_reader.rkt                   # Puente de lectura JSON a tuplas nativas
     ├── parser.rkt                        # Conversión tipada y preparación de candidatos
+    ├── generator.rkt                     # Motor combinatorio recursivo puro
     └── test.rkt                          # Suite de verificación de ingesta y tipos
 ```
 
