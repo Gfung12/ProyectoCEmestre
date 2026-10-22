@@ -69,3 +69,4 @@ Thumbs.db
 # Archivos generados por el programa y scripts de prueba
 data/output_schedule.json
 data_backup/
+data/horarios_finales.json
