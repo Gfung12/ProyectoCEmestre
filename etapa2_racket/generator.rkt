@@ -4,7 +4,6 @@
 
 (provide generar-combinaciones)
 
-
 (: bloques-chocan? (-> ScheduleBlock ScheduleBlock Boolean))
 (define (bloques-chocan? b1 b2)
   (and (= (ScheduleBlock-day b1) (ScheduleBlock-day b2))
@@ -18,38 +17,63 @@
     [(bloques-chocan? bloque (car lista-bloques)) #true]
     [else (choca-con-lista? bloque (cdr lista-bloques))]))
 
+(: horarios-grupo-chocan? (-> (Listof ScheduleBlock) (Listof ScheduleBlock) Boolean))
+(define (horarios-grupo-chocan? nuevos-horarios horarios-existentes)
+  (cond
+    [(null? nuevos-horarios) #false]
+    [(choca-con-lista? (car nuevos-horarios) horarios-existentes) #true]
+    [else (horarios-grupo-chocan? (cdr nuevos-horarios) horarios-existentes)]))
+
+(: extraer-horarios (-> (Listof SelectedGroup) (Listof ScheduleBlock)))
+(define (extraer-horarios seleccionados)
+  (cond
+    [(null? seleccionados) '()]
+    [else (append (SelectedGroup-schedules (car seleccionados))
+                  (extraer-horarios (cdr seleccionados)))]))
+
 (: grupo-valido-en-combinacion? (-> SelectedGroup (Listof SelectedGroup) Boolean))
 (define (grupo-valido-en-combinacion? nuevo-grupo seleccionados)
-  ;;Extraemos y aplanamos todos los bloques de horarios de los grupos ya seleccionados en la combinación
-  (define horarios-existentes
-    (append-map SelectedGroup-schedules seleccionados))
-  
-  ;;Verificamos que ningún bloque del nuevo grupo colisione con los horarios existentes
-  (not (ormap (lambda ([b : ScheduleBlock])
-                (choca-con-lista? b horarios-existentes))
-              (SelectedGroup-schedules nuevo-grupo))))
+  (not (horarios-grupo-chocan? (SelectedGroup-schedules nuevo-grupo)
+                               (extraer-horarios seleccionados))))
 
+(: concatenar-streams (All (A) (-> (LazyStream A) (Promise (LazyStream A)) (LazyStream A))))
+(define (concatenar-streams s1 s2-promesa)
+  (cond
+    [(null? s1) (force s2-promesa)]
+    [else
+     (StreamNode (StreamNode-first s1)
+                 (delay (concatenar-streams (force (StreamNode-rest s1)) s2-promesa)))]))
 
-(: generar-combinaciones (-> (Listof (Listof SelectedGroup)) (Listof ScheduleCombination)))
+(: insertar-grupo-en-stream (-> SelectedGroup (LazyStream ScheduleCombination) (LazyStream ScheduleCombination)))
+(define (insertar-grupo-en-stream grupo flujo-resto)
+  (cond
+    [(null? flujo-resto) '()]
+    [else
+     (let ([comb (StreamNode-first flujo-resto)]
+           [resto (StreamNode-rest flujo-resto)])
+       (if (grupo-valido-en-combinacion? grupo (ScheduleCombination-selections comb))
+           (StreamNode
+            (ScheduleCombination
+             (cons grupo (ScheduleCombination-selections comb))
+             (+ (SelectedGroup-credits grupo) (ScheduleCombination-total-credits comb)))
+            (delay (insertar-grupo-en-stream grupo (force resto))))
+           (insertar-grupo-en-stream grupo (force resto))))]))
+
+(: expandir-grupos-stream (-> (Listof SelectedGroup) (LazyStream ScheduleCombination) (LazyStream ScheduleCombination)))
+(define (expandir-grupos-stream grupos flujo-resto)
+  (cond
+    [(null? grupos) '()]
+    [else
+     (concatenar-streams
+      (insertar-grupo-en-stream (car grupos) flujo-resto)
+      (delay (expandir-grupos-stream (cdr grupos) flujo-resto)))]))
+
+(: generar-combinaciones (-> (Listof (Listof SelectedGroup)) (LazyStream ScheduleCombination)))
 (define (generar-combinaciones lista-de-cursos-candidatos)
   (cond
-    ;;Caso base: si ya no hay cursos por procesar, retornamos un horario vacío (0 créditos)
     [(null? lista-de-cursos-candidatos)
-     (list (ScheduleCombination '() 0))]
-    
+     (StreamNode (ScheduleCombination '() 0) (delay '()))]
     [else
-     (define grupos-curso-actual (car lista-de-cursos-candidatos))
-     (define combinaciones-resto (generar-combinaciones (cdr lista-de-cursos-candidatos)))
-     
-     ;;Para cada opción de grupo del curso actual, intentamos insertarla en las combinaciones válidas del resto
-     (append-map
-      (lambda ([grupo : SelectedGroup])
-        (filter-map
-         (lambda ([comb : ScheduleCombination])
-           (if (grupo-valido-en-combinacion? grupo (ScheduleCombination-selections comb))
-               (ScheduleCombination
-                (cons grupo (ScheduleCombination-selections comb))
-                (+ (SelectedGroup-credits grupo) (ScheduleCombination-total-credits comb)))
-               #false))
-         combinaciones-resto))
-      grupos-curso-actual)]))
+     (let ([grupos-curso-actual (car lista-de-cursos-candidatos)]
+           [flujo-resto (generar-combinaciones (cdr lista-de-cursos-candidatos))])
+       (expandir-grupos-stream grupos-curso-actual flujo-resto))]))

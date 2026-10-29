@@ -1,21 +1,11 @@
 #lang typed/racket
 
-(require "types.rkt")
-(require "filters.rkt")
+(require "types.rkt"
+         "filters.rkt")
 
-(provide list->lazy-stream
-         filtrar-rango-creditos
+(provide filtrar-rango-creditos
          exportar-combinaciones-json)
 
-;; 1. Convertir lista generada a LazyStream
-(: list->lazy-stream (-> (Listof ScheduleCombination) (LazyStream ScheduleCombination)))
-(define (list->lazy-stream lista)
-  (if (null? lista)
-      '()
-      (StreamNode (car lista)
-                  (delay (list->lazy-stream (cdr lista))))))
-
-;; 2. Filtrar el stream usando el filtro polimórfico
 (: filtrar-rango-creditos (-> Integer Integer (LazyStream ScheduleCombination) (LazyStream ScheduleCombination)))
 (define (filtrar-rango-creditos min-cred max-cred flujo)
   (filtrar-stream-polimorfico
@@ -24,7 +14,6 @@
        (and (>= total min-cred) (<= total max-cred))))
    flujo))
 
-;; 3. Funciones auxiliares para dar formato JSON
 (: formato-grupo-json (-> SelectedGroup String))
 (define (formato-grupo-json grupo)
   (string-append
@@ -51,7 +40,6 @@
    "\n    ]\n"
    "  }"))
 
-;; 4. Escritura perezosa (lazy) en el archivo JSON
 (: escribir-stream-json (-> Output-Port (LazyStream ScheduleCombination) Boolean Void))
 (define (escribir-stream-json puerto flujo es-primero?)
   (cond
