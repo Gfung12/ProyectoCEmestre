@@ -74,6 +74,7 @@
     [(null? lista-de-cursos-candidatos)
      (StreamNode (ScheduleCombination '() 0) (delay '()))]
     [else
-     (let ([grupos-curso-actual (car lista-de-cursos-candidatos)]
-           [flujo-resto (generar-combinaciones (cdr lista-de-cursos-candidatos))])
-       (expandir-grupos-stream grupos-curso-actual flujo-resto))]))
+     (let* ([grupos-curso-actual (car lista-de-cursos-candidatos)]
+            [flujo-resto (generar-combinaciones (cdr lista-de-cursos-candidatos))]
+            [flujo-con-curso (expandir-grupos-stream grupos-curso-actual flujo-resto)])
+       (concatenar-streams flujo-con-curso (delay flujo-resto)))]))
