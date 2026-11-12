@@ -26,6 +26,7 @@ typedef struct {
     int credits;
     int semester;
     char career[MAX_STRING_LEN]; //"Computadores" o "Biotecnología"
+    char area[MAX_STRING_LEN];   //Área del curso
     
     //Listas de códigos para requisitos y correquisitos
     char prerequisites[MAX_PREREQUISITES][MAX_CODE_LEN];

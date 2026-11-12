@@ -5,7 +5,7 @@
 #include "../include/struct_definitions.h"
 #include "../include/parser.h"
 
-// 1. Lee el archivo completo y lo guarda en la memoria dinámica
+//Lee el archivo completo y lo guarda en la memoria dinámica
 static char* read_file_to_string(const char *filepath) {
     FILE *file = fopen(filepath, "rb");
     if (!file) return NULL;
@@ -14,7 +14,7 @@ static char* read_file_to_string(const char *filepath) {
     long length = ftell(file);
     fseek(file, 0, SEEK_SET);
 
-    // Blindaje: Si el archivo está vacío, no reservamos memoria
+    //Blindaje: Si el archivo está vacío, no reservamos memoria
     if (length <= 0) {
         fclose(file);
         return NULL;
@@ -27,40 +27,40 @@ static char* read_file_to_string(const char *filepath) {
     }
 
     size_t bytes_read = fread(buffer, 1, length, file);
-    buffer[bytes_read] = '\0'; // Candado final de seguridad
+    buffer[bytes_read] = '\0'; //Candado final de seguridad
     fclose(file);
     return buffer;
 }
 
-// 2. Extrae un texto (string) de forma segura
+//Extrae un texto (string) de forma segura
 static void get_json_string_val(const char *json, const char *key, char *out, size_t max_len) {
-    out[0] = '\0'; // Limpiamos la salida por defecto
+    out[0] = '\0'; //Limpiamos la salida por defecto
 
     char pattern[64];
     snprintf(pattern, sizeof(pattern), "\"%s\"", key);
 
     char *pos = strstr(json, pattern);
-    if (!pos) return; // Blindaje: Si no encuentra la llave, aborta seguro
+    if (!pos) return; //Blindaje: Si no encuentra la llave, aborta seguro
 
     pos = strchr(pos + strlen(pattern), ':');
     if (!pos) return;
 
     pos = strchr(pos, '"');
     if (!pos) return;
-    pos++; // Saltamos la primera comilla
+    pos++; //Saltamos la primera comilla
 
     char *end = strchr(pos, '"');
     if (!end) return;
 
-    // Blindaje: Evitamos desbordamiento de búfer limitando la longitud
+    //Blindaje: Evitamos desbordamiento de búfer limitando la longitud
     size_t len = end - pos;
     if (len >= max_len) len = max_len - 1;
 
     strncpy(out, pos, len);
-    out[len] = '\0'; // Candado manual obligatorio
+    out[len] = '\0'; //Candado manual obligatorio
 }
 
-// 3. Extrae un número entero de forma segura
+//Extrae un número entero de forma segura
 static int get_json_int_val(const char *json, const char *key) {
     char pattern[64];
     snprintf(pattern, sizeof(pattern), "\"%s\"", key);
@@ -74,13 +74,13 @@ static int get_json_int_val(const char *json, const char *key) {
 
     while (*pos && !isdigit((unsigned char)*pos) && *pos != '-') pos++;
 
-    // Si llegamos a algo que no es número, devolvemos 0
+    //Si llegamos a algo que no es número, devolvemos 0
     if (!isdigit((unsigned char)*pos) && *pos != '-') return 0;
 
     return atoi(pos);
 }
 
-// 4. Extrae arreglos de textos (prerrequisitos y correquisitos)
+//Extrae arreglos de textos (prerrequisitos y correquisitos)
 static void get_json_array_strings(const char *json, const char *key, char out_arr[][MAX_CODE_LEN], int *out_count, int max_items) {
     *out_count = 0;
     char pattern[64];
@@ -96,7 +96,7 @@ static void get_json_array_strings(const char *json, const char *key, char out_a
     if (!end_bracket) return;
 
     char *ptr = pos + 1;
-    // Blindaje: *out_count < max_items evita pasarnos de MAX_PREREQUISITES o MAX_COREQUISITES
+    //Blindaje: *out_count < max_items evita pasarnos de MAX_PREREQUISITES o MAX_COREQUISITES
     while (ptr < end_bracket && *out_count < max_items) {
         ptr = strchr(ptr, '"');
         if (!ptr || ptr >= end_bracket) break;
@@ -115,7 +115,7 @@ static void get_json_array_strings(const char *json, const char *key, char out_a
     }
 }
 
-// 5. Parsea la estructura anidada y riesgosa de grupos y horarios
+//Parsea la estructura anidada y riesgosa de grupos y horarios
 static void parse_groups_and_schedules(const char *json_course, Course *course) {
     course->group_count = 0;
 
@@ -126,9 +126,9 @@ static void parse_groups_and_schedules(const char *json_course, Course *course) 
     if (!g_ptr) return;
 
     char *curr_g = strstr(g_ptr, "{");
-    // Blindaje: Respetar MAX_GROUPS
+    //Blindaje: Respetar MAX_GROUPS
     while (curr_g != NULL && course->group_count < MAX_GROUPS) {
-        // Encontrar dónde termina este grupo específico (contando llaves para ser robustos)
+        //Encontrar dónde termina este grupo específico (contando llaves para ser robustos)
         int depth = 0;
         char *end_g = NULL;
         for (char *p = curr_g; *p != '\0'; p++) {
@@ -143,7 +143,7 @@ static void parse_groups_and_schedules(const char *json_course, Course *course) 
         }
         if (!end_g) break;
 
-        // Aislar temporalmente el texto de este grupo
+        //Aislar temporalmente el texto de este grupo
         char backup_g = *end_g;
         *end_g = '\0';
 
@@ -156,7 +156,7 @@ static void parse_groups_and_schedules(const char *json_course, Course *course) 
             char *s_ptr = strchr(sched_pos, '[');
             if (s_ptr) {
                 char *curr_s = strstr(s_ptr, "{");
-                // Blindaje: Respetar MAX_SCHEDULES_PER_GROUP
+                //Blindaje: Respetar MAX_SCHEDULES_PER_GROUP
                 while (curr_s != NULL && g->schedule_count < MAX_SCHEDULES_PER_GROUP) {
                     ScheduleBlock *s = &g->schedules[g->schedule_count];
                     s->day = get_json_int_val(curr_s, "day");
@@ -164,18 +164,18 @@ static void parse_groups_and_schedules(const char *json_course, Course *course) 
                     s->end_time = get_json_int_val(curr_s, "end_time");
                     g->schedule_count++;
 
-                    curr_s = strchr(curr_s + 1, '{'); // Siguiente horario
+                    curr_s = strchr(curr_s + 1, '{'); //Siguiente horario
                 }
             }
         }
 
         course->group_count++;
-        *end_g = backup_g; // Restaurar el JSON original
-        curr_g = strchr(end_g + 1, '{'); // Buscar el siguiente grupo
+        *end_g = backup_g; //Restaurar el JSON original
+        curr_g = strchr(end_g + 1, '{'); //Buscar el siguiente grupo
     }
 }
 
-// 6. Función principal para cargar el catálogo
+//Función principal para cargar el catálogo
 bool load_catalog(const char *filename, Catalog *catalog) {
     if (!catalog) return false;
     catalog->course_count = 0;
@@ -184,7 +184,7 @@ bool load_catalog(const char *filename, Catalog *catalog) {
     if (!json_data) return false;
 
     char *cursor = json_data;
-    // Blindaje: Detener la lectura si llegamos a MAX_COURSES
+    //Blindaje: Detener la lectura si llegamos a MAX_COURSES
     while (catalog->course_count < MAX_COURSES) {
         char *brace_start = strchr(cursor, '{');
         if (!brace_start) break;
@@ -213,6 +213,7 @@ bool load_catalog(const char *filename, Catalog *catalog) {
         get_json_string_val(brace_start, "code", c->code, sizeof(c->code));
         get_json_string_val(brace_start, "name", c->name, sizeof(c->name));
         get_json_string_val(brace_start, "career", c->career, sizeof(c->career));
+        get_json_string_val(brace_start, "area", c->area, sizeof(c->area)); //Lee el área
         c->credits = get_json_int_val(brace_start, "credits");
         c->semester = get_json_int_val(brace_start, "semester");
 
@@ -230,7 +231,7 @@ bool load_catalog(const char *filename, Catalog *catalog) {
     return true;
 }
 
-// 7. Carga el historial del estudiante
+//Carga el historial del estudiante
 bool load_student_history(const char *filename, StudentHistory *history) {
     if (!history) return false;
     char *json_data = read_file_to_string(filename);
@@ -245,7 +246,7 @@ bool load_student_history(const char *filename, StudentHistory *history) {
     }
 
     char *ptr = array_start;
-    // Blindaje: Detenernos al alcanzar MAX_APPROVED_COURSES
+    //Blindaje: Detenernos al alcanzar MAX_APPROVED_COURSES
     while ((ptr = strchr(ptr, '"')) != NULL && history->approved_count < MAX_APPROVED_COURSES) {
         ptr++;
         char *end = strchr(ptr, '"');
@@ -264,7 +265,7 @@ bool load_student_history(const char *filename, StudentHistory *history) {
     return true;
 }
 
-// 8. Limpieza de memoria
+//Limpieza de memoria
 void free_catalog(Catalog *catalog) {
     if (catalog) {
         catalog->course_count = 0;

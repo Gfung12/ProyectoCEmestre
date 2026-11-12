@@ -10,7 +10,7 @@
 #define MAX_COREQUISITES 5
 #define MAX_COURSES 200
 #define MAX_APPROVED_COURSES 100
-#define MAX_SEMESTER 6
+#define MAX_SEMESTER 8
 
 // Representación numérica de los días de la semana
 #define DAY_MONDAY 1

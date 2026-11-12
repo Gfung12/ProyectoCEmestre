@@ -5,7 +5,7 @@
 (provide read-catalog-raw
          read-preferences-raw)
 
-;; Lee output_schedule.json y extrae solo listas y valores atómicos
+;;Lee output_schedule.json y extrae el campo area junto con los demás datos
 (define (read-catalog-raw filepath)
   (call-with-input-file filepath
     (lambda (in)
@@ -17,6 +17,7 @@
               (hash-ref c 'code "")
               (hash-ref c 'name "")
               (hash-ref c 'career "")
+              (hash-ref c 'area "")
               (hash-ref c 'credits 0)
               (hash-ref c 'semester 0)
               (hash-ref c 'is_approved #f)
@@ -40,7 +41,7 @@
            data)
           '()))))
 
-;; Lee preferencias.json y extrae listas simples
+;;Lee preferencias.json y extrae listas simples
 (define (read-preferences-raw filepath)
   (call-with-input-file filepath
     (lambda (in)

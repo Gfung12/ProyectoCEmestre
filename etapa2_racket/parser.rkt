@@ -4,11 +4,10 @@
          "types.rkt"
          "filters.rkt")
 
-;; Importamos el lector seguro con tipos limpios sin HashTables opacos
 (require/typed "json_reader.rkt"
   [read-catalog-raw
    (-> Path-String
-       (Listof (List String String String Integer Integer Boolean Boolean Boolean
+       (Listof (List String String String String Integer Integer Boolean Boolean Boolean
                      (Listof String) (Listof String)
                      (Listof (List Integer Boolean (Listof (List Integer Integer Integer)))))))]
   [read-preferences-raw
@@ -18,10 +17,6 @@
 (provide load-catalog-from-json
          load-preferences-from-json
          prepare-candidate-courses)
-
-;; =========================================================================
-;; CONVERSORES A STRUCTS INMUTABLES TIPADOS MEDIANTE PATTERN MATCHING
-;; =========================================================================
 
 (: raw->schedule-block (-> (List Integer Integer Integer) ScheduleBlock))
 (define (raw->schedule-block raw)
@@ -33,17 +28,18 @@
   (match-define (list g-num clash scheds) raw)
   (Group g-num clash (map raw->schedule-block scheds)))
 
-(: raw->course (-> (List String String String Integer Integer Boolean Boolean Boolean
+(: raw->course (-> (List String String String String Integer Integer Boolean Boolean Boolean
                          (Listof String) (Listof String)
                          (Listof (List Integer Boolean (Listof (List Integer Integer Integer)))))
                    Course))
 (define (raw->course raw)
-  (match-define (list c-code c-name c-career c-credits c-semester
+  (match-define (list c-code c-name c-career c-area c-credits c-semester
                       c-approved c-eligible c-any-clash
                       c-prereqs c-coreqs c-groups) raw)
   (Course c-code
           c-name
           c-career
+          c-area
           c-credits
           c-semester
           c-approved
@@ -66,10 +62,6 @@
 (define (load-preferences-from-json filepath)
   (match-define (list min-c max-c interested-raw) (read-preferences-raw filepath))
   (Preferences min-c max-c (map raw->interested-course interested-raw)))
-
-;; =========================================================================
-;; CRUCE DE DATOS CON POLIMORFISMO PARAMÉTRICO
-;; =========================================================================
 
 (: prepare-candidate-courses (-> (Listof Course) Preferences (Listof (Listof SelectedGroup))))
 (define (prepare-candidate-courses catalog prefs)
@@ -104,6 +96,7 @@
                      (Course-code course)
                      (Course-name course)
                      (Course-career course)
+                     (Course-area course)
                      (Course-credits course)
                      (Group-group-number g)
                      (Group-has-clash g)

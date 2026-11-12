@@ -20,7 +20,9 @@
    "        {\n"
    "          \"course_code\": \"" (SelectedGroup-code grupo) "\",\n"
    "          \"group_number\": " (number->string (SelectedGroup-group-number grupo)) ",\n"
-   "          \"career\": \"" (SelectedGroup-career grupo) "\"\n"
+   "          \"career\": \"" (SelectedGroup-career grupo) "\",\n"
+   "          \"area\": \"" (SelectedGroup-area grupo) "\",\n"
+   "          \"credits\": " (number->string (SelectedGroup-credits grupo)) "\n" ;
    "        }"))
 
 (: grupos->json (-> (Listof SelectedGroup) String))
