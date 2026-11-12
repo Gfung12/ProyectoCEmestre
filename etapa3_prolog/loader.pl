@@ -1,4 +1,4 @@
-:- use_module(library(http/json)).
+:- use_module(library(json)).
 :- ensure_loaded('politica.pl').
 :- ensure_loaded('modelo.pl').
 
