@@ -12,7 +12,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -30,8 +34,16 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1120},
-          {"day": 3, "start_time": 730, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1120
+          },
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -44,13 +56,23 @@
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
     "prerequisites": [],
-    "corequisites": ["CE1101"],
+    "corequisites": [
+      "CE1101"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 1120},
-          {"day": 4, "start_time": 730, "end_time": 1120}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 1120
+          },
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -62,14 +84,24 @@
     "semester": 1,
     "career": "Ingeniería en Computadores",
     "area": "Matemáticas",
-    "prerequisites": ["MA0101"],
+    "prerequisites": [
+      "MA0101"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1650},
-          {"day": 3, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1650
+          },
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -87,8 +119,16 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1650},
-          {"day": 5, "start_time": 730, "end_time": 1120}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1650
+          },
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -101,12 +141,18 @@
     "career": "Ingeniería en Computadores",
     "area": "Ciencias Básicas",
     "prerequisites": [],
-    "corequisites": ["QU1106"],
+    "corequisites": [
+      "QU1106"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -119,12 +165,18 @@
     "career": "Ingeniería en Computadores",
     "area": "Ciencias Básicas",
     "prerequisites": [],
-    "corequisites": ["QU1102"],
+    "corequisites": [
+      "QU1102"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -142,7 +194,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -160,7 +216,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -172,14 +232,26 @@
     "semester": 2,
     "career": "Ingeniería en Computadores",
     "area": "Computación",
-    "prerequisites": ["CE1101", "CE1104", "MA1403"],
+    "prerequisites": [
+      "CE1101",
+      "CE1104",
+      "MA1403"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1120},
-          {"day": 3, "start_time": 730, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1120
+          },
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -191,13 +263,19 @@
     "semester": 2,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE1104"],
+    "prerequisites": [
+      "CE1104"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 1120}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -215,7 +293,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -233,7 +315,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 920}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 920
+          }
         ]
       }
     ]
@@ -245,13 +331,19 @@
     "semester": 2,
     "career": "Ingeniería en Computadores",
     "area": "Física",
-    "prerequisites": ["MA1102"],
+    "prerequisites": [
+      "MA1102"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -264,12 +356,18 @@
     "career": "Ingeniería en Computadores",
     "area": "Física",
     "prerequisites": [],
-    "corequisites": ["FI1101"],
+    "corequisites": [
+      "FI1101"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -281,13 +379,19 @@
     "semester": 2,
     "career": "Ingeniería en Computadores",
     "area": "Matemáticas",
-    "prerequisites": ["MA1102"],
+    "prerequisites": [
+      "MA1102"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1120}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -305,7 +409,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -317,13 +425,20 @@
     "semester": 3,
     "career": "Ingeniería en Computadores",
     "area": "Computación",
-    "prerequisites": ["CE1103", "CE1105"],
+    "prerequisites": [
+      "CE1103",
+      "CE1105"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -341,7 +456,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1120}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -353,13 +472,20 @@
     "semester": 3,
     "career": "Ingeniería en Computadores",
     "area": "Electrónica",
-    "prerequisites": ["FI1101", "MA1102"],
+    "prerequisites": [
+      "FI1101",
+      "MA1102"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -377,7 +503,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 920}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 920
+          }
         ]
       }
     ]
@@ -389,13 +519,21 @@
     "semester": 3,
     "career": "Ingeniería en Computadores",
     "area": "Física",
-    "prerequisites": ["FI1101"],
-    "corequisites": ["MA1102"],
+    "prerequisites": [
+      "FI1101"
+    ],
+    "corequisites": [
+      "MA1102"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -407,13 +545,21 @@
     "semester": 3,
     "career": "Ingeniería en Computadores",
     "area": "Física",
-    "prerequisites": ["FI1201"],
-    "corequisites": ["FI1102"],
+    "prerequisites": [
+      "FI1201"
+    ],
+    "corequisites": [
+      "FI1102"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 920}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 920
+          }
         ]
       }
     ]
@@ -425,13 +571,19 @@
     "semester": 3,
     "career": "Ingeniería en Computadores",
     "area": "Matemáticas",
-    "prerequisites": ["MA1103"],
+    "prerequisites": [
+      "MA1103"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1120}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -443,13 +595,19 @@
     "semester": 4,
     "career": "Ingeniería en Computadores",
     "area": "Computación",
-    "prerequisites": ["CE2103"],
+    "prerequisites": [
+      "CE2103"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -461,13 +619,19 @@
     "semester": 4,
     "career": "Ingeniería en Computadores",
     "area": "Electrónica",
-    "prerequisites": ["FI1202"],
+    "prerequisites": [
+      "FI1202"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 1020}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -479,13 +643,21 @@
     "semester": 4,
     "career": "Ingeniería en Computadores",
     "area": "Electrónica",
-    "prerequisites": ["EL2113"],
-    "corequisites": ["EL2207"],
+    "prerequisites": [
+      "EL2113"
+    ],
+    "corequisites": [
+      "EL2207"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 730, "end_time": 1120}
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -497,13 +669,19 @@
     "semester": 4,
     "career": "Ingeniería en Computadores",
     "area": "Electrónica",
-    "prerequisites": ["EL2113"],
+    "prerequisites": [
+      "EL2113"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 1120}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -515,13 +693,19 @@
     "semester": 4,
     "career": "Ingeniería en Computadores",
     "area": "Matemáticas",
-    "prerequisites": ["MA2104"],
+    "prerequisites": [
+      "MA2104"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -533,13 +717,19 @@
     "semester": 4,
     "career": "Ingeniería en Computadores",
     "area": "Gestión",
-    "prerequisites": ["FI1102"],
+    "prerequisites": [
+      "FI1102"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -551,14 +741,39 @@
     "semester": 5,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE1104"],
+    "prerequisites": [
+      "CE1104"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1450},
-          {"day": 4, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1450
+          },
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1450
+          }
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {
+            "day": 2,
+            "start_time": 930,
+            "end_time": 1120
+          },
+          {
+            "day": 4,
+            "start_time": 930,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -570,14 +785,24 @@
     "semester": 5,
     "career": "Ingeniería en Computadores",
     "area": "Computación",
-    "prerequisites": ["CE1106"],
+    "prerequisites": [
+      "CE1106"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 930, "end_time": 1120},
-          {"day": 4, "start_time": 930, "end_time": 1120}
+          {
+            "day": 2,
+            "start_time": 930,
+            "end_time": 1120
+          },
+          {
+            "day": 4,
+            "start_time": 930,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -589,14 +814,25 @@
     "semester": 5,
     "career": "Ingeniería en Computadores",
     "area": "Electrónica",
-    "prerequisites": ["EL2114", "EL2207"],
+    "prerequisites": [
+      "EL2114",
+      "EL2207"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1700, "end_time": 1850},
-          {"day": 4, "start_time": 1700, "end_time": 1850}
+          {
+            "day": 2,
+            "start_time": 1700,
+            "end_time": 1850
+          },
+          {
+            "day": 4,
+            "start_time": 1700,
+            "end_time": 1850
+          }
         ]
       }
     ]
@@ -608,14 +844,24 @@
     "semester": 5,
     "career": "Ingeniería en Computadores",
     "area": "Computación",
-    "prerequisites": ["CE2103"],
+    "prerequisites": [
+      "CE2103"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1900, "end_time": 2050},
-          {"day": 5, "start_time": 1900, "end_time": 2050}
+          {
+            "day": 3,
+            "start_time": 1900,
+            "end_time": 2050
+          },
+          {
+            "day": 5,
+            "start_time": 1900,
+            "end_time": 2050
+          }
         ]
       }
     ]
@@ -627,14 +873,25 @@
     "semester": 5,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE1104", "EL2207"],
+    "prerequisites": [
+      "CE1104",
+      "EL2207"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 930, "end_time": 1120},
-          {"day": 5, "start_time": 930, "end_time": 1120}
+          {
+            "day": 3,
+            "start_time": 930,
+            "end_time": 1120
+          },
+          {
+            "day": 5,
+            "start_time": 930,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -646,14 +903,24 @@
     "semester": 6,
     "career": "Ingeniería en Computadores",
     "area": "Electrónica",
-    "prerequisites": ["CE1109"],
+    "prerequisites": [
+      "CE1109"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 930, "end_time": 1120},
-          {"day": 5, "start_time": 930, "end_time": 1120}
+          {
+            "day": 3,
+            "start_time": 930,
+            "end_time": 1120
+          },
+          {
+            "day": 5,
+            "start_time": 930,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -665,14 +932,25 @@
     "semester": 6,
     "career": "Ingeniería en Computadores",
     "area": "Matemáticas",
-    "prerequisites": ["CE1101", "MA2104"],
+    "prerequisites": [
+      "CE1101",
+      "MA2104"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 930, "end_time": 1120},
-          {"day": 4, "start_time": 930, "end_time": 1120}
+          {
+            "day": 2,
+            "start_time": 930,
+            "end_time": 1120
+          },
+          {
+            "day": 4,
+            "start_time": 930,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -684,14 +962,27 @@
     "semester": 6,
     "career": "Ingeniería en Computadores",
     "area": "Electrónica",
-    "prerequisites": ["CE1109", "CE3201"],
-    "corequisites": ["CE1110"],
+    "prerequisites": [
+      "CE1109",
+      "CE3201"
+    ],
+    "corequisites": [
+      "CE1110"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1500, "end_time": 1650},
-          {"day": 5, "start_time": 1500, "end_time": 1650}
+          {
+            "day": 3,
+            "start_time": 1500,
+            "end_time": 1650
+          },
+          {
+            "day": 5,
+            "start_time": 1500,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -703,14 +994,25 @@
     "semester": 6,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE1107", "CE3201"],
+    "prerequisites": [
+      "CE1107",
+      "CE3201"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1500, "end_time": 1650},
-          {"day": 5, "start_time": 1500, "end_time": 1650}
+          {
+            "day": 3,
+            "start_time": 1500,
+            "end_time": 1650
+          },
+          {
+            "day": 5,
+            "start_time": 1500,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -722,14 +1024,25 @@
     "semester": 6,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE1107", "CE1108"],
+    "prerequisites": [
+      "CE1107",
+      "CE1108"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1500, "end_time": 1650},
-          {"day": 4, "start_time": 1500, "end_time": 1650}
+          {
+            "day": 2,
+            "start_time": 1500,
+            "end_time": 1650
+          },
+          {
+            "day": 4,
+            "start_time": 1500,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -741,13 +1054,19 @@
     "semester": 6,
     "career": "Ingeniería en Computadores",
     "area": "Humanidades",
-    "prerequisites": ["EL2114"],
+    "prerequisites": [
+      "EL2114"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -759,13 +1078,20 @@
     "semester": 7,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE3101", "CE4301"],
+    "prerequisites": [
+      "CE3101",
+      "CE4301"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -777,13 +1103,21 @@
     "semester": 7,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE4301"],
-    "corequisites": ["CE4303"],
+    "prerequisites": [
+      "CE4301"
+    ],
+    "corequisites": [
+      "CE4303"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 1120}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -795,13 +1129,19 @@
     "semester": 8,
     "career": "Ingeniería en Computadores",
     "area": "Gestión",
-    "prerequisites": ["CS2101"],
+    "prerequisites": [
+      "CS2101"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -813,13 +1153,19 @@
     "semester": 8,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE4303"],
+    "prerequisites": [
+      "CE4303"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -831,13 +1177,20 @@
     "semester": 8,
     "career": "Ingeniería en Computadores",
     "area": "Computadores",
-    "prerequisites": ["CE1116", "CE4303"],
+    "prerequisites": [
+      "CE1116",
+      "CE4303"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -849,13 +1202,20 @@
     "semester": 8,
     "career": "Ingeniería en Computadores",
     "area": "Electiva",
-    "prerequisites": ["CE4302", "CI3203"],
+    "prerequisites": [
+      "CE4302",
+      "CI3203"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -867,13 +1227,19 @@
     "semester": 8,
     "career": "Ingeniería en Computadores",
     "area": "Humanidades",
-    "prerequisites": ["CS2101"],
+    "prerequisites": [
+      "CS2101"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -891,7 +1257,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 730, "end_time": 1120}
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -909,7 +1279,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1120}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -922,12 +1296,18 @@
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
     "prerequisites": [],
-    "corequisites": ["BI1102"],
+    "corequisites": [
+      "BI1102"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -940,12 +1320,18 @@
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
     "prerequisites": [],
-    "corequisites": ["BI1101"],
+    "corequisites": [
+      "BI1101"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 730, "end_time": 1020}
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -963,7 +1349,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 920}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 920
+          }
         ]
       }
     ]
@@ -981,7 +1371,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 920}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 920
+          }
         ]
       }
     ]
@@ -999,7 +1393,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1120}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -1012,12 +1410,19 @@
     "career": "Ingeniería en Biotecnología",
     "area": "Biotecnología",
     "prerequisites": [],
-    "corequisites": ["BI1101", "BI1102"],
+    "corequisites": [
+      "BI1101",
+      "BI1102"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -1035,7 +1440,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1048,12 +1457,18 @@
     "career": "Ingeniería en Biotecnología",
     "area": "Ciencias Básicas",
     "prerequisites": [],
-    "corequisites": ["QU1106"],
+    "corequisites": [
+      "QU1106"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -1066,12 +1481,18 @@
     "career": "Ingeniería en Biotecnología",
     "area": "Ciencias Básicas",
     "prerequisites": [],
-    "corequisites": ["QU1102"],
+    "corequisites": [
+      "QU1102"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1089,7 +1510,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -1107,7 +1532,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1020}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1119,13 +1548,20 @@
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
     "area": "Humanidades",
-    "prerequisites": ["CI0200", "CI0202"],
+    "prerequisites": [
+      "CI0200",
+      "CI0202"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 1020}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1137,13 +1573,19 @@
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
     "area": "Matemáticas",
-    "prerequisites": ["MA0101"],
+    "prerequisites": [
+      "MA0101"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 730, "end_time": 1120}
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -1155,13 +1597,22 @@
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["BI1101", "BI1102"],
-    "corequisites": ["IB2204"],
+    "prerequisites": [
+      "BI1101",
+      "BI1102"
+    ],
+    "corequisites": [
+      "IB2204"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 1120}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -1173,13 +1624,22 @@
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["BI1101", "BI1102"],
-    "corequisites": ["IB2203"],
+    "prerequisites": [
+      "BI1101",
+      "BI1102"
+    ],
+    "corequisites": [
+      "IB2203"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1020}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1191,13 +1651,19 @@
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
     "area": "Matemáticas",
-    "prerequisites": ["MA0101"],
+    "prerequisites": [
+      "MA0101"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1209,13 +1675,22 @@
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
     "area": "Ciencias Básicas",
-    "prerequisites": ["QU1102", "QU1106"],
-    "corequisites": ["QU1107"],
+    "prerequisites": [
+      "QU1102",
+      "QU1106"
+    ],
+    "corequisites": [
+      "QU1107"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -1227,13 +1702,22 @@
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
     "area": "Ciencias Básicas",
-    "prerequisites": ["QU1102", "QU1106"],
-    "corequisites": ["QU1104"],
+    "prerequisites": [
+      "QU1102",
+      "QU1106"
+    ],
+    "corequisites": [
+      "QU1104"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1251,7 +1735,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -1263,13 +1751,19 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Humanidades",
-    "prerequisites": ["CI1202"],
+    "prerequisites": [
+      "CI1202"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 1020}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1281,13 +1775,19 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Humanidades",
-    "prerequisites": ["CI1107"],
+    "prerequisites": [
+      "CI1107"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 920}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 920
+          }
         ]
       }
     ]
@@ -1299,13 +1799,22 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["IB2203", "IB2204"],
-    "corequisites": ["IB2211"],
+    "prerequisites": [
+      "IB2203",
+      "IB2204"
+    ],
+    "corequisites": [
+      "IB2211"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 730, "end_time": 1020}
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1317,13 +1826,22 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["IB2203", "IB2204"],
-    "corequisites": ["IB2205"],
+    "prerequisites": [
+      "IB2203",
+      "IB2204"
+    ],
+    "corequisites": [
+      "IB2205"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 1020}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1335,13 +1853,22 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["BI1101", "BI1102"],
-    "corequisites": ["IB2304"],
+    "prerequisites": [
+      "BI1101",
+      "BI1102"
+    ],
+    "corequisites": [
+      "IB2304"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1020}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1353,13 +1880,22 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["BI1101", "BI1102"],
-    "corequisites": ["IB2302"],
+    "prerequisites": [
+      "BI1101",
+      "BI1102"
+    ],
+    "corequisites": [
+      "IB2302"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1371,13 +1907,21 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Ciencias Básicas",
-    "prerequisites": ["QU1107"],
-    "corequisites": ["QU2404"],
+    "prerequisites": [
+      "QU1107"
+    ],
+    "corequisites": [
+      "QU2404"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1389,13 +1933,21 @@
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
     "area": "Ciencias Básicas",
-    "prerequisites": ["QU1104"],
-    "corequisites": ["QU2403"],
+    "prerequisites": [
+      "QU1104"
+    ],
+    "corequisites": [
+      "QU2403"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1413,7 +1965,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 1300, "end_time": 1450}
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1450
+          }
         ]
       }
     ]
@@ -1431,7 +1987,11 @@
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 730, "end_time": 920}
+          {
+            "day": 1,
+            "start_time": 730,
+            "end_time": 920
+          }
         ]
       }
     ]
@@ -1443,13 +2003,20 @@
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
     "area": "Biotecnología",
-    "prerequisites": ["IB2113", "IB2304"],
+    "prerequisites": [
+      "IB2113",
+      "IB2304"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 1020}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1461,13 +2028,21 @@
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["IB2113"],
-    "corequisites": ["IB2021"],
+    "prerequisites": [
+      "IB2113"
+    ],
+    "corequisites": [
+      "IB2021"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 730, "end_time": 1020}
+          {
+            "day": 3,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1479,13 +2054,20 @@
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["IB2302", "IB2304"],
+    "prerequisites": [
+      "IB2302",
+      "IB2304"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 4, "start_time": 730, "end_time": 1020}
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1497,13 +2079,22 @@
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
     "area": "Agrícola",
-    "prerequisites": ["IB2205", "IB2211"],
-    "corequisites": ["IB3405"],
+    "prerequisites": [
+      "IB2205",
+      "IB2211"
+    ],
+    "corequisites": [
+      "IB3405"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 730, "end_time": 1020}
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1020
+          }
         ]
       }
     ]
@@ -1515,13 +2106,22 @@
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
     "area": "Agrícola",
-    "prerequisites": ["IB2205", "IB2211"],
-    "corequisites": ["IB3404"],
+    "prerequisites": [
+      "IB2205",
+      "IB2211"
+    ],
+    "corequisites": [
+      "IB3404"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -1533,13 +2133,22 @@
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
     "area": "Biotecnología",
-    "prerequisites": ["QU2403", "QU2404"],
-    "corequisites": ["IB3603"],
+    "prerequisites": [
+      "QU2403",
+      "QU2404"
+    ],
+    "corequisites": [
+      "IB3603"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -1551,13 +2160,22 @@
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
     "area": "Biotecnología",
-    "prerequisites": ["QU2403", "QU2404"],
-    "corequisites": ["IB3601"],
+    "prerequisites": [
+      "QU2403",
+      "QU2404"
+    ],
+    "corequisites": [
+      "IB3601"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -1569,13 +2187,19 @@
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
     "area": "Humanidades",
-    "prerequisites": ["CS1502"],
+    "prerequisites": [
+      "CS1502"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -1587,13 +2211,23 @@
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["BI1101", "BI1102", "IB3601"],
-    "corequisites": ["IB2106"],
+    "prerequisites": [
+      "BI1101",
+      "BI1102",
+      "IB3601"
+    ],
+    "corequisites": [
+      "IB2106"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 830, "end_time": 1120}
+          {
+            "day": 1,
+            "start_time": 830,
+            "end_time": 1120
+          }
         ]
       }
     ]
@@ -1605,13 +2239,58 @@
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
     "area": "Biología",
-    "prerequisites": ["BI1101", "BI1102", "IB3603"],
-    "corequisites": ["IB2105"],
+    "prerequisites": [
+      "BI1101",
+      "BI1102",
+      "IB3603"
+    ],
+    "corequisites": [
+      "IB2105"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 3, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1550
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB2503",
+    "name": "Biotecnología Y Genética Humana",
+    "credits": 3,
+    "semester": 5,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB2302",
+      "IB2304"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1550
+          }
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1550
+          }
         ]
       }
     ]
@@ -1623,13 +2302,22 @@
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
     "area": "Biotecnología",
-    "prerequisites": ["IB2205", "IB2211"],
-    "corequisites": ["IB3203"],
+    "prerequisites": [
+      "IB2205",
+      "IB2211"
+    ],
+    "corequisites": [
+      "IB3203"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1800, "end_time": 2050}
+          {
+            "day": 1,
+            "start_time": 1800,
+            "end_time": 2050
+          }
         ]
       }
     ]
@@ -1641,13 +2329,22 @@
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
     "area": "Biotecnología",
-    "prerequisites": ["IB2205", "IB2211"],
-    "corequisites": ["IB3202"],
+    "prerequisites": [
+      "IB2205",
+      "IB2211"
+    ],
+    "corequisites": [
+      "IB3202"
+    ],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 5, "start_time": 1300, "end_time": 1650}
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1659,13 +2356,353 @@
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
     "area": "Biotecnología",
-    "prerequisites": ["IB3601", "IB3603"],
+    "prerequisites": [
+      "IB3601",
+      "IB3603"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 2, "start_time": 730, "end_time": 1120}
+          {
+            "day": 2,
+            "start_time": 730,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3101",
+    "name": "Seminario Taller De Formulación, Evaluación Y Gestación De Proyectos",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Gestión",
+    "prerequisites": [
+      "IB3404",
+      "IB3405"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1550
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3107",
+    "name": "Microbiología Industrial",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biología",
+    "prerequisites": [
+      "IB2105",
+      "IB2106"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 3,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1550
+          }
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {
+            "day": 3,
+            "start_time": 1600,
+            "end_time": 1850
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB3802",
+    "name": "Manejo Biotecnológico De Cultivos",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Agrícola",
+    "prerequisites": [
+      "IB3404",
+      "IB3405"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4101",
+    "name": "Biología Molecular Aplicada",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB2105",
+      "IB3601"
+    ],
+    "corequisites": [
+      "IB4106"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 2,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4106",
+    "name": "Laboratorio De Biología Molecular Aplicada",
+    "credits": 2,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB2106",
+      "IB3603"
+    ],
+    "corequisites": [
+      "IB4101"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 1700,
+            "end_time": 2050
+          }
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 5,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4201",
+    "name": "Cultivo De Tejidos II",
+    "credits": 3,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB3202",
+      "IB3203"
+    ],
+    "corequisites": [
+      "IB4202"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 1,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {
+            "day": 1,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {
+            "day": 1,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4202",
+    "name": "Laboratorio De Cultivo De Tejidos II",
+    "credits": 2,
+    "semester": 6,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB3202",
+      "IB3203"
+    ],
+    "corequisites": [
+      "IB4201"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      },
+      {
+        "group_number": 2,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 1700,
+            "end_time": 2050
+          }
+        ]
+      },
+      {
+        "group_number": 3,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 730,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 4,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      },
+      {
+        "group_number": 5,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 730,
+            "end_time": 1120
+          }
+        ]
+      },
+      {
+        "group_number": 6,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1650
+          }
         ]
       }
     ]
@@ -1677,13 +2714,275 @@
     "semester": 7,
     "career": "Ingeniería en Biotecnología",
     "area": "Humanidades",
-    "prerequisites": ["CS3401"],
+    "prerequisites": [
+      "CS3401"
+    ],
     "corequisites": [],
     "groups": [
       {
         "group_number": 1,
         "schedules": [
-          {"day": 1, "start_time": 1300, "end_time": 1550}
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1550
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4301",
+    "name": "Ingeniería Genética",
+    "credits": 3,
+    "semester": 7,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB4101",
+      "IB4106"
+    ],
+    "corequisites": [
+      "IB4302"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 2,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4302",
+    "name": "Laboratorio De Ingeniería Genética",
+    "credits": 2,
+    "semester": 7,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB4101",
+      "IB4106"
+    ],
+    "corequisites": [
+      "IB4301"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4501",
+    "name": "Ingeniería De Bioprocesos",
+    "credits": 3,
+    "semester": 7,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB3107",
+      "IB3204"
+    ],
+    "corequisites": [
+      "IB4502"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 3,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4502",
+    "name": "Laboratorio De Ingeniería De Bioprocesos",
+    "credits": 2,
+    "semester": 7,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB3107",
+      "IB3204"
+    ],
+    "corequisites": [
+      "IB4501"
+    ],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB4601",
+    "name": "Biotecnología Ambiental",
+    "credits": 3,
+    "semester": 7,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB3107",
+      "IB3210"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 1,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "AE4208",
+    "name": "Desarrollo De Emprendedores",
+    "credits": 4,
+    "semester": 8,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Gestión",
+    "prerequisites": [
+      "IB3101"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 1,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB5101",
+    "name": "Gestión De La Calidad Y Bioseguridad",
+    "credits": 3,
+    "semester": 8,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Gestión",
+    "prerequisites": [
+      "IB4301",
+      "IB4501"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 2,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB5201",
+    "name": "Diseño De Plantas Biotecnológicas",
+    "credits": 3,
+    "semester": 8,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB4501",
+      "IB4502"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 3,
+            "start_time": 1300,
+            "end_time": 1650
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB5301",
+    "name": "Seminario De Investigación En Biotecnología",
+    "credits": 3,
+    "semester": 8,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Biotecnología",
+    "prerequisites": [
+      "IB3101",
+      "IB4301"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 4,
+            "start_time": 830,
+            "end_time": 1120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IB5701",
+    "name": "Electiva I",
+    "credits": 3,
+    "semester": 8,
+    "career": "Ingeniería en Biotecnología",
+    "area": "Electiva",
+    "prerequisites": [
+      "IB4601"
+    ],
+    "corequisites": [],
+    "groups": [
+      {
+        "group_number": 1,
+        "schedules": [
+          {
+            "day": 5,
+            "start_time": 830,
+            "end_time": 1120
+          }
         ]
       }
     ]
