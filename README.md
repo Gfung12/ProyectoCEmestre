@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Prolog-SWI--Prolog-E61B23?style=flat-square" alt="SWI-Prolog" />
   <img src="https://img.shields.io/badge/Build-Makefile-6D8086?style=flat-square" alt="Makefile" />
   <img src="https://img.shields.io/badge/Datos-JSON-000000?style=flat-square&logo=json&logoColor=white" alt="JSON" />
-  <img src="https://img.shields.io/badge/Cat%C3%A1logo-91%20asignaturas-orange?style=flat-square" alt="91 asignaturas" />
+  <img src="https://img.shields.io/badge/Cat%C3%A1logo-111%20asignaturas-orange?style=flat-square" alt="111 asignaturas" />
 </p>
 
 ---
@@ -29,19 +29,19 @@
 
 | # | Sección | Contenido |
 |:-:|---|---|
-| 1 | [Visión General del Proyecto](#-1-visión-general-del-proyecto) | Objetivo y paradigmas |
-| 2 | [Arquitectura y Flujo del Pipeline](#-2-arquitectura-y-flujo-del-pipeline) | Diagrama de punta a punta |
-| 3 | [Estructura de Directorios](#-3-estructura-de-directorios) | Árbol del proyecto por zonas |
-| 4 | [Constantes y Modelado de Datos en C](#-4-constantes-y-modelado-de-datos-en-c) | `config.h` y structs |
-| 5 | [Descripción Modular de la Etapa 1](#-5-descripción-modular-de-la-etapa-1-etapa1_c) | Módulos en C |
-| 6 | [Actualizaciones de Datos para la Etapa 2](#-6-actualizaciones-de-datos-para-la-etapa-2) | Plan a 6 semestres, preferencias y extensión de datos para la Etapa 3 |
-| 7 | [Arquitectura Funcional en Racket](#-7-arquitectura-funcional-en-racket-parte2_racket) | Tipos, polimorfismo, ingesta, generación y exportación |
-| 8 | [Guía de Integración para Desarrolladores](#-8-guía-de-integración-para-desarrolladores-etapa-2) | Cómo consumir los módulos base |
-| 9 | [Compilación y Ejecución](#-9-compilación-y-ejecución) | C, Racket y Prolog |
-| 10 | [Batería de Comandos de Inspección y Pruebas](#-10-batería-de-comandos-de-inspección-y-pruebas) | PowerShell y `jq` |
-| 11 | [Manejo Defensivo y Casos Límite](#-11-manejo-defensivo-y-casos-límite) | Robustez del sistema |
-| 12 | [Decisiones de Diseño de la Etapa 2](#-12-decisiones-de-diseño-de-la-etapa-2) | Justificaciones, caso límite real y formato de salida |
-| 13 | [Estructuras de Datos Desarrolladas](#-13-estructuras-de-datos-desarrolladas) | Tipos, tuplas intermedias y mapa de funciones |
+| 1 | [Visión General del Proyecto](#1-visión-general-del-proyecto) | Objetivo y paradigmas |
+| 2 | [Arquitectura y Flujo del Pipeline](#2-arquitectura-y-flujo-del-pipeline) | Diagrama de punta a punta |
+| 3 | [Estructura de Directorios](#3-estructura-de-directorios) | Árbol del proyecto por zonas |
+| 4 | [Constantes y Modelado de Datos en C](#4-constantes-y-modelado-de-datos-en-c) | `config.h` y structs |
+| 5 | [Descripción Modular de la Etapa 1](#5-descripción-modular-de-la-etapa-1-etapa1_c) | Módulos en C |
+| 6 | [Actualizaciones de Datos para la Etapa 2](#6-actualizaciones-de-datos-para-la-etapa-2) | Plan a 8 semestres (111 asignaturas), preferencias y cambios de la Etapa 3 (área, créditos y archivos modificados) |
+| 7 | [Arquitectura Funcional en Racket](#-7-arquitectura-funcional-en-racket-etapa2_racket) | Tipos, polimorfismo, ingesta, generación y exportación |
+| 8 | [Guía de Integración para Desarrolladores](#8-guía-de-integración-para-desarrolladores-etapa-2) | Cómo consumir los módulos base |
+| 9 | [Compilación y Ejecución](#9-compilación-y-ejecución) | C, Racket y Prolog, y flujo completo en Windows y Linux |
+| 10 | [Batería de Comandos de Inspección y Pruebas](#10-batería-de-comandos-de-inspección-y-pruebas) | PowerShell y `jq` |
+| 11 | [Manejo Defensivo y Casos Límite](#11-manejo-defensivo-y-casos-límite) | Robustez del sistema |
+| 12 | [Decisiones de Diseño de la Etapa 2](#12-decisiones-de-diseño-de-la-etapa-2) | Justificaciones, caso límite real y formato de salida |
+| 13 | [Estructuras de Datos Desarrolladas](#13-estructuras-de-datos-desarrolladas) | Tipos, tuplas intermedias y mapa de funciones |
 | 14 | [Arquitectura Lógica en Prolog](#-14-arquitectura-lógica-en-prolog-etapa3_prolog) | Módulos, política, modelo, ingesta, reglas, evaluador, exportador y archivo de salida |
 | 15 | [Decisiones de Diseño de la Etapa 3](#-15-decisiones-de-diseño-de-la-etapa-3) | Modelado, área, pares incompatibles, orden de reglas, corte y negación por falla, caso límite y formato de salida |
 | 16 | [Predicados Principales y Modos de Consulta](#-16-predicados-principales-y-modos-de-consulta) | Mapa de predicados, ejemplos en más de un modo y cambios de política |
@@ -89,11 +89,11 @@ flowchart TD
     NEXT(["🟥 ETAPA 4 · Java"])
     PREF["preferencias.json"]
 
-    subgraph R["🟪 ETAPA 2 · Typed Racket (parte2_racket)"]
+    subgraph R["🟪 ETAPA 2 · Typed Racket (etapa2_racket)"]
         D1["json_reader.rkt<br/>parser.rkt"]
         D2["filters.rkt<br/>Polimorfismo paramétrico"]
         D3["Candidatos tipados<br/>(Listof (Listof SelectedGroup))"]
-        D4["generator.rkt<br/>Combinaciones sin choques"]
+        D4["generator.rkt<br/>LazyStream de combinaciones sin choques"]
         D5["exporter.rkt<br/>Stream + filtro de créditos + JSON"]
     end
 
@@ -178,9 +178,9 @@ flowchart TD
                               │
                               ▼
                 [ generator.rkt: generar-combinaciones ]
-                              │   (Listof ScheduleCombination)
+                              │   (LazyStream ScheduleCombination)
                               ▼
-   [ exporter.rkt: list->lazy-stream → filtrar-rango-creditos → JSON ]
+   [ exporter.rkt: filtrar-rango-creditos → exportar-combinaciones-json ]
                               │
                               ▼
                 [ data/horarios_finales.json ]
@@ -208,10 +208,10 @@ flowchart TD
 | Fase | Módulo | Descripción |
 |:-:|---|---|
 | **1** | `parser.c` | **Ingesta y deserialización.** Extrae datos jerárquicos desde los JSON de entrada y puebla las estructuras estáticas en memoria. |
-| **2** | `validator.c` | **Saneamiento y certificación.** Normaliza cadenas, verifica integridad referencial, prohíbe cursos fantasma o auto-requisitos y asegura cronología horaria válida. |
+| **2** | `validator.c` | **Saneamiento y certificación.** Normaliza cadenas, verifica integridad referencial, prohíbe cursos fantasma o auto-requisitos y asegura cronología horaria válida. Exige además que `career` y `area` estén presentes. |
 | **3** | `prereq_checker.c` | **Resolución académica.** Calcula si una materia no aprobada cuenta con todos sus prerrequisitos y correquisitos viables. |
 | **4** | `schedule_checker.c` | **Análisis temporal de colisiones.** Detecta traslapes horarios entre asignaturas elegibles de la misma carrera. |
-| **5** | `exporter.c` | **Serialización estandarizada.** Emite el catálogo con los estados booleanos calculados: `is_approved`, `is_eligible`, `has_clash`, `has_any_schedule_clash`. |
+| **5** | `exporter.c` | **Serialización estandarizada.** Emite el catálogo con los estados booleanos calculados: `is_approved`, `is_eligible`, `has_clash`, `has_any_schedule_clash`, junto con los campos del curso, incluida el `area`. |
 
 ### Fases de Ejecución de la Etapa 2
 
@@ -219,8 +219,8 @@ flowchart TD
 |:-:|---|---|
 | **1** | `json_reader.rkt` / `parser.rkt` | **Ingesta tipada.** Lee `output_schedule.json` y `preferencias.json` y los convierte a structs inmutables (`Course`, `Preferences`). |
 | **2** | `parser.rkt` (`prepare-candidate-courses`) | **Cruce catálogo–preferencias.** Descarta cursos no elegibles, conserva solo los grupos pedidos y entrega una sublista de `SelectedGroup` por curso. |
-| **3** | `generator.rkt` | **Generación combinatoria.** Construye recursivamente las combinaciones de un grupo por curso, descartando cualquier grupo que choque con los ya elegidos. |
-| **4** | `exporter.rkt` (`list->lazy-stream`, `filtrar-rango-creditos`) | **Streaming y filtrado.** Convierte las combinaciones a `LazyStream` y filtra por `[min_credits, max_credits]` con la función polimórfica. |
+| **3** | `generator.rkt` | **Generación combinatoria perezosa.** Construye recursivamente, como `LazyStream`, las combinaciones con a lo sumo un grupo por curso (cada curso se incluye o se omite), descartando cualquier grupo que choque con los ya elegidos. |
+| **4** | `exporter.rkt` (`filtrar-rango-creditos`) | **Filtrado.** Filtra el `LazyStream` por `[min_credits, max_credits]` con la función polimórfica, sin construir una lista intermedia. |
 | **5** | `exporter.rkt` (`exportar-combinaciones-json`) | **Serialización.** Fuerza el stream nodo por nodo y escribe `data/horarios_finales.json`. |
 
 ### Fases de Ejecución de la Etapa 3
@@ -243,7 +243,7 @@ ProyectoCEmestre/
 │
 ├── 📁 data/                              # ── Esquemas JSON (entradas y salida) ──
 │   ├── historial_estudiante.json         # Materias aprobadas por el estudiante
-│   ├── plan_estudios.json                # Catálogo oficial (Semestres 0 al 6)
+│   ├── plan_estudios.json                # Catálogo oficial (Semestres 0 al 8, 111 asignaturas)
 │   ├── preferencias.json                 # Cursos de interés, grupos y rango de créditos
 │   ├── output_schedule.json              # Salida validada generada por C
 │   ├── horarios_finales.json             # Salida de Racket: combinaciones sin choques (contrato con Prolog)
@@ -269,12 +269,12 @@ ProyectoCEmestre/
 │       ├── schedule_checker.c            # Detección de choques en bloques horarios
 │       └── validator.c                   # Validador semántico y de formato
 │
-├── 📁 parte2_racket/                     # ── 🟪 Implementación funcional (Etapa 2) ──
+├── 📁 etapa2_racket/                     # ── 🟪 Implementación funcional (Etapa 2) ──
 │   ├── types.rkt                         # Structs inmutables y LazyStream
 │   ├── filters.rkt                       # Funciones con polimorfismo paramétrico
 │   ├── json_reader.rkt                   # Puente de lectura JSON a tuplas nativas
 │   ├── parser.rkt                        # Conversión tipada y preparación de candidatos
-│   ├── generator.rkt                     # Motor combinatorio recursivo puro
+│   ├── generator.rkt                     # Motor combinatorio recursivo puro (produce un LazyStream)
 │   ├── exporter.rkt                      # Stream, filtro de créditos y exportación JSON
 │   └── test.rkt                          # Prueba integral: ingesta, generación, filtrado y exportación
 │
@@ -295,7 +295,7 @@ ProyectoCEmestre/
 | 🟨 | `data/` | Contrato de datos entre etapas | `plan_estudios.json`, `historial_estudiante.json`, `preferencias.json`, `output_schedule.json`, `horarios_finales.json`, `resultado_politicas.json` |
 | 🟦 | `etapa1_c/include/` | Contratos de tipos e interfaces | `config.h`, `struct_definitions.h` |
 | 🟦 | `etapa1_c/src/` | Lógica imperativa | `main.c`, `parser.c`, `validator.c`, `prereq_checker.c`, `schedule_checker.c`, `exporter.c` |
-| 🟪 | `parte2_racket/` | Lógica funcional tipada | `types.rkt`, `filters.rkt`, `json_reader.rkt`, `parser.rkt`, `generator.rkt`, `exporter.rkt`, `test.rkt` |
+| 🟪 | `etapa2_racket/` | Lógica funcional tipada | `types.rkt`, `filters.rkt`, `json_reader.rkt`, `parser.rkt`, `generator.rkt`, `exporter.rkt`, `test.rkt` |
 | 🟧 | `etapa3_prolog/` | Lógica declarativa (hechos, reglas, corte y negación por falla) | `main.pl`, `politica.pl`, `modelo.pl`, `loader.pl`, `reglas.pl`, `evaluador.pl`, `exporter.pl` |
 
 ---
@@ -321,12 +321,15 @@ Las dimensiones de memoria estática están centralizadas en `etapa1_c/include/c
     <tr><td><code>MAX_PREREQUISITES</code></td><td align="center"><code>10</code></td><td>Límite superior de prerrequisitos por materia.</td></tr>
     <tr><td><code>MAX_COREQUISITES</code></td><td align="center"><code>5</code></td><td>Límite superior de correquisitos por materia.</td></tr>
     <tr><td><code>MAX_APPROVED_COURSES</code></td><td align="center"><code>100</code></td><td>Máximo de asignaturas acreditadas en el expediente.</td></tr>
-    <tr><td><code>MAX_SEMESTER</code></td><td align="center"><code>6</code></td><td>Alcance curricular cubierto por el sistema.</td></tr>
+    <tr><td><code>MAX_SEMESTER</code></td><td align="center"><code>8</code></td><td>Alcance curricular cubierto por el sistema (semestres 0 a 8; antes 6).</td></tr>
     <tr><td><code>MAX_STRING_LEN</code></td><td align="center"><code>100</code></td><td>Tamaño de búfer para nombres y carreras.</td></tr>
     <tr><td><code>MAX_CODE_LEN</code></td><td align="center"><code>15</code></td><td>Tamaño de búfer para códigos alfanuméricos.</td></tr>
     <tr><td><code>DAY_MONDAY</code> – <code>DAY_SATURDAY</code></td><td align="center"><code>1</code> – <code>6</code></td><td>Representación numérica de los días lectivos.</td></tr>
   </tbody>
 </table>
+
+> [!NOTE]
+> **Holgura frente al catálogo real.** Con `data/plan_estudios.json` (111 asignaturas), el uso máximo observado es: 111 de `MAX_COURSES` (200) cursos; 6 de `MAX_GROUPS` (10) grupos en un mismo curso; 2 de `MAX_SCHEDULES_PER_GROUP` (5) bloques por grupo; 3 de `MAX_PREREQUISITES` (10) prerrequisitos y 2 de `MAX_COREQUISITES` (5) correquisitos. El nombre más largo mide 68 caracteres (límite `MAX_STRING_LEN` = 100) y el área más larga, 16. `MAX_APPROVED_COURSES` (100) cubre de sobra el historial de ejemplo (6 cursos aprobados).
 
 ### 4.2 Estructuras centrales
 
@@ -336,7 +339,7 @@ Definidas en `etapa1_c/include/struct_definitions.h`:
 |---|---|---|
 | **`ScheduleBlock`** | `day`, `start_time`, `end_time` | Bloque horario en formato militar (ej. `730` a `1120`; `730` equivale a 07:30 y `1650` a 16:50). |
 | **`Group`** | `group_number`, `schedules`, `schedule_count`, `has_clash` | Grupo académico con su arreglo de bloques y bandera individual de choque. |
-| **`Course`** | `code`, `name`, `credits`, `semester`, `career`, prerrequisitos, correquisitos, `groups`, `is_approved`, `is_eligible`, `has_any_schedule_clash` | Asignatura completa con dependencias y banderas de decisión. |
+| **`Course`** | `code`, `name`, `credits`, `semester`, `career` y `area` (ambas `char[MAX_STRING_LEN]`), prerrequisitos, correquisitos, `groups`, `is_approved`, `is_eligible`, `has_any_schedule_clash` | Asignatura completa con dependencias y banderas de decisión. |
 | **`Catalog`** | arreglo de cursos, `course_count` | Contenedor global del catálogo. |
 | **`StudentHistory`** | `approved_courses`, `approved_count` | Expediente del estudiante (códigos aprobados). |
 
@@ -356,7 +359,7 @@ Definidas en `etapa1_c/include/struct_definitions.h`:
 | Función | Qué hace |
 |---|---|
 | `sanitize_code` | Limpia espacios residuales y uniforma códigos a mayúsculas. |
-| `validate_catalog` | Normaliza códigos, impide cursos duplicados en la misma carrera, verifica que `career` no esté vacío, valida créditos (0 a 10) y semestres (0 a `MAX_SEMESTER`), y detecta requisitos fantasma, auto-dependencias y traslapes internos dentro de un mismo grupo. |
+| `validate_catalog` | Normaliza códigos, impide cursos duplicados en la misma carrera, verifica que `career` y `area` no estén vacíos (ambos son obligatorios), valida créditos (0 a 10) y semestres (0 a `MAX_SEMESTER`), y detecta requisitos fantasma, auto-dependencias y traslapes internos dentro de un mismo grupo. |
 | `validate_student_history` | Asegura que las materias aprobadas existan en el catálogo y no estén duplicadas. |
 
 ### 5.3 Motor de Horarios · `src/schedule_checker.c`
@@ -373,19 +376,29 @@ $$\text{start}_1 < \text{end}_2 \;\land\; \text{start}_2 < \text{end}_1$$
 
 ### 5.4 Deserializador y Serializador · `src/parser.c` y `src/exporter.c`
 
-- **`parser.c`:** lectura binaria acotada en memoria (`read_file_to_string`), extracción delimitada de campos (`get_json_string_val`, `get_json_int_val`), captura de arreglos y parseo de llaves balanceadas (`parse_groups_and_schedules`), todo sin librerías externas y con candados de fin de cadena (`\0`) explícitos.
-- **`exporter.c`:** escritura estandarizada hacia `data/output_schedule.json`, con control de comas terminales y booleanos nativos.
+- **`parser.c`:** lectura binaria acotada en memoria (`read_file_to_string`), extracción delimitada de campos (`get_json_string_val`, `get_json_int_val`), captura de arreglos y parseo de llaves balanceadas (`parse_groups_and_schedules`), incluida la lectura del campo `area` de cada curso, todo sin librerías externas y con candados de fin de cadena (`\0`) explícitos.
+- **`exporter.c`:** escritura estandarizada hacia `data/output_schedule.json`, con control de comas terminales y booleanos nativos. Cada curso incluye el campo `"area"`, entre `"career"` y `"credits"`.
 
 ---
 
-## 6. Actualizaciones de Datos para la Etapa 2
+## 6. Actualizaciones de Datos
 
-### 6.1 Ampliación curricular a 6 semestres · `data/plan_estudios.json`
+### 6.1 Ampliación curricular a 8 semestres · `data/plan_estudios.json`
 
-Se extendió el catálogo con las guías oficiales de horarios hasta el sexto semestre para **Ingeniería en Computadores** e **Ingeniería en Biotecnología**, alcanzando un total de **91 asignaturas** con múltiples grupos y bloques horarios.
+Se extendió el catálogo con las guías oficiales de horarios para **Ingeniería en Computadores** e **Ingeniería en Biotecnología**. La Etapa 2 llegaba hasta el sexto semestre (**91 asignaturas**); para la Etapa 3 el plan cubre los **semestres 0 al 8** y suma **111 asignaturas** con múltiples grupos y bloques horarios.
+
+| Dato del catálogo | Valor |
+|---|:-:|
+| Asignaturas totales | **111** |
+| Ingeniería en Computadores | 48 |
+| Ingeniería en Biotecnología | 63 |
+| Semestres cubiertos | 0 al 8 (ambas carreras) |
+| Códigos presentes en las dos carreras | 10 (ver [15.2](#152-asignación-del-área)) |
+| Áreas distintas | 14 (ver [15.2](#152-asignación-del-área)) |
+| Cursos elegibles con `historial_estudiante.json` | 28 (el historial de ejemplo tiene 6 códigos aprobados, que marcan 7 entradas del catálogo porque `MA0101` está en las dos carreras) |
 
 > [!NOTE]
-> En `etapa1_c/include/config.h` se definió `MAX_SEMESTER 6` y `etapa1_c/src/validator.c` certifica la presencia del campo `career` y valida semestres en el intervalo $[0, 6]$.
+> En `etapa1_c/include/config.h` se definió `MAX_SEMESTER 8` (antes `6`) y `etapa1_c/src/validator.c` certifica la presencia de los campos `career` y `area` y valida semestres en el intervalo $[0, 8]$. `MAX_COURSES` (200) sigue sobrando para las 111 asignaturas.
 
 ### 6.2 Archivo de preferencias · `data/preferencias.json`
 
@@ -405,6 +418,21 @@ A diferencia de `historial_estudiante.json` (que refleja el pasado académico), 
       "code": "MA1102",
       "career": "Ingeniería en Computadores",
       "groups": [1]
+    },
+    {
+      "code": "MA1403",
+      "career": "Ingeniería en Computadores",
+      "groups": [1]
+    },
+    {
+      "code": "CE1105",
+      "career": "Ingeniería en Computadores",
+      "groups": [1]
+    },
+    {
+      "code": "CS1502",
+      "career": "Ingeniería en Computadores",
+      "groups": [1]
     }
   ]
 }
@@ -416,24 +444,63 @@ A diferencia de `historial_estudiante.json` (que refleja el pasado académico), 
 | `career` (por curso) | Evita ambigüedades en materias compartidas entre carreras. Si se deja vacío (`""`), `prepare-candidate-courses` acepta el primer curso elegible con ese código. |
 | `groups` | Permite seleccionar múltiples grupos alternativos para un mismo curso de interés. |
 
-### 6.3 Extensión de datos requerida por la Etapa 3
+**Qué produce este archivo con los datos del repositorio.** Se piden 5 cursos (`CE1107` con dos grupos y los demás con uno), así que hay 6 grupos candidatos. Como el generador también considera las combinaciones que omiten cursos (sección [7.4](#74-generador-de-combinaciones--generatorrkt)), `generar-combinaciones` produce **32** combinaciones sin choques (incluida la vacía); `filtrar-rango-creditos` deja las **17** cuyo total está entre 8 y 16 créditos y esas son las que llegan a `horarios_finales.json` y a Prolog. El desarrollo completo está en la sección [15.11](#1511-ejemplo-de-extremo-a-extremo-con-los-archivos-reales).
 
-La Etapa 3 (Prolog) necesita información que las etapas anteriores no exportaban. Estos son los datos que el módulo en Prolog **espera recibir**:
+### 6.3 Extensión del proyecto para la Etapa 3
 
-| Requisito de la etapa | Qué espera Prolog | Dónde se usa |
+El enunciado de la Etapa 3 pide ajustar las etapas anteriores **sin modificar la lógica ya construida**: un campo `area` obligatorio por curso (se agrega en C y se propaga por Racket), toda información adicional que Prolog necesite (aquí, los créditos por curso) y la extensión del plan a 8 semestres por carrera. Esta sección registra qué se cambió y dónde.
+
+| Requisito del enunciado | Qué se hizo | Estado |
 |---|---|---|
-| **Campo `area` obligatorio por curso** (se agrega en C y se propaga por Racket). | Llave `area` en cada elemento de `selections` de `horarios_finales.json`. | Regla de límite por área (sección [15.2](#152-asignación-del-área)). |
-| **Créditos por curso** en la exportación de Racket. | Llave `credits` en cada elemento de `selections`. | Regla de balance entre carreras (suma de créditos por carrera). |
-| **Plan de estudios ampliado a 8 semestres** por carrera (antes 6), reutilizando el módulo de C con más datos. | Más cursos en `plan_estudios.json`, sin cambios en la lógica de las etapas anteriores. | Catálogo de entrada de toda la tubería. |
+| **Campo `area` obligatorio por curso** (se agrega en C y se propaga por Racket). | Se lee y se exige en C, se exporta en `output_schedule.json`, se propaga por Racket hasta `horarios_finales.json` y lo consume Prolog (tabla 6.3.1). | Implementado |
+| **Créditos por curso** en la exportación de Racket, justificados. | `formato-grupo-json` escribe `credits` por selección (sección [7.6.1](#761-ampliación-del-contrato-para-la-etapa-3)). | Implementado |
+| **Plan de estudios ampliado a 8 semestres** por carrera (antes 6), reutilizando el módulo de C con más datos. | Más cursos en `plan_estudios.json` y `MAX_SEMESTER` pasa de 6 a 8 en `config.h`; no cambia la lógica de las etapas anteriores. | Implementado: semestres 0 al 8, 111 asignaturas y `MAX_SEMESTER 8` (sección 6.1) |
 
-El formato exacto de la ampliación del archivo de Racket está en la sección [7.6.1](#761-ampliación-del-contrato-para-la-etapa-3).
+#### 6.3.1 Propagación del campo `area` (de C a Prolog)
 
-> [!WARNING]
-> Las secciones 4.1 (`MAX_SEMESTER 6`), 6.1 (plan a 6 semestres y 91 asignaturas), el comentario del árbol de directorios de la sección 3 y la insignia de catálogo del encabezado siguen describiendo el catálogo de 6 semestres. Cuando la extensión a 8 semestres esté integrada en C y Racket, hay que actualizarlas con los valores finales (nuevo `MAX_SEMESTER`, número total de asignaturas y criterio de asignación del área).
+| Paso | Archivo | Qué hace con `area` |
+|:-:|---|---|
+| 1 | `data/plan_estudios.json` | Cada curso declara su `area`. Es la fuente del dato (ver la asignación en la [sección 15.2](#152-asignación-del-área)). |
+| 2 | `etapa1_c/src/parser.c` | `load_catalog` lo lee con `get_json_string_val(brace_start, "area", c->area, sizeof(c->area))`. |
+| 3 | `etapa1_c/src/validator.c` | `validate_catalog` lo exige: un curso con `area` vacía produce el error `El curso no tiene un área asignada.` y `main.c` aborta antes de exportar. |
+| 4 | `etapa1_c/src/exporter.c` | Escribe `"area"` (entre `career` y `credits`) en cada curso de `data/output_schedule.json`. |
+| 5 | `etapa2_racket/json_reader.rkt` | `read-catalog-raw` lo extrae con `(hash-ref c 'area "")` como cuarto elemento de la tupla del curso. |
+| 6 | `etapa2_racket/types.rkt` y `parser.rkt` | `Course-area` se carga en el struct `Course`; `prepare-candidate-courses` lo copia a `SelectedGroup-area`. |
+| 7 | `etapa2_racket/exporter.rkt` | `formato-grupo-json` lo escribe en cada selección de `data/horarios_finales.json`. |
+| 8 | `etapa3_prolog/loader.pl` | Lo lee de `selections[].area` y lo guarda en el término `curso/5` (sección [14.4](#144-ingesta--loaderpl)). |
+
+#### 6.3.2 Archivos modificados para la Etapa 3
+
+| Etapa | Archivo | Cambio |
+|:-:|---|---|
+| 🟦 C | `include/config.h` | `MAX_SEMESTER` pasa de `6` a `8` para admitir el plan de 8 semestres. |
+| 🟦 C | `include/struct_definitions.h` | El struct `Course` incluye el campo `area` (`char area[MAX_STRING_LEN]`, justo después de `career`), usado por `parser.c`, `validator.c` y `exporter.c`. |
+| 🟨 Datos | `data/plan_estudios.json` | Semestres 0 al 8 (111 asignaturas) y el campo `area` en cada curso. |
+| 🟨 Datos | `data/preferencias.json` | Cinco cursos de interés (`CE1107`, `MA1102`, `MA1403`, `CE1105`, `CS1502`) y rango de 8 a 16 créditos (sección 6.2). |
+| 🟦 C | `src/parser.c` | Lee `"area"` de cada curso del plan. |
+| 🟦 C | `src/validator.c` | `area` pasa a ser un campo obligatorio (igual que `career`). |
+| 🟦 C | `src/exporter.c` | Exporta `"area"` en `output_schedule.json`. |
+| 🟪 Racket | `types.rkt` | `Course` y `SelectedGroup` reciben el campo `area : String` (justo después de `career`). |
+| 🟪 Racket | `json_reader.rkt` | La tupla del curso lleva `area` en la cuarta posición (sección [13.3](#133-tuplas-intermedias-de-json_readerrkt)). |
+| 🟪 Racket | `parser.rkt` | La declaración `require/typed` y `raw->course` incluyen `area`; `prepare-candidate-courses` lo copia al `SelectedGroup`. |
+| 🟪 Racket | `generator.rkt` | `generar-combinaciones` produce directamente un `LazyStream` (sección [7.4](#74-generador-de-combinaciones--generatorrkt)). |
+| 🟪 Racket | `exporter.rkt` | `formato-grupo-json` escribe `area` y `credits`; `list->lazy-stream` ya no existe (sección [7.5](#75-exportador--exporterrkt)). |
+| 🟪 Racket | `test.rkt` | Consume el stream del generador directamente, sin conversión intermedia (sección [9.2](#92--etapa-2--typed-racket)). |
+| 🟧 Prolog | `etapa3_prolog/` | Módulo nuevo (secciones [14](#-14-arquitectura-lógica-en-prolog-etapa3_prolog), [15](#-15-decisiones-de-diseño-de-la-etapa-3) y [16](#-16-predicados-principales-y-modos-de-consulta)). |
+
+#### 6.3.3 Compatibilidad con las etapas previas
+
+- **El formato de los archivos solo creció.** `output_schedule.json` ganó la llave `area` y `horarios_finales.json` ganó `area` y `credits` por selección; no se quitó ni se renombró ninguna llave existente.
+- **Los lectores toleran llaves nuevas.** `parser.c` busca cada campo por nombre dentro del objeto del curso y `json_reader.rkt` usa `hash-ref` con valor por defecto, así que ninguno depende de las llaves que no usa.
+- **La lógica de choques y de créditos no cambió:** la regla de intersección horaria de `schedule_checker.c` (sección 5.3) es la misma que usa `bloques-chocan?` en Racket, y el filtro de créditos sigue siendo inclusivo en ambos extremos.
+- **El generador sí cambió de forma de entrega y de alcance:** ahora devuelve un `LazyStream` y su resultado incluye combinaciones que omiten cursos de interés (secciones [7.4](#74-generador-de-combinaciones--generatorrkt) y [12.1](#121-justificación-de-decisiones-propias), decisiones 6 y 12).
+
+> [!NOTE]
+> **Valores finales del catálogo.** `MAX_SEMESTER` es `8`, el catálogo tiene 111 asignaturas (48 de Computadores y 63 de Biotecnología) y el criterio de asignación del área está documentado, con ejemplos de ambos planes, en la sección [15.2](#152-asignación-del-área). `validator.c` valida el semestre contra `MAX_SEMESTER`, definido en `config.h`.
 
 ---
 
-## 🟪 7. Arquitectura Funcional en Racket (`parte2_racket`)
+## 🟪 7. Arquitectura Funcional en Racket (`etapa2_racket`)
 
 La base funcional está construida con **Typed Racket** (`#lang typed/racket`), lo que garantiza verificación estática de tipos, inmutabilidad por defecto y ausencia de efectos secundarios.
 
@@ -446,9 +513,9 @@ Todas las estructuras del dominio son inmutables (`struct` sin `#:mutable`), y e
 | **`LazyStream` / `StreamNode`** | `first`, promesa `(Promise (LazyStream A))` | Secuencias perezosas tipadas. Posterga la evaluación del resto del flujo con `delay` y la reclama bajo demanda con `force`. |
 | **`ScheduleBlock`** | `[day : Integer]`, `[start-time : Integer]`, `[end-time : Integer]` | Bloque horario. |
 | **`Group`** | `[group-number : Integer]`, `[has-clash : Boolean]`, `[schedules : (Listof ScheduleBlock)]` | Grupo con sus bloques. |
-| **`Course`** | banderas `is-approved`, `is-eligible` y lista de grupos | Curso completo proveniente de C. |
+| **`Course`** | `area` (campo nuevo de la Etapa 3), banderas `is-approved`, `is-eligible` y lista de grupos | Curso completo proveniente de C. |
 | **`InterestedCourse`** y **`Preferences`** | `min-credits`, `max-credits`, `interested-courses` | Datos leídos desde `data/preferencias.json`. |
-| **`SelectedGroup`** | `code`, `name`, `career`, `credits`, `group-number`, `has-clash`, `schedules` | **Estructura clave del generador.** Aplana una opción específica de matrícula uniendo los datos del curso con un grupo concreto. |
+| **`SelectedGroup`** | `code`, `name`, `career`, `area`, `credits`, `group-number`, `has-clash`, `schedules` | **Estructura clave del generador.** Aplana una opción específica de matrícula uniendo los datos del curso con un grupo concreto. |
 | **`ScheduleCombination`** | `[selections : (Listof SelectedGroup)]`, `[total-credits : Integer]` | Horario completo armado. |
 
 ### 7.2 Polimorfismo paramétrico · `filters.rkt`
@@ -497,42 +564,68 @@ Funciones públicas de `parser.rkt`:
 | `load-preferences-from-json` | Ruta de `preferencias.json` | `Preferences` |
 | `prepare-candidate-courses` | Catálogo + preferencias | `(Listof (Listof SelectedGroup))` |
 
-`prepare-candidate-courses` cruza el catálogo con las preferencias invocando **tres veces** a `filtrar-lista-polimorfico` (con tipos `Course`, `Group` y `(Listof SelectedGroup)`). Descarta cursos no elegibles (`is-eligible = #f`) y conserva únicamente los números de grupo deseados por el estudiante.
+`prepare-candidate-courses` cruza el catálogo con las preferencias invocando **tres veces** a `filtrar-lista-polimorfico` (con tipos `Course`, `Group` y `(Listof SelectedGroup)`). Descarta cursos no elegibles (`is-eligible = #f`) y conserva únicamente los números de grupo deseados por el estudiante. El `area` de cada curso se copia de `Course-area` al `SelectedGroup` (campo nuevo de la Etapa 3, sección [6.3.1](#631-propagación-del-campo-area-de-c-a-prolog)).
 
 ### 7.4 Generador de combinaciones · `generator.rkt`
 
-Recibe la salida de `prepare-candidate-courses` y produce todas las combinaciones válidas: **un grupo por curso y sin traslapes entre los grupos elegidos**. Solo exporta `generar-combinaciones`; el resto son auxiliares privadas.
+Recibe la salida de `prepare-candidate-courses` y produce, como un **`LazyStream`**, todas las combinaciones válidas: **a lo sumo un grupo por curso de interés y sin traslapes entre los grupos elegidos**. Cada curso se incluye con uno de sus grupos o se omite, así que el stream contiene también las combinaciones parciales y la combinación vacía. Solo exporta `generar-combinaciones` (el módulo requiere únicamente `types.rkt`); el resto son auxiliares privadas.
 
 | Función | Firma | Qué hace |
 |---|---|---|
 | `bloques-chocan?` | `(-> ScheduleBlock ScheduleBlock Boolean)` | Dos bloques chocan si son del mismo día y se intersectan. Es la misma regla de `schedule_checker.c`, por lo que dos bloques contiguos (el fin de uno igual al inicio del otro) **no** chocan. |
 | `choca-con-lista?` | `(-> ScheduleBlock (Listof ScheduleBlock) Boolean)` | Recorre recursivamente una lista de bloques y se detiene en el primer choque. |
-| `grupo-valido-en-combinacion?` | `(-> SelectedGroup (Listof SelectedGroup) Boolean)` | Aplana con `append-map` los bloques de los grupos ya elegidos y verifica con `ormap` que ningún bloque del grupo nuevo choque con ellos. |
-| `generar-combinaciones` | `(-> (Listof (Listof SelectedGroup)) (Listof ScheduleCombination))` | Función principal. Recursión estructural sobre la lista de cursos. |
+| `horarios-grupo-chocan?` | `(-> (Listof ScheduleBlock) (Listof ScheduleBlock) Boolean)` | Recorre los bloques del grupo nuevo y se detiene en el primero que choca con alguno de los bloques ya elegidos. |
+| `extraer-horarios` | `(-> (Listof SelectedGroup) (Listof ScheduleBlock))` | Aplana recursivamente (con `append`) los bloques de los grupos ya elegidos. |
+| `grupo-valido-en-combinacion?` | `(-> SelectedGroup (Listof SelectedGroup) Boolean)` | Es verdadero si ningún bloque del grupo nuevo choca con los bloques de los grupos ya elegidos. |
+| `concatenar-streams` | `(All (A) (-> (LazyStream A) (Promise (LazyStream A)) (LazyStream A)))` | **Función polimórfica.** Concatena dos streams de forma perezosa: el segundo llega como promesa y solo se fuerza cuando se agota el primero. |
+| `insertar-grupo-en-stream` | `(-> SelectedGroup (LazyStream ScheduleCombination) (LazyStream ScheduleCombination))` | Para cada combinación del stream, si el grupo no choca con sus selecciones produce una nueva combinación con el grupo al frente (`cons`) y los créditos sumados; si choca, esa combinación se omite. Cada nodo guarda su resto bajo `(delay ...)`. |
+| `expandir-grupos-stream` | `(-> (Listof SelectedGroup) (LazyStream ScheduleCombination) (LazyStream ScheduleCombination))` | Aplica `insertar-grupo-en-stream` a cada grupo alternativo del curso actual y concatena los resultados con `concatenar-streams`. |
+| `generar-combinaciones` | `(-> (Listof (Listof SelectedGroup)) (LazyStream ScheduleCombination))` | Función principal. Recursión estructural sobre la lista de cursos. |
 
 **Algoritmo de `generar-combinaciones`:**
 
-1. **Caso base.** Con `'()` devuelve `(list (ScheduleCombination '() 0))`: una única combinación vacía con 0 créditos, que actúa como elemento neutro.
-2. **Paso recursivo.** Obtiene `combinaciones-resto` llamándose con `(cdr lista)`. Luego, para cada grupo del curso actual (`append-map`), recorre `combinaciones-resto` con `filter-map`:
-   - si `grupo-valido-en-combinacion?` es verdadero, produce `(ScheduleCombination (cons grupo selecciones) (+ créditos-grupo créditos-resto))`;
-   - si hay choque, devuelve `#false` y esa combinación parcial **se descarta en ese punto y nunca se extiende**.
+1. **Caso base.** Con `'()` devuelve un stream de un único nodo, `(StreamNode (ScheduleCombination '() 0) (delay '()))`: la combinación vacía con 0 créditos, que actúa como elemento neutro.
+2. **Paso recursivo.** Obtiene `flujo-resto` llamándose con `(cdr lista)`. Luego calcula `flujo-con-curso` con `expandir-grupos-stream` (los grupos del curso actual aplicados a `flujo-resto`) y devuelve `(concatenar-streams flujo-con-curso (delay flujo-resto))`, es decir:
+   - primero las combinaciones que **incluyen** el curso actual, una por cada grupo del curso que no choque con las selecciones de cada combinación del resto;
+   - después, las combinaciones que **omiten** el curso actual (`flujo-resto` tal cual).
+3. **Poda.** Si el grupo nuevo choca con las selecciones de una combinación, `insertar-grupo-en-stream` no produce esa combinación, así que **se descarta en ese punto y nunca se extiende**.
 
-Los créditos se acumulan incrementalmente al construir cada combinación, sin recorrer la lista al final. Las selecciones de cada combinación quedan en el mismo orden en que los cursos aparecen en `preferencias.json`, y las combinaciones se ordenan por el grupo del primer curso.
+Los créditos se acumulan incrementalmente al construir cada combinación, sin recorrer la lista al final. Las selecciones de cada combinación quedan en el mismo orden en que los cursos aparecen en `preferencias.json`. En el stream aparecen primero las combinaciones que incluyen el primer curso (ordenadas por su grupo) y después las que lo omiten; la combinación vacía es siempre el último elemento.
 
-**Ejemplo:** con `CE1107` (grupos 1 y 2) y `MA1102` (grupo 1), si el grupo 2 de `CE1107` choca con `MA1102-G1`, el resultado es una sola combinación: `[CE1107-G1, MA1102-G1]`.
+**Ejemplo:** con `CE1107` (grupos 1 y 2, 4 créditos cada uno) y `MA1102` (grupo 1, 4 créditos), si el grupo 2 de `CE1107` choca con `MA1102-G1`, `generar-combinaciones` produce, en este orden:
+
+| # | Selecciones | Créditos |
+|:-:|---|:-:|
+| 1 | `CE1107-G1`, `MA1102-G1` | 8 |
+| 2 | `CE1107-G1` | 4 |
+| 3 | `CE1107-G2` | 4 |
+| 4 | `MA1102-G1` | 4 |
+| 5 | *(vacía)* | 0 |
+
+La combinación `CE1107-G2` + `MA1102-G1` no aparece porque choca. Con el rango de la sección [6.2](#62-archivo-de-preferencias--datapreferenciasjson) (8 a 16 créditos), `filtrar-rango-creditos` deja únicamente la primera: `[CE1107-G1, MA1102-G1]`.
 
 > [!NOTE]
-> En el peor caso el número de combinaciones es el producto de la cantidad de grupos solicitados por curso. La poda al insertar reduce el trabajo, pero el generador devuelve una lista completa (`Listof ScheduleCombination`); ver la decisión 6 en la [sección 12.1](#121-justificación-de-decisiones-propias).
+> El ejemplo anterior es ilustrativo (supone un choque inventado). Con los datos reales de `preferencias.json` los choques son otros: `CE1107-G1` (martes y jueves 13:00–14:50) choca con `MA1403-G1` (martes 13:00–16:50) y `CE1107-G2` (martes y jueves 09:30–11:20) choca con `CE1105-G1` (martes 07:30–11:20). El resultado completo, con sus 32 combinaciones, está en la sección [15.11](#1511-ejemplo-de-extremo-a-extremo-con-los-archivos-reales).
+
+> [!NOTE]
+> **Intención del diseño.** Antes, un choque en cualquier curso hacía que el generador descartara la combinación completa. Ahora, cuando un grupo choca, el generador sigue construyendo la combinación con los demás cursos, de modo que los horarios generados **no necesariamente contienen todas las preferencias**. Esto es deliberado: `preferencias.json` ofrece pocos grupos por curso y cada grupo tiene pocos bloques horarios, por lo que rara vez todos los cursos de interés caben juntos.
+>
+> **Alcance de la omisión.** El generador no limita la omisión a los cursos que chocan: genera **todos los subconjuntos** de cursos sin traslapes, incluidos los que omiten un curso aunque este cabría (por ejemplo, la combinación n.° 4 de la sección [15.11](#1511-ejemplo-de-extremo-a-extremo-con-los-archivos-reales), `CE1107-G1` + `MA1102-G1`, no incluye `CS1502-G1` a pesar de que no choca con ninguno). El rango de créditos reduce ese conjunto, pero no lo limita a combinaciones maximales.
+
+> [!NOTE]
+> En el peor caso el número de combinaciones es el producto, sobre todos los cursos, de (cantidad de grupos solicitados + 1); el `+ 1` es la opción de omitir el curso. El generador no construye esa lista completa: cada nodo se calcula cuando el consumidor (el filtro o la escritura) fuerza `StreamNode-rest`, y las promesas memorizan su resultado, de modo que recorrer el mismo stream una segunda vez no repite el cálculo. Ver las decisiones 6 y 12 en la [sección 12.1](#121-justificación-de-decisiones-propias).
 
 ### 7.5 Exportador · `exporter.rkt`
 
-Convierte las combinaciones a un `LazyStream`, las filtra por créditos y las escribe a disco. Exporta tres funciones públicas.
+Filtra por créditos el stream de combinaciones que entrega el generador y lo escribe a disco. Requiere `types.rkt` y `filters.rkt`, y exporta dos funciones públicas.
 
 | Función | Firma | Qué hace |
 |---|---|---|
-| `list->lazy-stream` | `(-> (Listof ScheduleCombination) (LazyStream ScheduleCombination))` | Convierte recursivamente una lista en un stream: `'()` marca el fin y cada `StreamNode` guarda su resto bajo `(delay ...)`. |
 | `filtrar-rango-creditos` | `(-> Integer Integer (LazyStream ScheduleCombination) (LazyStream ScheduleCombination))` | Filtra el stream conservando las combinaciones con `min <= total-credits <= max` (extremos inclusivos). |
 | `exportar-combinaciones-json` | `(-> String (LazyStream ScheduleCombination) Void)` | Escribe el stream en la ruta indicada como un arreglo JSON. Sobrescribe el archivo si existe (`#:exists 'replace`). |
+
+> [!NOTE]
+> `exporter.rkt` ya no define `list->lazy-stream`: la conversión de lista a stream dejó de ser necesaria porque `generar-combinaciones` entrega el `LazyStream` directamente (sección [7.4](#74-generador-de-combinaciones--generatorrkt)).
 
 **`filtrar-rango-creditos` no define recursión propia.** Es la instancia de `filtrar-stream-polimorfico` con `A = ScheduleCombination` y un predicado de rango. Es la misma función genérica que `parser.rkt` usa sobre listas de `Course`, `Group` y `(Listof SelectedGroup)`.
 
@@ -540,7 +633,7 @@ Convierte las combinaciones a un `LazyStream`, las filtra por créditos y las es
 
 | Función | Firma | Qué hace |
 |---|---|---|
-| `formato-grupo-json` | `(-> SelectedGroup String)` | Serializa un objeto `{course_code, group_number, career}`. |
+| `formato-grupo-json` | `(-> SelectedGroup String)` | Serializa un objeto `{course_code, group_number, career, area, credits}`, en ese orden. |
 | `grupos->json` | `(-> (Listof SelectedGroup) String)` | Une los objetos con `",\n"` por recursión. Evita coma final con tres casos: lista vacía, último elemento y resto. |
 | `formato-combinacion-json` | `(-> ScheduleCombination String)` | Serializa `{total_credits, selections: [...]}`. |
 | `escribir-stream-json` | `(-> Output-Port (LazyStream ScheduleCombination) Boolean Void)` | Recorre el stream forzando **un nodo a la vez** y escribe cada combinación apenas se obtiene. |
@@ -550,17 +643,19 @@ Convierte las combinaciones a un `LazyStream`, las filtra por créditos y las es
 **Uso desde `test.rkt`:**
 
 ```racket
-(define flujo-inicial  (list->lazy-stream combinaciones))
+(define flujo-combinaciones (generar-combinaciones candidatos))
 (define flujo-filtrado (filtrar-rango-creditos
                         (Preferences-min-credits prefs)
                         (Preferences-max-credits prefs)
-                        flujo-inicial))
+                        flujo-combinaciones))
 (exportar-combinaciones-json "../data/horarios_finales.json" flujo-filtrado)
 ```
 
+`test.rkt` recorre `flujo-filtrado` dos veces: la primera para imprimir cada combinación y contarlas (sección 4 de la prueba) y la segunda para exportarlas (sección 5). Como las promesas de `StreamNode-rest` memorizan su valor, el segundo recorrido reutiliza los nodos ya calculados.
+
 ### 7.6 Archivo de salida · `data/horarios_finales.json`
 
-Es el **contrato de la Etapa 3 (Prolog)**. Contiene un arreglo JSON en el nivel superior, con un objeto por combinación válida (sin choques y dentro del rango de créditos).
+Es el **contrato de la Etapa 3 (Prolog)**. Contiene un arreglo JSON en el nivel superior, con un objeto por combinación válida (sin choques y dentro del rango de créditos). Pueden aparecer combinaciones parciales, que omiten algún curso de interés, siempre que sus créditos estén dentro del rango (sección [7.4](#74-generador-de-combinaciones--generatorrkt)).
 
 ```json
 [
@@ -570,17 +665,24 @@ Es el **contrato de la Etapa 3 (Prolog)**. Contiene un arreglo JSON en el nivel 
         {
           "course_code": "CE1107",
           "group_number": 1,
-          "career": "Ingeniería en Computadores"
+          "career": "Ingeniería en Computadores",
+          "area": "Computadores",
+          "credits": 4
         },
         {
           "course_code": "MA1102",
           "group_number": 1,
-          "career": "Ingeniería en Computadores"
+          "career": "Ingeniería en Computadores",
+          "area": "Matemáticas",
+          "credits": 4
         }
     ]
   }
 ]
 ```
+
+> [!NOTE]
+> Los valores de `area` del ejemplo son ilustrativos: dependen de lo que declare `plan_estudios.json` (sección [6.3.1](#631-propagación-del-campo-area-de-c-a-prolog)).
 
 | Campo | Tipo | Origen | Requisito de la etapa que cubre |
 |---|---|---|---|
@@ -589,54 +691,39 @@ Es el **contrato de la Etapa 3 (Prolog)**. Contiene un arreglo JSON en el nivel 
 | `selections[].course_code` | cadena | `SelectedGroup-code` | Curso del par curso-grupo |
 | `selections[].group_number` | entero | `SelectedGroup-group-number` | Grupo del par curso-grupo |
 | `selections[].career` | cadena | `SelectedGroup-career` | Carrera de origen de cada curso |
+| `selections[].area` | cadena | `SelectedGroup-area` | Campo nuevo obligatorio de la Etapa 3 (regla de límite por área) |
+| `selections[].credits` | entero | `SelectedGroup-credits` | Información adicional justificada (regla de balance entre carreras) |
 
 **Garantías del archivo:**
 
 - Ninguna combinación tiene dos grupos con bloques traslapados.
 - Todo `total_credits` cumple `min_credits <= total_credits <= max_credits` (inclusivo).
 - Cada combinación tiene como máximo un grupo por curso, y solo de los cursos de interés que están habilitados (`is_eligible`).
+- Una combinación puede no incluir todos los cursos de interés; lo que se exige es el rango de créditos.
 - Las `selections` conservan el orden de `preferencias.json`.
 - El archivo siempre es JSON válido, también cuando ninguna combinación cumple el rango (en ese caso queda `[` + línea vacía + `]`).
-- En la Etapa 2 no se agregaron campos adicionales a los exigidos por la etapa. La justificación está en la [sección 12.3](#123-justificación-del-formato-de-salida).
-- Para la Etapa 3 el contrato se amplió con `credits` y `area` por selección (ver [7.6.1](#761-ampliación-del-contrato-para-la-etapa-3)).
+- En la Etapa 2 el contrato solo tenía `course_code`, `group_number` y `career` por selección; para la Etapa 3 se agregaron `area` y `credits`. La justificación está en la [sección 7.6.1](#761-ampliación-del-contrato-para-la-etapa-3) y en la [sección 12.3](#123-justificación-del-formato-de-salida).
 
 ### 7.6.1 Ampliación del contrato para la Etapa 3
 
-La Etapa 3 lee `horarios_finales.json` y, además de los campos anteriores, necesita `credits` y `area` en cada selección (el enunciado exige justificar toda información adicional del esquema):
+La Etapa 3 lee `horarios_finales.json` y, además de los campos básicos, necesita `credits` y `area` en cada selección (el enunciado exige justificar toda información adicional del esquema). Ambos ya se exportan desde `formato-grupo-json`; respecto al contrato anterior, cada selección ganó estas dos llaves:
 
-```json
-[
-  {
-    "total_credits": 8,
-    "selections": [
-        {
-          "course_code": "CE1107",
-          "group_number": 1,
-          "credits": 4,
-          "career": "Ingeniería en Computadores",
-          "area": "Computadores"
-        },
-        {
-          "course_code": "MA1102",
-          "group_number": 1,
-          "credits": 4,
-          "career": "Ingeniería en Computadores",
-          "area": "Matemática"
-        }
-    ]
-  }
-]
+```jsonc
+{
+  "course_code": "CE1107",
+  "group_number": 1,
+  "career": "Ingeniería en Computadores",
+  "area": "Computadores",   // nuevo (Etapa 3)
+  "credits": 4              // nuevo (Etapa 3)
+}
 ```
-
-> [!NOTE]
-> Los valores de `area` del ejemplo son ilustrativos.
 
 | Campo agregado | Tipo | Origen | Justificación |
 |---|---|---|---|
-| `selections[].credits` | entero | `SelectedGroup-credits` (ya existe en el struct) | La regla de balance entre carreras suma los créditos de cada carrera dentro de la combinación; sin este dato Prolog tendría que cruzarse con `output_schedule.json`. |
-| `selections[].area` | cadena | Campo `area` agregado en C y propagado por Racket | La regla de límite por área cuenta los cursos de una misma área dentro de la combinación. |
+| `selections[].credits` | entero | `SelectedGroup-credits` (ya existía en el struct) | La regla de balance entre carreras suma los créditos de cada carrera dentro de la combinación; sin este dato Prolog tendría que cruzarse con `output_schedule.json`. |
+| `selections[].area` | cadena | `SelectedGroup-area`, copiado de `Course-area`, que `json_reader.rkt` lee de `output_schedule.json` (donde lo escribe `exporter.c`) | La regla de límite por área cuenta los cursos de una misma área dentro de la combinación. |
 
-Esta ampliación solo **agrega** llaves a `formato-grupo-json`; los campos existentes (`total_credits`, `course_code`, `group_number`, `career`) no cambian. Si estas llaves faltan, el cargador de Prolog usa valores por defecto sin avisar (ver [15.10](#1510-limitaciones-conocidas)).
+Esta ampliación solo **agrega** llaves a `formato-grupo-json`; los campos existentes (`total_credits`, `course_code`, `group_number`, `career`) no cambian. Si estas llaves faltan (por ejemplo, en un `horarios_finales.json` generado con una versión anterior de la Etapa 2), el cargador de Prolog usa valores por defecto sin avisar (ver [15.10](#1510-limitaciones-conocidas)).
 
 ---
 
@@ -646,7 +733,7 @@ Esta sección detalla cómo los demás integrantes del equipo deben consumir los
 
 ### 8.1 Importación en nuevos archivos `.rkt`
 
-Todo archivo nuevo en `parte2_racket/` debe iniciar con `#lang typed/racket` e importar los módulos base:
+Todo archivo nuevo en `etapa2_racket/` debe iniciar con `#lang typed/racket` e importar los módulos base:
 
 ```racket
 #lang typed/racket
@@ -681,6 +768,7 @@ Al llamar a `(prepare-candidate-courses catalogo prefs)` se obtiene un valor de 
 | `(SelectedGroup-code sg)` | `String` | `"CE1107"` |
 | `(SelectedGroup-group-number sg)` | `Integer` | `1` |
 | `(SelectedGroup-credits sg)` | `Integer` | `4` |
+| `(SelectedGroup-area sg)` | `String` | `"Computadores"` |
 | `(SelectedGroup-schedules sg)` | `(Listof ScheduleBlock)` | lista de bloques |
 
 #### Acceso a cada bloque horario (`ScheduleBlock`) para verificar choques
@@ -729,16 +817,16 @@ Al llamar a `(prepare-candidate-courses catalogo prefs)` se obtiene un valor de 
 (define catalogo   (load-catalog-from-json "../data/output_schedule.json"))
 (define prefs      (load-preferences-from-json "../data/preferencias.json"))
 (define candidatos (prepare-candidate-courses catalogo prefs))   ; (Listof (Listof SelectedGroup))
-(define combos     (generar-combinaciones candidatos))           ; (Listof ScheduleCombination)
+(define combos     (generar-combinaciones candidatos))           ; (LazyStream ScheduleCombination)
 
 (exportar-combinaciones-json
  "../data/horarios_finales.json"
  (filtrar-rango-creditos (Preferences-min-credits prefs)
                          (Preferences-max-credits prefs)
-                         (list->lazy-stream combos)))
+                         combos))
 ```
 
-Las rutas son relativas, por lo que el programa debe ejecutarse desde `parte2_racket/`.
+Las rutas son relativas, por lo que el programa debe ejecutarse desde `etapa2_racket/`.
 ---
 
 ## 9. Compilación y Ejecución
@@ -779,10 +867,10 @@ Proceso completado con éxito. Resultados guardados en ../data/output_schedule.j
 
 ### 9.2 🟪 Etapa 2 · Typed Racket
 
-1. Abrir **DrRacket** y cargar el archivo `parte2_racket/test.rkt` (o `main.rkt` una vez integrado).
+1. Abrir **DrRacket** y cargar el archivo `etapa2_racket/test.rkt` (o `main.rkt` una vez integrado).
 2. Presionar el botón **Run** (`Ctrl + R`).
 3. El sistema leerá `../data/output_schedule.json` y `../data/preferencias.json`, ejecutará la validación de tipos y el filtrado polimórfico, mostrará en consola los cursos candidatos y las combinaciones sin choques, y escribirá `../data/horarios_finales.json` (secciones 1 a 5 de la prueba).
-4. También puede ejecutarse desde la terminal, dentro de `parte2_racket/` (las rutas `../data/` son relativas a esa carpeta):
+4. También puede ejecutarse desde la terminal, dentro de `etapa2_racket/` (las rutas `../data/` son relativas a esa carpeta):
 
 ```bash
 racket test.rkt
@@ -790,6 +878,16 @@ racket test.rkt
 
 > [!IMPORTANT]
 > `data/output_schedule.json` debe existir antes de ejecutar Racket: hay que correr primero la Etapa 1 (sección 9.1). Si `horarios_finales.json` ya existe, se sobrescribe.
+
+La prueba imprime cinco secciones, una por paso del flujo:
+
+| Sección de `test.rkt` | Qué hace |
+|:-:|---|
+| **1** | Carga el catálogo desde `../data/output_schedule.json` y muestra el total de cursos. |
+| **2** | Carga `../data/preferencias.json` y muestra el rango de créditos y la cantidad de cursos de interés. |
+| **3** | Cruza catálogo y preferencias (`prepare-candidate-courses`) y detalla los grupos candidatos de cada curso. |
+| **4** | Genera el stream de combinaciones, lo filtra por `[min_credits, max_credits]`, imprime cada combinación con sus créditos y el total de combinaciones válidas. |
+| **5** | Exporta el stream filtrado a `../data/horarios_finales.json` y confirma con `Archivo guardado en ../data/horarios_finales.json con exito.` |
 
 ### 9.3 🟧 Etapa 3 · Prolog
 
@@ -799,13 +897,15 @@ racket test.rkt
 
 ```bash
 cd etapa3_prolog
-swipl -q -s main.pl -g main -t halt
+swipl -g main -t halt -s main.pl
 ```
 
 | Sistema | Comando |
 |---|---|
-| Windows (PowerShell / CMD) | `swipl.exe -q -s main.pl -g main -t halt` |
-| Linux / macOS | `swipl -q -s main.pl -g main -t halt` |
+| Windows (PowerShell / CMD) | `swipl -g main -t halt -s main.pl` |
+| Linux / macOS | `swipl -g main -t halt -s main.pl` |
+
+`-s main.pl` carga el script, `-g main` ejecuta `main/0` al terminar la carga y `-t halt` cierra SWI-Prolog al terminar. Se puede agregar `-q` para suprimir los mensajes informativos del arranque. El paso a paso completo (instalación, orden de las etapas y verificación) está en la [sección 9.4](#94-flujo-de-ejecución-completo-etapas-1-a-3-en-windows-y-linux).
 
 **Ejecución interactiva** (útil para probar consultas y para la defensa):
 
@@ -833,6 +933,182 @@ swipl main.pl
 
 > [!IMPORTANT]
 > Si `data/resultado_politicas.json` ya existe, se sobrescribe. Los parámetros de política se pueden cambiar editando `politica.pl` y recargando con `cargar_politica('politica.pl')` (ver [16.4](#164-modificar-la-política-durante-la-defensa)).
+
+### 9.4 Flujo de ejecución completo (Etapas 1 a 3) en Windows y Linux
+
+Todo el proyecto se puede ejecutar desde **VS Code**: se abre la carpeta completa del proyecto y se usa una terminal integrada por etapa. Las etapas son programas independientes que se comunican por archivos, así que deben ejecutarse **en orden**, porque cada una lee lo que escribió la anterior:
+
+| Etapa | Carpeta donde se ejecuta | Lee | Escribe |
+|:-:|---|---|---|
+| 🟦 **1** | `etapa1_c/` | `data/plan_estudios.json`, `data/historial_estudiante.json` | `data/output_schedule.json` |
+| 🟪 **2** | `etapa2_racket/` | `data/output_schedule.json`, `data/preferencias.json` | `data/horarios_finales.json` |
+| 🟧 **3** | `etapa3_prolog/` | `data/horarios_finales.json` (y los hechos de `politica.pl`) | `data/resultado_politicas.json` |
+
+> [!NOTE]
+> En algunas copias del repositorio la carpeta de Racket se llama `etapa2_racket` en lugar de `etapa2_racket`. Es la misma carpeta (la que contiene `test.rkt`): basta con usar el nombre que tenga en el comando `cd`.
+
+#### 9.4.1 Preparación del entorno (una sola vez)
+
+**Windows**
+
+1. Descargar **SWI-Prolog** (versión estable) para el sistema operativo desde [swi-prolog.org/download/stable](https://www.swi-prolog.org/download/stable).
+2. Al personalizar la instalación, seleccionar la casilla **«Add SWI-Prolog to the system PATH for all users»**. Así el comando `swipl` se reconoce desde cualquier terminal.
+3. En VS Code, abrir la pestaña de **Extensiones**, buscar **VSC-Prolog** (de Arthur Wang) e instalarlo, para que el editor reconozca el lenguaje.
+4. Cerrar y volver a abrir VS Code para que las terminales tomen el `PATH` actualizado, y comprobar la instalación con `swipl --version`.
+
+GCC (por ejemplo, MinGW-w64) y Racket son los mismos de las Etapas 1 y 2.
+
+**Linux**
+
+En Linux no hay una casilla de `PATH`: los paquetes instalan `swipl` en una ruta que ya está en el `PATH`. Lo que hay que instalar es lo siguiente.
+
+1. **GCC y `make`** (Etapa 1):
+
+```bash
+# Debian / Ubuntu y derivados
+sudo apt update && sudo apt install build-essential
+
+# Fedora
+sudo dnf install gcc make
+
+# Arch Linux
+sudo pacman -S base-devel
+```
+
+2. **Racket, distribución completa** (Etapa 2). No sirve «Minimal Racket», porque `test.rkt` usa `typed/racket`. Lo ideal es usar la misma versión del equipo (la sección [7.3](#73-ingesta-segura-y-cruce-de-datos--json_readerrkt-y-parserrkt) se refiere a Racket 9.3 CS).
+
+```bash
+# Ubuntu y derivados (PPA)
+sudo add-apt-repository ppa:plt/racket
+sudo apt-get update
+sudo apt-get install racket
+```
+
+   Alternativa para cualquier distribución: descargar el instalador `.sh` de [download.racket-lang.org](https://download.racket-lang.org/) y ejecutarlo con `sudo sh racket-<versión>-x86_64-linux-<variante>.sh`. El instalador pregunta dónde instalar y dónde crear los enlaces del sistema; indicar un prefijo como `/usr/local` para que `racket` quede en el `PATH`.
+
+3. **SWI-Prolog** (Etapa 3):
+
+```bash
+# Ubuntu y derivados (PPA oficial de SWI-Prolog)
+sudo apt-get install software-properties-common   # solo si falta apt-add-repository
+sudo apt-add-repository ppa:swi-prolog/stable
+sudo apt-get update
+sudo apt-get install swi-prolog
+
+# Arch Linux
+sudo pacman -S swi-prolog
+```
+
+   Según la documentación oficial, los paquetes de las distribuciones suelen estar desactualizados; por eso se recomienda el PPA en Ubuntu. Otra opción es Flatpak (`flatpak install flathub org.swi_prolog.swipl`); en ese caso el comando es `flatpak run org.swi_prolog.swipl` en lugar de `swipl`, y Flatpak puede requerir permisos para acceder a la carpeta del proyecto.
+
+4. **VS Code y la extensión VSC-Prolog:** instalar VS Code, abrir la pestaña de **Extensiones** y buscar **VSC-Prolog** (de Arthur Wang). Si `swipl` no está en `/usr/bin/swipl` (el valor por defecto de la extensión), se indica la ruta real en el ajuste `prolog.executablePath` (`which swipl` la muestra).
+
+5. **`jq`** (opcional, para los comandos de inspección de la sección [10](#10-batería-de-comandos-de-inspección-y-pruebas)): `sudo apt install jq`.
+
+6. **Verificar la instalación y la codificación:**
+
+```bash
+gcc --version
+racket --version
+swipl --version
+echo $LANG        # debe terminar en UTF-8 (por ejemplo, es_CR.UTF-8 o en_US.UTF-8)
+```
+
+La codificación UTF-8 importa porque los nombres de carrera llevan tilde (`Ingeniería en Computadores`) y deben coincidir con los hechos de `politica.pl`.
+
+#### 9.4.2 Ejecución paso a paso
+
+1. En VS Code, abrir la **carpeta completa del proyecto** (*File → Open Folder*).
+2. Abrir una terminal en la carpeta de cada etapa (clic derecho sobre la carpeta → *Open in Integrated Terminal*, o *Terminal → New Terminal* y luego `cd`).
+3. Ejecutar las tres etapas en orden.
+
+**Etapa 1 · C** (desde `etapa1_c/`)
+
+Windows (PowerShell):
+
+```powershell
+cd etapa1_c
+gcc -Wall -Wextra -std=c99 -Iinclude src/*.c -o cemestre_c
+.\cemestre_c.exe
+```
+
+Linux:
+
+```bash
+cd etapa1_c
+gcc -Wall -Wextra -std=c99 -Iinclude src/*.c -o cemestre_c
+./cemestre_c
+```
+
+En Linux también se puede compilar con `make` (sección [9.1](#91--etapa-1--lenguaje-c)). Salida esperada: `Proceso completado con éxito. Resultados guardados en ../data/output_schedule.json`.
+
+**Etapa 2 · Racket** (desde `etapa2_racket/`; el comando es el mismo en Windows y Linux)
+
+```bash
+cd etapa2_racket
+racket test.rkt
+```
+
+Salida esperada, al final: `Archivo guardado en ../data/horarios_finales.json con exito.` y `Prueba completada con exito!`.
+
+**Etapa 3 · Prolog** (desde `etapa3_prolog/`; el comando es el mismo en Windows y Linux)
+
+```bash
+cd etapa3_prolog
+swipl -g main -t halt -s main.pl
+```
+
+| Opción | Qué hace |
+|---|---|
+| `-s main.pl` | Carga el script `main.pl`, que a su vez consulta `politica.pl`, `modelo.pl`, `loader.pl`, `reglas.pl`, `evaluador.pl` y `exporter.pl`. |
+| `-g main` | Ejecuta el predicado `main/0` cuando termina la carga. |
+| `-t halt` | Cierra SWI-Prolog al terminar (sin esta opción queda abierto el intérprete interactivo). |
+
+Salida esperada: el banner de la sección [9.3](#93--etapa-3--prolog), que termina con `EXITO: Archivo generado en: ../data/resultado_politicas.json`. Al terminar aparece el archivo nuevo **`data/resultado_politicas.json`**.
+
+**Comprobar que el archivo se generó**
+
+Windows (PowerShell):
+
+```powershell
+Test-Path ..\data\resultado_politicas.json
+(Get-Content -Raw -Path "..\data\resultado_politicas.json" | ConvertFrom-Json).Count
+```
+
+Linux:
+
+```bash
+ls -l ../data/resultado_politicas.json
+jq 'length' ../data/resultado_politicas.json
+```
+
+El número de objetos debe coincidir con el de `horarios_finales.json` (sección [10](#10-batería-de-comandos-de-inspección-y-pruebas)).
+
+#### 9.4.3 Equivalencias entre Windows y Linux
+
+| Tarea | Windows (PowerShell) | Linux |
+|---|---|---|
+| Compilar la Etapa 1 | `gcc -Wall -Wextra -std=c99 -Iinclude src/*.c -o cemestre_c` | El mismo comando (o `make`) |
+| Ejecutar el binario de C | `.\cemestre_c.exe` | `./cemestre_c` |
+| Limpiar los compilados | `Remove-Item -Force -ErrorAction SilentlyContinue cemestre_c.exe, *.o` | `rm -f cemestre_c *.o` |
+| Ejecutar Racket | `racket test.rkt` | `racket test.rkt` |
+| Ejecutar Prolog | `swipl -g main -t halt -s main.pl` | `swipl -g main -t halt -s main.pl` |
+| Hacer que `swipl` esté en el `PATH` | Casilla *Add SWI-Prolog to the system PATH for all users* del instalador | Lo resuelve el paquete (`apt`, `pacman`, ...) |
+| Inspeccionar los JSON | `Get-Content` + `ConvertFrom-Json` | `jq` |
+| Separador de rutas en el código | `../data/...` funciona igual en ambos sistemas | `../data/...` |
+
+#### 9.4.4 Problemas frecuentes
+
+| Síntoma | Causa probable | Solución |
+|---|---|---|
+| `swipl` no se reconoce (Windows) o `command not found` (Linux) | SWI-Prolog no está en el `PATH`. | Windows: reinstalar marcando la casilla del `PATH` y reiniciar VS Code. Linux: instalar el paquete (9.4.1) o, con Flatpak, usar `flatpak run org.swi_prolog.swipl`. |
+| Error de existencia de `../data/horarios_finales.json` (o de otro JSON) | Se ejecutó desde la carpeta equivocada o falta correr la etapa anterior. | Ejecutar siempre desde la carpeta de la etapa y respetar el orden 1 → 2 → 3. |
+| `data/resultado_politicas.json` se genera en un lugar inesperado | Prolog se lanzó desde la raíz del repositorio: la ruta de salida es relativa a `etapa3_prolog/` (sección [15.10](#1510-limitaciones-conocidas)). | Hacer `cd etapa3_prolog` antes de ejecutar. |
+| Las selecciones llegan a Prolog con `area` vacía o con créditos `0` | Se usó un `output_schedule.json` o un `horarios_finales.json` generado antes de agregar `area` y `credits`. | Volver a ejecutar las Etapas 1 y 2 en orden. |
+| `Permission denied` al ejecutar `./cemestre_c` (Linux) | El binario no tiene permiso de ejecución. | `chmod +x cemestre_c` o volver a compilar. |
+| Tildes ilegibles en consola o en el JSON | La terminal o el sistema no usan UTF-8. | Verificar `echo $LANG` (Linux) y guardar todos los `.pl` en UTF-8. |
+| `racket: command not found` o error al cargar `typed/racket` | Racket no está en el `PATH` o se instaló «Minimal Racket». | Instalar la distribución completa (9.4.1) y verificar con `racket --version`. |
+| El curso no aparece o la Etapa 1 aborta con `El curso no tiene un área asignada.` | Falta el campo `area` en algún curso de `plan_estudios.json`. | Agregar el `area` a ese curso y volver a ejecutar la Etapa 1. |
 
 ---
 
@@ -866,6 +1142,20 @@ Todos los comandos se ejecutan desde `etapa1_c/` y permiten auditar `data/output
 (Get-Content -Raw -Path "..\data\output_schedule.json" | ConvertFrom-Json).Count
 ```
 
+**5. Ver la cantidad de cursos por área y detectar cursos sin área:**
+
+```powershell
+(Get-Content -Raw -Path "..\data\output_schedule.json" | ConvertFrom-Json) | Group-Object area | Select-Object Name, Count | Sort-Object Name
+```
+
+Una fila con `Name` vacío indica cursos sin `area`, algo que `validator.c` no debería dejar pasar.
+
+**6. Listar los cursos con su carrera y área (útil para documentar la [sección 15.2](#152-asignación-del-área)):**
+
+```powershell
+(Get-Content -Raw -Path "..\data\output_schedule.json" | ConvertFrom-Json) | Sort-Object career, area, code | Select-Object career, area, code, name
+```
+
 ### Linux / macOS (Bash + `jq`)
 
 **1. Listar cursos de semestres 5 y 6:**
@@ -886,6 +1176,18 @@ jq '.[] | select(.code == "CE1107") | {code, name, semester, is_eligible, is_app
 jq 'length' ../data/output_schedule.json
 ```
 
+**4. Ver la cantidad de cursos por área:**
+
+```bash
+jq -r 'group_by(.area) | .[] | "\(.[0].area): \(length)"' ../data/output_schedule.json
+```
+
+**5. Listar los cursos con su carrera y área (útil para documentar la [sección 15.2](#152-asignación-del-área)):**
+
+```bash
+jq -r '.[] | "\(.career) | \(.area) | \(.code) | \(.name)"' ../data/output_schedule.json | sort
+```
+
 ### Inspección de `data/horarios_finales.json` (salida de Racket)
 
 Los rangos de ejemplo (8 y 16) corresponden al `preferencias.json` de la sección 6.2; deben ajustarse si se modifican las preferencias.
@@ -901,6 +1203,9 @@ Los rangos de ejemplo (8 y 16) corresponden al `preferencias.json` de la secció
 
 # Primera combinación completa
 (Get-Content -Raw -Path "..\data\horarios_finales.json" | ConvertFrom-Json)[0] | ConvertTo-Json -Depth 4
+
+# Selecciones sin area o sin credits (debe imprimir 0)
+((Get-Content -Raw -Path "..\data\horarios_finales.json" | ConvertFrom-Json).selections | Where-Object { -not $_.area -or $null -eq $_.credits } | Measure-Object).Count
 ```
 
 **Linux / macOS (Bash + `jq`)**
@@ -917,6 +1222,12 @@ jq '.[0]' ../data/horarios_finales.json
 
 # Pares curso-grupo de cada combinación en una línea
 jq -r '.[] | "\(.total_credits) cr: " + ([.selections[] | "\(.course_code)-G\(.group_number)"] | join(", "))' ../data/horarios_finales.json
+
+# Selecciones sin area o sin credits: debe imprimir 0
+jq '[.[].selections[] | select(.area == null or .area == "" or .credits == null)] | length' ../data/horarios_finales.json
+
+# Áreas presentes en las combinaciones
+jq -r '[.[].selections[].area] | unique[]' ../data/horarios_finales.json
 ```
 
 ### Inspección de `data/resultado_politicas.json` (salida de Prolog)
@@ -966,13 +1277,15 @@ jq 'length' ../data/horarios_finales.json
 | **Independencia del nivel semestral en choques** | El motor evalúa colisiones entre cualesquiera dos cursos elegibles sin restringirlos al mismo semestre, soportando matrículas con cursos de rezago o adelanto. |
 | **Prevención de ciclos de correquisitos** | La comprobación en `prereq_checker.c` valida la matriculabilidad de la materia par sin permitir recursión infinita. |
 | **Tolerancia cero ante datos corruptos** | `validator.c` detiene la ejecución si detecta auto-dependencias, referencias a cursos inexistentes o intervalos de tiempo militar inconsistentes, evitando que datos corruptos lleguen a Racket. |
-| **Frontera tipada contra datos dinámicos** | En `parte2_racket`, `require/typed` junto con desestructuración por patrones (`match-define`) garantiza que ningún dato malformado proveniente de un JSON externo viole las invariantes de tipos de Typed Racket. |
-| **Curso de interés sin grupos utilizables** | Si un curso pedido no es elegible o ninguno de sus grupos solicitados existe, `prepare-candidate-courses` elimina su sublista vacía. Así no anula todas las combinaciones de los demás cursos (detalle en la [sección 12.2](#122-caso-límite-real-curso-de-interés-sin-grupos-utilizables)). |
-| **Combinación vacía** | El caso base de `generar-combinaciones` devuelve una combinación con 0 créditos. Si no queda ningún curso candidato, esa combinación solo supera el filtro cuando `min_credits` es 0. |
+| **Frontera tipada contra datos dinámicos** | En `etapa2_racket`, `require/typed` junto con desestructuración por patrones (`match-define`) garantiza que ningún dato malformado proveniente de un JSON externo viole las invariantes de tipos de Typed Racket. |
+| **Curso de interés sin grupos utilizables** | Si un curso pedido no es elegible o ninguno de sus grupos solicitados existe, `prepare-candidate-courses` elimina su sublista vacía. Además, el generador trata una sublista vacía como un curso omitido, por lo que no anula las combinaciones de los demás cursos (detalle en la [sección 12.2](#122-caso-límite-real-curso-de-interés-sin-grupos-utilizables)). |
+| **Combinación vacía** | El caso base de `generar-combinaciones` produce una combinación con 0 créditos, que es siempre el último elemento del stream. Si no queda ningún curso candidato, esa combinación solo supera el filtro cuando `min_credits` es 0. |
+| **Combinaciones parciales (cursos omitidos)** | El generador incluye también combinaciones que omiten uno o más cursos de interés. Lo que decide si se exportan es el rango de créditos (`filtrar-rango-creditos`): una combinación parcial fuera del rango se descarta como cualquier otra (sección [7.4](#74-generador-de-combinaciones--generatorrkt)). |
+| **Campo `area` ausente o vacío** | `validator.c` lo trata como un error de datos (`El curso no tiene un área asignada.`) y `main.c` aborta antes de exportar, de modo que Racket y Prolog no reciben cursos sin área desde C. Si la llave faltara en un JSON ajeno, `json_reader.rkt` usa `""` por defecto. |
 | **Choques entre carreras en la combinación final** | `generator.rkt` compara los bloques de todos los grupos elegidos sin importar su carrera, porque el estudiante asistiría a todos. Esto es independiente de `has_clash`, que la Etapa 1 calcula solo entre cursos de la misma carrera. |
 | **Resultado vacío tras el filtro de créditos** | Si ninguna combinación cumple el rango, `exportar-combinaciones-json` escribe `[`, una línea vacía y `]`, que sigue siendo JSON válido para la Etapa 3. |
 | **Límites del rango de créditos** | Los extremos son inclusivos: una combinación con exactamente `min_credits` o `max_credits` créditos se exporta. |
-| **Cadenas sin escape en la exportación** | `formato-grupo-json` inserta `code` y `career` tal cual, sin escapar comillas ni barras. Es seguro porque `validator.c` ya sanitiza los códigos y las carreras del catálogo; un valor con `"` o `\` produciría JSON inválido. |
+| **Cadenas sin escape en la exportación** | `formato-grupo-json` inserta `code`, `career` y `area` tal cual, sin escapar comillas ni barras (igual que `exporter.c` con los textos de cada curso). `validator.c` verifica que los códigos tengan solo letras y números y que `career` y `area` no estén vacíos, pero no revisa ni escapa el contenido de `career` ni de `area`. Un valor con `"` o `\` produciría JSON inválido, por lo que esos textos deben escribirse sin comillas ni barras en `plan_estudios.json`. |
 | **Combinación de una sola carrera (100 %)** | `rompe_balance_carrera/5` compara con `>` estricto: una carrera que alcanza exactamente su máximo no viola la regla. Con el máximo en 100, una combinación de una sola carrera es válida, como exige el enunciado (detalle en la [sección 15.6](#156-caso-límite-real-una-sola-carrera-y-combinación-de-0-créditos)). |
 | **Combinación de 0 créditos o lista vacía** | La condición `TotalCreditosCombinacion > 0` precede al cálculo del porcentaje y evita la división por cero. Con la lista vacía ninguna regla se rompe y el resultado es `aprobada`. |
 | **Combinación que viola varias reglas** | Los cortes de `evaluar_combinacion/4` entregan un único resultado: la primera regla violada según el orden de las cláusulas, con su primer testigo (secciones 15.4 y 15.5). |
@@ -993,22 +1306,25 @@ jq 'length' ../data/horarios_finales.json
 | # | Decisión | Alternativa descartada | Justificación |
 |:-:|---|---|---|
 | 1 | **Generación recursiva con la combinación como valor inmutable** (`ScheduleCombination` se reconstruye con `cons` en cada paso). | Acumular en una lista o contador mutable. | Cumple la restricción de no usar `set!` ni estructuras mutables. Los créditos viajan dentro de la combinación y se suman al construirla. |
-| 2 | **Poda al insertar** cada grupo: `grupo-valido-en-combinacion?` se evalúa antes de crear la combinación. | Generar el producto cartesiano completo y filtrar los choques después. | Una combinación parcial con choque se descarta de inmediato y nunca se extiende, con lo que se evita construir las combinaciones completas inválidas. |
+| 2 | **Poda al insertar** cada grupo: `grupo-valido-en-combinacion?` se evalúa antes de crear la combinación. | Generar el producto cartesiano completo y filtrar los choques después. | Una combinación parcial con choque se descarta de inmediato y nunca se extiende, con lo que se evita construir las combinaciones completas inválidas. El choque de un grupo ya no invalida el resto de la combinación: la recursión continúa por la rama que omite ese curso (decisión 12). |
 | 3 | **Recalcular los choques en Racket** en vez de usar `has-clash` de `SelectedGroup`. | Descartar todo grupo con `has-clash = #t`. | `has_clash` (Etapa 1) indica que el grupo choca con algún otro grupo del catálogo, no que choque con los grupos *concretamente elegidos*. Descartarlo eliminaría combinaciones válidas. Además, la Etapa 1 solo compara dentro de una misma carrera y la combinación final debe comparar todo. |
 | 4 | **`filtrar-rango-creditos` como instancia de `filtrar-stream-polimorfico`**, no como recursión nueva. | Escribir un filtro de créditos específico sobre el stream. | El criterio de la etapa pide una función reutilizable para más de un tipo de filtro. Un cambio de criterio (otro rango, otro predicado) solo cambia el predicado. |
 | 5 | **Responsabilidades separadas:** `generator.rkt` no conoce créditos ni formato, y `exporter.rkt` no conoce choques. | Filtrar créditos dentro del generador. | Sigue el orden pedido (generar, filtrar, exportar) y permite probar y modificar cada pieza por separado. |
-| 6 | **El stream se construye desde la lista generada** (`list->lazy-stream`). La pereza se aprovecha en el filtrado y en la escritura, que fuerzan un nodo a la vez. | Un generador que produzca el stream directamente. | `generar-combinaciones` devuelve `(Listof ScheduleCombination)`, de modo que el stream se arma una vez generada la lista. Esta decisión dejó el generador simple y verificable, a costa de que la lista completa exista en memoria antes del filtrado. |
+| 6 | **El generador produce directamente un `LazyStream`.** La pereza abarca generación, filtrado y escritura, que fuerzan un nodo a la vez. | Generar la lista completa de combinaciones y convertirla después con una función `list->lazy-stream` (que por eso ya no existe). | La lista completa no llega a existir en memoria: cada combinación se construye cuando se fuerza su nodo (`insertar-grupo-en-stream`, `expandir-grupos-stream`, `concatenar-streams`). Las promesas memorizan su resultado, así que recorrer el stream otra vez (como hace `test.rkt` al imprimir y luego exportar) no repite el cálculo. |
 | 7 | **Escritura incremental** con `escribir-stream-json`: cada combinación se escribe apenas se fuerza su nodo. | Construir un único `String` o `jsexpr` con todo el archivo y volcarlo al final. | No se materializa el documento completo. Además evita la frontera con `HashTableTop` de `jsexpr` en Typed Racket (sección 7.3). |
 | 8 | **JSON armado con `string-append`**, sin librería de serialización. | `write-json` sobre una estructura `jsexpr`. | Permite escribir elemento por elemento, controlar la indentación y mantener tipos estáticos simples (`String`) en todo `exporter.rkt`. |
 | 9 | **Coma separadora mediante el parámetro `es-primero?`** de la recursión. | Contador o bandera reasignada con `set!`. | Resuelve el estado con recursión e inmutabilidad, como exige la etapa. La llamada recursiva está en posición de cola, así que el recorrido usa pila constante. |
 | 10 | **Rango de créditos inclusivo** en ambos extremos. | Extremo superior exclusivo. | Coincide con la semántica de «créditos mínimos y máximos deseados» del enunciado. |
 | 11 | **Combinaciones con un solo grupo por curso de interés** y solo de los cursos habilitados (`is_eligible`). | Permitir cursos no elegibles. | Respeta la validación de requisitos y correquisitos hecha en C; Racket no la repite. |
+| 12 | **El generador incluye combinaciones que omiten cursos:** cada curso de interés se incluye con uno de sus grupos o se omite (`(concatenar-streams flujo-con-curso (delay flujo-resto))`), y la combinación vacía es siempre el último elemento. | Exigir que toda combinación contenga todos los cursos de interés. | Una versión anterior del generador **descartaba la combinación completa en cuanto había un choque en cualquier curso**. Con los archivos reales eso deja casi sin resultados: `preferencias.json` trae pocos grupos por curso y cada grupo tiene pocos bloques horarios, así que es raro que todos los cursos de interés quepan juntos. Ahora, cuando un grupo choca, el generador **sigue construyendo la combinación sin ese curso** (la rama que lo omite) en lugar de abandonarla, y por eso los horarios generados no necesariamente incluyen todas las preferencias. El rango de créditos (`min_credits` a `max_credits`) es el criterio que decide qué combinaciones se exportan: si los cursos pedidos no caben juntos (por choques) o sus créditos quedan fuera del rango, el estudiante todavía recibe las alternativas parciales que sí cumplen. El costo es que el número de combinaciones crece con el producto de (grupos + 1) por curso. |
+| 13 | **`area` y `credits` por selección en `horarios_finales.json`.** | Que Prolog vuelva a leer `output_schedule.json` para obtener esos datos de cada selección. | `area` es obligatorio en la Etapa 3 (regla de límite por área) y `credits` lo necesita la regla de balance entre carreras. Solo se agregan llaves; los campos y la lógica anteriores no cambian (sección [7.6.1](#761-ampliación-del-contrato-para-la-etapa-3)). |
+| 14 | **`concatenar-streams` genérica** (`All (A)`). | Una concatenación escrita solo para `ScheduleCombination`. | Mismo criterio de la decisión 4: concatenar dos streams no depende del tipo de elemento, y la firma genérica la deja reutilizable. |
 
 ### 12.2 Caso límite real: curso de interés sin grupos utilizables
 
 **Situación.** Un curso listado en `preferencias.json` puede no aportar ningún grupo: porque no es elegible (`is_eligible = #f`), porque no aparece en el catálogo con esa carrera, o porque ninguno de los números de grupo pedidos existe. Por ejemplo, `interested_courses` pide `CE1107` (grupos 1 y 2) y otro curso con un grupo inexistente.
 
-**Problema.** `prepare-candidate-courses` produce una sublista vacía `'()` para ese curso. Si esa sublista llegara a `generar-combinaciones`, el `append-map` sobre sus grupos devolvería `'()`. Como cada nivel de la recursión se apoya en el resultado del siguiente, **el resultado final sería vacío** aunque los demás cursos tuvieran combinaciones válidas.
+**Problema.** `prepare-candidate-courses` produce una sublista vacía `'()` para ese curso. Una sublista vacía no tiene ningún grupo que insertar: `expandir-grupos-stream` devuelve `'()` para ese curso, y si el generador no la tratara de forma explícita, cada nivel de la recursión que se apoya en ese resultado podría quedar sin combinaciones aunque los demás cursos tuvieran combinaciones válidas. Con el generador actual, `generar-combinaciones` ya interpreta una sublista vacía como un curso omitido (continúa con `flujo-resto`), pero el contrato entre `parser.rkt` y `generator.rkt` sigue siendo que cada sublista corresponde a un curso con al menos un grupo, y por eso se conserva el filtro de la resolución.
 
 **Resolución.** La última expresión de `prepare-candidate-courses` descarta las sublistas vacías con el mismo filtro polimórfico:
 
@@ -1020,7 +1336,7 @@ jq 'length' ../data/horarios_finales.json
 
 El curso sin grupos utilizables se ignora y las combinaciones se arman con el resto.
 
-**Caso relacionado: ningún curso utilizable.** Si todas las sublistas se descartan, `generar-combinaciones` recibe `'()` y devuelve la combinación vacía del caso base (0 créditos). Esa combinación pasa por `filtrar-rango-creditos` y solo se exporta si `min_credits` es 0. En el caso habitual queda un arreglo vacío válido (`[`, línea vacía, `]`), y la Etapa 3 recibe JSON bien formado.
+**Caso relacionado: ningún curso utilizable.** Si todas las sublistas se descartan, `generar-combinaciones` recibe `'()` y devuelve un stream con la combinación vacía del caso base (0 créditos). Esa combinación pasa por `filtrar-rango-creditos` y solo se exporta si `min_credits` es 0. En el caso habitual queda un arreglo vacío válido (`[`, línea vacía, `]`), y la Etapa 3 recibe JSON bien formado.
 
 ### 12.3 Justificación del formato de salida
 
@@ -1031,7 +1347,7 @@ El curso sin grupos utilizables se ignora y las combinaciones se arman con el re
 | **JSON en lugar de CSV.** | Una combinación es una estructura anidada (total de créditos y una lista de pares curso-grupo de largo variable). En CSV habría que repetir el total en cada fila de una combinación o codificar la lista dentro de una celda con un delimitador propio. |
 | **Un objeto por combinación, escrito al forzar cada nodo del stream.** | Es el reflejo de la decisión 7: cada elemento del `LazyStream` se convierte en un objeto JSON independiente, y el arreglo se cierra al terminar el stream. El formato se adapta a la escritura incremental. |
 | **Mismo formato y convención `snake_case` que `output_schedule.json` y `preferencias.json`** (`group_number`, `total_credits`). | Toda la tubería usa JSON entre etapas; el consumidor de Prolog trabaja con un único formato y nomenclatura en todos los archivos de entrada. |
-| **Solo `course_code`, `group_number` y `career` por selección, más `total_credits`.** | Son los campos que pide la etapa. El par `(course_code, career)` es la misma identidad que se usa en toda la tubería (sección 11), así que Prolog puede cruzar con `output_schedule.json` para obtener nombre, créditos por curso u horarios sin duplicarlos en cada una de las combinaciones, cuyo número crece con el producto de los grupos. |
+| **`course_code`, `group_number`, `career`, `area` y `credits` por selección, más `total_credits`.** | Los tres primeros son los campos básicos de la etapa, y el par `(course_code, career)` es la misma identidad que se usa en toda la tubería (sección 11). `area` es el campo nuevo obligatorio de la Etapa 3 y `credits` se agregó porque la regla de balance entre carreras suma los créditos de cada carrera dentro de la combinación: incluirlo evita que Prolog tenga que cruzarse con `output_schedule.json` para cada selección. El nombre del curso y los horarios siguen fuera del archivo para no duplicarlos en cada combinación, cuyo número crece con el producto de (grupos + 1) por curso. |
 | **`total_credits` precalculado.** | Ya se acumula al construir la combinación (decisión 1), y la regla de créditos máximos de Prolog puede aplicarse sin recalcular. |
 | **Arreglo vacío válido cuando no hay resultados.** | El consumidor siempre recibe JSON bien formado. Un archivo vacío o truncado haría fallar la lectura en Prolog. |
 
@@ -1039,13 +1355,13 @@ El curso sin grupos utilizables se ignora y las combinaciones se arman con el re
 > Si la Etapa 3 requiere más datos por combinación (por ejemplo, créditos por curso o bloques horarios para reglas de compatibilidad), basta con agregar nuevas llaves a los objetos de `formato-grupo-json` y `formato-combinacion-json`. Los lectores JSON ignoran las llaves que no usan, por lo que los campos actuales no se rompen.
 
 > [!NOTE]
-> **Actualización para la Etapa 3.** El consumidor en Prolog necesitó exactamente esa ampliación: `credits` y `area` por selección (ver [7.6.1](#761-ampliación-del-contrato-para-la-etapa-3)). Con esta decisión no se rompe nada de lo anterior, porque solo se agregan llaves a los objetos.
+> **Actualización para la Etapa 3.** El consumidor en Prolog necesitó exactamente esa ampliación y ya está implementada en `formato-grupo-json`: `area` y `credits` por selección (ver [7.6.1](#761-ampliación-del-contrato-para-la-etapa-3)). Con esta decisión no se rompe nada de lo anterior, porque solo se agregan llaves a los objetos.
 
 ---
 
 ## 13. Estructuras de Datos Desarrolladas
 
-Todas las estructuras de `parte2_racket/types.rkt` son `struct` inmutables y `#:transparent`; el módulo las publica con `(provide (all-defined-out))`.
+Todas las estructuras de `etapa2_racket/types.rkt` son `struct` inmutables y `#:transparent`; el módulo las publica con `(provide (all-defined-out))`.
 
 ### 13.1 Tipos de `types.rkt` (campos completos)
 
@@ -1071,7 +1387,7 @@ Todas las estructuras de `parte2_racket/types.rkt` son `struct` inmutables y `#:
 | **`Group`** | `group-number` | `Integer` |
 | | `has-clash` | `Boolean` |
 | | `schedules` | `(Listof ScheduleBlock)` |
-| **`Course`** | `code`, `name`, `career` | `String` |
+| **`Course`** | `code`, `name`, `career`, `area` | `String` |
 | | `credits`, `semester` | `Integer` |
 | | `is-approved`, `is-eligible`, `has-any-schedule-clash` | `Boolean` |
 | | `prerequisites`, `corequisites` | `(Listof String)` |
@@ -1080,7 +1396,7 @@ Todas las estructuras de `parte2_racket/types.rkt` son `struct` inmutables y `#:
 | | `groups` | `(Listof Integer)` |
 | **`Preferences`** | `min-credits`, `max-credits` | `Integer` |
 | | `interested-courses` | `(Listof InterestedCourse)` |
-| **`SelectedGroup`** | `code`, `name`, `career` | `String` |
+| **`SelectedGroup`** | `code`, `name`, `career`, `area` | `String` |
 | | `credits`, `group-number` | `Integer` |
 | | `has-clash` | `Boolean` |
 | | `schedules` | `(Listof ScheduleBlock)` |
@@ -1094,10 +1410,9 @@ Todas las estructuras de `parte2_racket/types.rkt` son `struct` inmutables y `#:
 | 1 | `load-catalog-from-json` | `Path-String` | `(Listof Course)` |
 | 2 | `load-preferences-from-json` | `Path-String` | `Preferences` |
 | 3 | `prepare-candidate-courses` | `(Listof Course)`, `Preferences` | `(Listof (Listof SelectedGroup))` |
-| 4 | `generar-combinaciones` | `(Listof (Listof SelectedGroup))` | `(Listof ScheduleCombination)` |
-| 5 | `list->lazy-stream` | `(Listof ScheduleCombination)` | `(LazyStream ScheduleCombination)` |
-| 6 | `filtrar-rango-creditos` | `Integer`, `Integer`, `(LazyStream ScheduleCombination)` | `(LazyStream ScheduleCombination)` |
-| 7 | `exportar-combinaciones-json` | `String`, `(LazyStream ScheduleCombination)` | `Void` (archivo `horarios_finales.json`) |
+| 4 | `generar-combinaciones` | `(Listof (Listof SelectedGroup))` | `(LazyStream ScheduleCombination)` |
+| 5 | `filtrar-rango-creditos` | `Integer`, `Integer`, `(LazyStream ScheduleCombination)` | `(LazyStream ScheduleCombination)` |
+| 6 | `exportar-combinaciones-json` | `String`, `(LazyStream ScheduleCombination)` | `Void` (archivo `horarios_finales.json`) |
 
 ### 13.3 Tuplas intermedias de `json_reader.rkt`
 
@@ -1105,7 +1420,7 @@ Todas las estructuras de `parte2_racket/types.rkt` son `struct` inmutables y `#:
 
 | Tupla | Posiciones |
 |---|---|
-| **Curso** `(List String String String Integer Integer Boolean Boolean Boolean (Listof String) (Listof String) (Listof Grupo))` | `code`, `name`, `career`, `credits`, `semester`, `is_approved`, `is_eligible`, `has_any_schedule_clash`, `prerequisites`, `corequisites`, `groups` |
+| **Curso** `(List String String String String Integer Integer Boolean Boolean Boolean (Listof String) (Listof String) (Listof Grupo))` | `code`, `name`, `career`, `area`, `credits`, `semester`, `is_approved`, `is_eligible`, `has_any_schedule_clash`, `prerequisites`, `corequisites`, `groups` |
 | **Grupo** `(List Integer Boolean (Listof Bloque))` | `group_number`, `has_clash`, `schedules` |
 | **Bloque** `(List Integer Integer Integer)` | `day`, `start_time`, `end_time` |
 | **Preferencias** `(List Integer Integer (Listof (List String String (Listof Integer))))` | `min_credits`, `max_credits`, lista de `(code, career, groups)` |
@@ -1120,8 +1435,8 @@ Los campos ausentes toman valores por defecto (`""`, `0`, `#f`, `'()`) y, si la 
 | `filters.rkt` | `filtrar-lista-polimorfico`, `filtrar-stream-polimorfico`, `stream->list-polimorfico` | — |
 | `json_reader.rkt` | `read-catalog-raw`, `read-preferences-raw` | — |
 | `parser.rkt` | `load-catalog-from-json`, `load-preferences-from-json`, `prepare-candidate-courses` | `raw->schedule-block`, `raw->group`, `raw->course`, `raw->interested-course` |
-| `generator.rkt` | `generar-combinaciones` | `bloques-chocan?`, `choca-con-lista?`, `grupo-valido-en-combinacion?` |
-| `exporter.rkt` | `list->lazy-stream`, `filtrar-rango-creditos`, `exportar-combinaciones-json` | `formato-grupo-json`, `grupos->json`, `formato-combinacion-json`, `escribir-stream-json` |
+| `generator.rkt` | `generar-combinaciones` | `bloques-chocan?`, `choca-con-lista?`, `horarios-grupo-chocan?`, `extraer-horarios`, `grupo-valido-en-combinacion?`, `concatenar-streams`, `insertar-grupo-en-stream`, `expandir-grupos-stream` |
+| `exporter.rkt` | `filtrar-rango-creditos`, `exportar-combinaciones-json` | `formato-grupo-json`, `grupos->json`, `formato-combinacion-json`, `escribir-stream-json` |
 | `test.rkt` | — (script de prueba integral) | — |
 
 > [!NOTE]
@@ -1135,6 +1450,7 @@ Los campos ausentes toman valores por defecto (`""`, `0`, `#f`, `'()`) y, si la 
 | `filtrar-lista-polimorfico` | `Group` | `prepare-candidate-courses`: conserva solo los grupos pedidos. |
 | `filtrar-lista-polimorfico` | `(Listof SelectedGroup)` | `prepare-candidate-courses`: elimina las sublistas vacías (sección 12.2). |
 | `filtrar-stream-polimorfico` | `ScheduleCombination` | `filtrar-rango-creditos` (`exporter.rkt`): filtra por rango de créditos. |
+| `concatenar-streams` | `ScheduleCombination` | `expandir-grupos-stream` y `generar-combinaciones` (`generator.rkt`): concatenan de forma perezosa los streams de combinaciones. Es privada del módulo. |
 
 ---
 
@@ -1280,13 +1596,13 @@ El `Id` de cada combinación **no viene en el JSON**: lo asigna el cargador de f
     { "course_code": "CE1107", "group_number": 1, "credits": 4,
       "career": "Ingeniería en Computadores", "area": "Computadores" },
     { "course_code": "MA1102", "group_number": 1, "credits": 4,
-      "career": "Ingeniería en Computadores", "area": "Matemática" } ] }
+      "career": "Ingeniería en Computadores", "area": "Matemáticas" } ] }
 ```
 
 ```prolog
 combinacion_entrada(1, 8, [
     curso('CE1107', 1, 4, 'Ingeniería en Computadores', 'Computadores'),
-    curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemática')
+    curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemáticas')
 ]).
 ```
 
@@ -1422,19 +1738,20 @@ Es el **contrato de la Etapa 4 (Java)**. Contiene un arreglo JSON con **un objet
 [
   {
     "id_combinacion": 1,
-    "cumple_politicas": true,
-    "razon": "Ninguna",
+    "cumple_politicas": false,
+    "razon": "Cursos incompatibles: CE1107 y CE1105",
     "cursos": [
       { "codigo": "CE1107", "grupo": 1 },
-      { "codigo": "MA1102", "grupo": 1 }
+      { "codigo": "MA1102", "grupo": 1 },
+      { "codigo": "CE1105", "grupo": 1 },
+      { "codigo": "CS1502", "grupo": 1 }
     ]
   },
   {
-    "id_combinacion": 2,
-    "cumple_politicas": false,
-    "razon": "Cursos incompatibles: CE1105 y CE1107",
+    "id_combinacion": 4,
+    "cumple_politicas": true,
+    "razon": "Ninguna",
     "cursos": [
-      { "codigo": "CE1105", "grupo": 1 },
       { "codigo": "CE1107", "grupo": 1 },
       { "codigo": "MA1102", "grupo": 1 }
     ]
@@ -1443,7 +1760,7 @@ Es el **contrato de la Etapa 4 (Java)**. Contiene un arreglo JSON con **un objet
 ```
 
 > [!NOTE]
-> Ejemplo ilustrativo. SWI-Prolog decide el orden de las llaves de cada objeto y el espaciado, por lo que el consumidor debe leer los campos **por nombre** y no por posición.
+> Fragmento con los ids 1 y 4 de las 17 combinaciones que producen los archivos del repositorio (ver [15.11](#1511-ejemplo-de-extremo-a-extremo-con-los-archivos-reales)); el orden de `cursos` es el de `preferencias.json`. SWI-Prolog decide el orden de las llaves de cada objeto y el espaciado, por lo que el consumidor debe leer los campos **por nombre** y no por posición.
 
 | Campo | Tipo | Origen | Requisito de la etapa que cubre |
 |---|---|---|---|
@@ -1489,15 +1806,88 @@ Una combinación se representa con **términos compuestos y listas**: `combinaci
 
 ### 15.2 Asignación del área
 
-El campo `area` se asigna en la Etapa 1 (C) y se propaga por Racket hasta Prolog, donde se trata como un **átomo opaco**: la regla de límite por área cuenta cuántos cursos de la combinación tienen exactamente el mismo átomo. Por eso la **granularidad** con que se defina el área determina cuán restrictiva es la regla.
+El campo `area` se declara por curso en `plan_estudios.json`, lo lee y lo exige la Etapa 1 (C) y se propaga por Racket hasta Prolog (sección [6.3.1](#631-propagación-del-campo-area-de-c-a-prolog)), donde se trata como un **átomo opaco**: la regla de límite por área cuenta cuántos cursos de la combinación tienen exactamente el mismo átomo. Por eso la **granularidad** con que se defina el área determina cuán restrictiva es la regla.
 
-> [!WARNING]
-> **Pendiente de completar por el grupo.** El enunciado exige justificar la forma de asignar el área con ejemplos de los planes elegidos. Los archivos de Prolog no contienen esa información (solo la consumen), así que debe documentarse aquí:
->
-> - Criterio usado para asignar el área (por ejemplo: por departamento, por eje temático o por prefijo del código del curso).
-> - Ejemplos concretos de **Ingeniería en Computadores** (curso → área).
-> - Ejemplos concretos de **Ingeniería en Biotecnología** (curso → área).
-> - Cómo se asigna el área a los cursos compartidos entre ambas carreras (por ejemplo `MA1102`).
+**Criterio usado.** El área se asigna por el **prefijo de dos letras del código del curso**, que identifica la escuela o el departamento que lo imparte. Es una regla de un solo paso y sin excepciones: todos los cursos con el mismo prefijo llevan la misma área, en cualquiera de las dos carreras. Se eligió porque es objetivo y reproducible (no depende de interpretar el contenido de cada curso), porque un curso nuevo solo necesita su código para quedar clasificado y porque garantiza por construcción que un curso compartido entre carreras tenga la misma área en ambos planes.
+
+| Prefijo | Área asignada | Entradas | Cursos distintos | Ejemplos (código y nombre) |
+|:-:|---|:-:|:-:|---|
+| `AE` | `Administración de Empresas` | 2 | 1 | `AE4208` Desarrollo De Emprendedores |
+| `BI` | `Biología` | 2 | 2 | `BI1101` Biología General, `BI1102` Laboratorio De Biología General |
+| `CE` | `Computadores` | 22 | 22 | `CE1101` Introducción A La Programación, `CE1104` Fundamentos De Sistemas Computacionales, `CE1103` Algoritmos Y Estructuras De Datos I, … |
+| `CI` | `Idiomas` | 8 | 8 | `CI1407` Habilidades De Comunicación En Ingeniería, `CI3203` Inglés Especializado Para Ingenierías En Computadores, `CI0200` Examen Diagnóstico, … |
+| `CS` | `Ciencias sociales` | 7 | 6 | `CS1502` Introducción A La Técnica Ciencia Y Tecnología, `CS2101` Ambiente Humano, `CS3404` Seminario De Ética Para La Ingeniería, … |
+| `EL` | `Electrónica` | 3 | 3 | `EL2113` Circuitos Eléctricos En Corriente Continua, `EL2114` Circuitos Eléctricos En Corriente Alterna, `EL2207` Elementos Activos |
+| `FH` | `Humanística` | 2 | 1 | `FH1000` Centros De Formación Humanística |
+| `FI` | `Física` | 5 | 5 | `FI1101` Física General I, `FI1201` Laboratorio Física General I, `FI1102` Física General II, … |
+| `IB` | `Biotecnología` | 37 | 37 | `IB1601` Introducción A La Biotecnología, `IB2113` Análisis Estadístico Para Biotecnología, `IB2203` Anatomía Vegetal, … |
+| `MA` | `Matemáticas` | 7 | 5 | `MA0101` Matemática General, `MA1102` Cálculo Diferencial E Integral, `MA1403` Matemática Discreta, … |
+| `PI` | `Producción Industrial` | 1 | 1 | `PI2609` Probabilidad Y Estadística |
+| `QU` | `Química` | 8 | 6 | `QU1102` Laboratorio De Química Básica I, `QU1106` Química Básica I, `QU1104` Laboratorio De Química Básica II, … |
+| `SE` | `Complementarias` | 6 | 3 | `SE1100` Actividad Cultural I, `SE1200` Actividad Deportiva I, `SE1400` Actividad Cultural-Deportiva |
+| `SO` | `Seguridad Laboral e Higiene Ambiental` | 1 | 1 | `SO4604` Seguridad Y Salud Ocupacional |
+
+**Ejemplos de Ingeniería en Computadores** (48 cursos, 12 áreas; curso → área):
+
+| Área | Cursos | Ejemplos (código y nombre) |
+|---|:-:|---|
+| `Computadores` | 22 | `CE1101` Introducción A La Programación, `CE1104` Fundamentos De Sistemas Computacionales, `CE1103` Algoritmos Y Estructuras De Datos I, … |
+| `Matemáticas` | 5 | `MA0101` Matemática General, `MA1102` Cálculo Diferencial E Integral, `MA1403` Matemática Discreta, … |
+| `Física` | 4 | `FI1101` Física General I, `FI1201` Laboratorio Física General I, `FI1102` Física General II, … |
+| `Ciencias sociales` | 3 | `CS1502` Introducción A La Técnica Ciencia Y Tecnología, `CS2101` Ambiente Humano, `CS3404` Seminario De Ética Para La Ingeniería |
+| `Complementarias` | 3 | `SE1100` Actividad Cultural I, `SE1200` Actividad Deportiva I, `SE1400` Actividad Cultural-Deportiva |
+| `Electrónica` | 3 | `EL2113` Circuitos Eléctricos En Corriente Continua, `EL2114` Circuitos Eléctricos En Corriente Alterna, `EL2207` Elementos Activos |
+| `Idiomas` | 2 | `CI1407` Habilidades De Comunicación En Ingeniería, `CI3203` Inglés Especializado Para Ingenierías En Computadores |
+| `Química` | 2 | `QU1102` Laboratorio De Química Básica I, `QU1106` Química Básica I |
+| `Administración de Empresas` | 1 | `AE4208` Desarrollo De Emprendedores |
+| `Humanística` | 1 | `FH1000` Centros De Formación Humanística |
+| `Producción Industrial` | 1 | `PI2609` Probabilidad Y Estadística |
+| `Seguridad Laboral e Higiene Ambiental` | 1 | `SO4604` Seguridad Y Salud Ocupacional |
+
+**Ejemplos de Ingeniería en Biotecnología** (63 cursos, 10 áreas; curso → área):
+
+| Área | Cursos | Ejemplos (código y nombre) |
+|---|:-:|---|
+| `Biotecnología` | 37 | `IB1601` Introducción A La Biotecnología, `IB2113` Análisis Estadístico Para Biotecnología, `IB2203` Anatomía Vegetal, … |
+| `Idiomas` | 6 | `CI0200` Examen Diagnóstico, `CI0202` Inglés Básico, `CI1106` Comunicación Escrita, … |
+| `Química` | 6 | `QU1102` Laboratorio De Química Básica I, `QU1106` Química Básica I, `QU1104` Laboratorio De Química Básica II, … |
+| `Ciencias sociales` | 4 | `CS1502` Introducción A La Técnica Ciencia Y Tecnología, `CS3301` Derecho Ambiental Y Biotecnológico, `CS3401` Seminario De Estudios Filosóficos Históricos, … |
+| `Complementarias` | 3 | `SE1100` Actividad Cultural I, `SE1200` Actividad Deportiva I, `SE1400` Actividad Cultural-Deportiva |
+| `Biología` | 2 | `BI1101` Biología General, `BI1102` Laboratorio De Biología General |
+| `Matemáticas` | 2 | `MA0101` Matemática General, `MA1102` Cálculo Diferencial E Integral |
+| `Administración de Empresas` | 1 | `AE4208` Desarrollo De Emprendedores |
+| `Física` | 1 | `FI1105` Física Para Biotecnología |
+| `Humanística` | 1 | `FH1000` Centros De Formación Humanística |
+
+**Cursos compartidos entre ambas carreras.** 10 códigos aparecen en los dos planes. Como el área depende solo del prefijo, llevan la misma área en las dos carreras, y así ocurre en los 10 casos del catálogo:
+
+| Código | Nombre | Área (en ambas carreras) |
+|---|---|---|
+| `MA0101` | Matemática General | `Matemáticas` |
+| `MA1102` | Cálculo Diferencial E Integral | `Matemáticas` |
+| `QU1102` | Laboratorio De Química Básica I | `Química` |
+| `QU1106` | Química Básica I | `Química` |
+| `SE1100` | Actividad Cultural I | `Complementarias` |
+| `SE1200` | Actividad Deportiva I | `Complementarias` |
+| `CS1502` | Introducción A La Técnica Ciencia Y Tecnología | `Ciencias sociales` |
+| `SE1400` | Actividad Cultural-Deportiva | `Complementarias` |
+| `FH1000` | Centros De Formación Humanística | `Humanística` |
+| `AE4208` | Desarrollo De Emprendedores | `Administración de Empresas` |
+
+Por ejemplo, `MA1102` (Cálculo Diferencial e Integral) es `Matemáticas` tanto en Computadores (semestre 1) como en Biotecnología (semestre 2). Como Prolog compara únicamente el átomo del área y **no la carrera**, una combinación que mezcle carreras cuenta en el mismo grupo todos los cursos con la misma área, sin importar de qué plan vienen (por ejemplo, `MA1102` de una carrera y cualquier otro curso `MA` de la otra).
+
+**Cómo condiciona la regla.** Con la política actual (`max_cursos_area(2)`, sección [15.4](#154-orden-de-las-reglas-y-un-caso-donde-cambia-la-razón)), una combinación puede tener como máximo 2 cursos por área, y el tamaño de cada área depende de cuántos cursos tenga su prefijo:
+
+- Las áreas más numerosas son `Biotecnología` (37 cursos, todos los `IB`) y `Computadores` (22 cursos, todos los `CE`); son donde más se nota el límite.
+- `Idiomas` (8 cursos), `Química` (6), `Matemáticas` (5) y `Ciencias sociales` (6) tienen suficientes cursos para disparar la regla.
+- Las áreas con a lo sumo 2 cursos distintos (`Administración de Empresas`, `Biología`, `Humanística`, `Producción Industrial` y `Seguridad Laboral e Higiene Ambiental`) **nunca** pueden violar un límite de 2.
+
+**Observaciones sobre los datos actuales.**
+
+- **El área sigue al prefijo, no al contenido.** Algunos cursos quedan en un área que no coincide con su tema, y es una consecuencia aceptada del criterio: `IB2113` (Análisis Estadístico para Biotecnología) es `Biotecnología` y no `Matemáticas`; `CE1111` (Análisis Numérico para la Ingeniería) y `CE2201` (Laboratorio de Circuitos Eléctricos) son `Computadores`, mientras que `EL2113` (Circuitos Eléctricos en Corriente Continua) es `Electrónica`; y `CI0200` (Examen Diagnóstico) es `Idiomas`. Si el grupo quisiera clasificar por contenido, habría que corregir el dato en `plan_estudios.json` sin tocar el código.
+- **Los cursos de 0 créditos cuentan para el límite por área.** Los cursos con 0 créditos (`CI0200`, `FH1000`, `SE1100`, `SE1200`, `SE1400`) siguen sumando al conteo de su área: por ejemplo, `SE1100`, `SE1200` y `SE1400` son `Complementarias` y tres de ellos juntos en una combinación producirían `Excede limite en area Complementarias: 3 > 2` aunque no aporten créditos.
+- **Los datos de área no se normalizan.** `validator.c` exige que el área no esté vacía pero no corrige mayúsculas ni tildes, así que `Matemáticas` y `Matematicas` serían áreas distintas (sección 11). Los nombres de las 14 áreas deben escribirse siempre igual.
+- **Versión anterior del criterio.** Una versión previa del catálogo asignaba el área por eje temático (con etiquetas como `Computación`, `Humanidades` o `Ciencias Básicas`). Se reemplazó por el criterio de prefijo, que unifica etiquetas y elimina casos inconsistentes como el de `CI0200`, que tenía un área propia (`Básicas`).
 
 ### 15.3 Pares declarados incompatibles
 
@@ -1517,32 +1907,34 @@ La política declara **cuatro pares** (el enunciado exige al menos dos en los do
 
 El orden con que se evalúan las reglas **no cambia el veredicto** (`es_valida/2` es una conjunción de negaciones), pero sí cambia **qué razón se reporta** cuando una combinación viola más de una regla. La prioridad actual es: **1) incompatibilidad, 2) balance entre carreras, 3) límite por área**.
 
-**Caso.** Una combinación con tres cursos del área `Computadores`, entre ellos el par incompatible `CE1105` y `CE1107` (el código `CE2201` es ilustrativo):
+**Caso real (reproducible con los archivos del repositorio).** La combinación n.° 2 que producen `preferencias.json` y los horarios del catálogo es `CE1107-G1`, `MA1102-G1` y `CE1105-G1` (11 créditos). Con la política por defecto solo viola la incompatibilidad. Para ver el efecto del orden hay que bajar temporalmente el límite por área a 1 (`max_cursos_area(1)` en `politica.pl`), con lo que viola dos reglas a la vez:
 
 ```prolog
-combinacion_entrada(3, 12, [
-    curso('CE1105', 1, 4, 'Ingeniería en Computadores', 'Computadores'),
+combinacion_entrada(2, 11, [
     curso('CE1107', 1, 4, 'Ingeniería en Computadores', 'Computadores'),
-    curso('CE2201', 1, 4, 'Ingeniería en Computadores', 'Computadores')
+    curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemáticas'),
+    curso('CE1105', 1, 3, 'Ingeniería en Computadores', 'Computadores')
 ]).
 ```
 
 | Regla | ¿Se viola? | Testigo |
 |---|:-:|---|
-| Incompatibilidad | Sí | `CE1105` y `CE1107` |
+| Incompatibilidad | Sí | `CE1107` y `CE1105` |
 | Balance entre carreras | No | 100 % ≤ 100 % |
-| Límite por área | Sí | Área `Computadores`: 3 cursos > 2 |
+| Límite por área (con `max_cursos_area(1)`) | Sí | Área `Computadores`: 2 cursos > 1 |
 
 | Orden de cláusulas en `evaluar_combinacion/4` | Razón reportada | Texto exportado |
 |---|---|---|
-| **Actual:** incompatibilidad → balance → área | `incompatibilidad('CE1105', 'CE1107')` | `Cursos incompatibles: CE1105 y CE1107` |
-| **Alterno:** área → balance → incompatibilidad | `limite_area('Computadores', 3, 2)` | `Excede limite en area Computadores: 3 > 2` |
+| **Actual:** incompatibilidad → balance → área | `incompatibilidad('CE1107', 'CE1105')` | `Cursos incompatibles: CE1107 y CE1105` |
+| **Alterno:** área → balance → incompatibilidad | `limite_area('Computadores', 2, 1)` | `Excede limite en area Computadores: 2 > 1` |
 
 Para obtener el orden alterno solo hay que reordenar las cláusulas 2, 3 y 4 de `evaluar_combinacion/4`; no se modifica ninguna regla.
 
+**Variante con el límite por defecto (ilustrativa).** Con `max_cursos_area(2)` hacen falta tres cursos del área `Computadores`, por ejemplo `CE1104`, `CE1105` y `CE1107` (3 + 3 + 4 = 10 créditos): violan la incompatibilidad (`CE1105`–`CE1107`) y el límite por área (3 > 2), y el orden decide cuál se reporta (`Cursos incompatibles: …` con el orden actual y `Excede limite en area Computadores: 3 > 2` con el alterno). Con el estudiante de ejemplo `CE1104` no es elegible, así que esta variante no aparece en los datos actuales.
+
 **Por qué se eligió el orden actual.** La incompatibilidad es una prohibición categórica sobre un par concreto de cursos y produce la indicación más accionable para el estudiante (quitar uno de los dos). El balance y el límite por área son propiedades agregadas de la combinación completa.
 
-**Caso del balance.** Con la política actual (100 %) el balance no se dispara. Para provocarlo basta con bajar el máximo, por ejemplo `max_porcentaje_carrera('Ingeniería en Computadores', 60)`: una combinación con 8 de 12 créditos de Computadores (66,67 %) se rechaza con `Excede balance en Ingeniería en Computadores: 66.67% > 60.00%`.
+**Caso del balance.** Con la política actual (100 %) el balance no se dispara, y con los datos de ejemplo tampoco se podría mostrar mezcla de carreras porque todos los cursos de interés son de Computadores. Para provocarlo basta con bajar el máximo, por ejemplo `max_porcentaje_carrera('Ingeniería en Computadores', 60)`: una combinación **hipotética** con 8 de 12 créditos de Computadores (66,67 %) se rechaza con `Excede balance en Ingeniería en Computadores: 66.67% > 60.00%`. Con esa política y los datos reales, las 17 combinaciones tienen el 100 % de sus créditos en Computadores y las que no violan otra regla se rechazarían por balance (100,00 % > 60,00 %).
 
 ### 15.5 Justificación de corte y negación por falla
 
@@ -1597,7 +1989,7 @@ Para obtener el orden alterno solo hay que reordenar las cláusulas 2, 3 y 4 de 
 | Al menos un predicado usable en más de un modo, con ejemplos | `cursos_incompatibles/2`, `rompe_incompatibilidad/3`, `curso_en_combinacion/2` y otros (sección 16.2). |
 | Recorrer todas las combinaciones por *backtracking* y exportar | `evaluar_todas/1` (`findall/3` sobre `combinacion_entrada/3`) y `exportar_resultados/1`. |
 | Sin `assert`/`retract` ni variables globales para resultados intermedios | `assertz/1` y `retractall/1` aparecen **solo** en `loader.pl` (y en el paso A de `main.pl`) para los datos de entrada. Los resultados se obtienen con argumentos, unificación y `findall/3`. |
-| Ejecutable desde la línea de comandos con `swipl` | Sección [9.3](#93--etapa-3--prolog). |
+| Ejecutable desde la línea de comandos con `swipl` | Secciones [9.3](#93--etapa-3--prolog) y [9.4](#94-flujo-de-ejecución-completo-etapas-1-a-3-en-windows-y-linux). |
 | No generar combinaciones ni filtrar por créditos | `evaluador.pl` solo evalúa las combinaciones cargadas. |
 
 ### 15.9 Otras decisiones de diseño
@@ -1618,12 +2010,67 @@ Para obtener el orden alterno solo hay que reordenar las cláusulas 2, 3 y 4 de 
 | Limitación | Detalle |
 |---|---|
 | **Debe ejecutarse desde `etapa3_prolog/`.** | La ruta de entrada pasa por `resolver_ruta_archivo/2`, pero la de salida (`'../data/resultado_politicas.json'`) se usa tal cual. Desde la raíz del repositorio la lectura funciona y la escritura apuntaría fuera del proyecto. |
-| **`credits` y `area` son indispensables en el JSON.** | Si faltan, el cargador usa los valores por defecto (`0` y `''`) sin avisar. Sin `area`, todos los cursos comparten el área `''` y el límite por área rechazaría combinaciones con más de `N` cursos. Sin `credits`, el balance entre carreras no se calcula correctamente. |
+| **`credits` y `area` son indispensables en el JSON.** | Racket ya los exporta; si faltan (por ejemplo, en un `horarios_finales.json` generado con una versión anterior de la Etapa 2), el cargador usa los valores por defecto (`0` y `''`) sin avisar. Sin `area`, todos los cursos comparten el área `''` y el límite por área rechazaría combinaciones con más de `N` cursos. Sin `credits`, el balance entre carreras no se calcula correctamente. |
 | **Carrera sin hecho de política.** | Si el nombre de la carrera del JSON no coincide exactamente con un `max_porcentaje_carrera/2`, la regla de balance no se aplica a esa carrera (por eso existen los alias cortos). Los archivos fuente deben guardarse en UTF-8 para que los nombres con tilde coincidan. |
 | **Aritmética del porcentaje.** | El cálculo `(Creditos / Total) * 100` puede producir un resto de punto flotante en valores límite (por ejemplo `28.000000000000004`). Una alternativa exacta es comparar `Creditos * 100 > Max * Total` con enteros. |
 | **Un solo testigo por regla.** | Se reporta la primera violación encontrada, no todas, como pide el enunciado. |
 | **Lógica auxiliar repetida.** | `reglas.pl` define `filtrar_por_carrera/3`, `suma_creditos/2` y `contar_por_area/3`, que tienen equivalentes en `modelo.pl` (`cursos_por_carrera/3`, `sumar_creditos_cursos/2`, `contar_cursos_por_area/3`). |
-| **Escritura del archivo.** | `exportar_resultados/1` abre el archivo con `open/3` sin `setup_call_cleanup/3` y sin declarar la codificación; el texto de `razon` puede contener tildes (nombres de carrera). |
+| **Áreas comparadas como texto exacto.** | La regla cuenta cursos con el mismo átomo de área. Etiquetas casi iguales (por ejemplo, con distinta tilde o mayúscula, como `Ciencias sociales` frente a `Ciencias Sociales`) son áreas distintas, y el área no distingue la carrera (sección [15.2](#152-asignación-del-área)). |
+| **Cursos de 0 créditos en el límite por área.** | Cuentan igual que cualquier otro curso del área (por ejemplo, las actividades `Complementarias`, `SE`). |
+| **Escritura del archivo.** | `exportar_resultados/1` abre el archivo con `open/3` sin `setup_call_cleanup/3` y sin declarar la codificación; el texto de `razon` puede contener tildes (nombres de carrera). En Windows la codificación por defecto del flujo puede no ser UTF-8, y entonces esas tildes se escribirían en otra codificación; una solución es abrir el archivo con `open(Ruta, write, Stream, [encoding(utf8)])`, como ya hace `loader.pl` al leer. |
+
+### 15.11 Ejemplo de extremo a extremo con los archivos reales
+
+Esta sección sigue los datos del repositorio (`plan_estudios.json`, `historial_estudiante.json` y `preferencias.json`) a lo largo de las tres etapas.
+
+> [!IMPORTANT]
+> **Procedencia de los resultados.** La Etapa 1 se compiló y ejecutó con estos archivos y generó `output_schedule.json`. Los resultados de Racket y de Prolog se obtuvieron **reproduciendo a mano la lógica de `generator.rkt`, del filtro de créditos y de las reglas de `reglas.pl`/`evaluador.pl`**, no ejecutando `racket` ni `swipl`. Deben coincidir con lo que produce `racket test.rkt` y `swipl -g main -t halt -s main.pl`; si no coinciden, prevalece la salida real.
+
+**1. Etapa 1 (C).** Con el historial de ejemplo (`MA0101`, `CE1101`, `CE1104`, `CI0200`, `CI0202`, `BI1101`) quedan **28** cursos elegibles de los 111. Los cinco cursos de interés de `preferencias.json` son elegibles.
+
+**2. Etapa 2 (Racket).** Los horarios de los grupos candidatos son (día: 1 = lunes … 5 = viernes):
+
+| Curso–grupo | Créditos | Área | Bloques |
+|---|:-:|---|---|
+| `CE1107-G1` | 4 | `Computadores` | martes y jueves 13:00–14:50 |
+| `CE1107-G2` | 4 | `Computadores` | martes y jueves 09:30–11:20 |
+| `MA1102-G1` | 4 | `Matemáticas` | lunes y miércoles 13:00–16:50 |
+| `MA1403-G1` | 4 | `Matemáticas` | martes 13:00–16:50 y viernes 07:30–11:20 |
+| `CE1105-G1` | 3 | `Computadores` | martes 07:30–11:20 |
+| `CS1502-G1` | 1 | `Ciencias sociales` | jueves 07:30–09:20 |
+
+Solo hay dos choques entre grupos de cursos distintos: `CE1107-G1` con `MA1403-G1` (martes 13:00) y `CE1107-G2` con `CE1105-G1` (martes 07:30–11:20). `generar-combinaciones` produce **32** combinaciones sin choques (el producto de las opciones por curso es 3·2·2·2·2 = 48 sin podar; los choques descartan las demás), de las que 15 quedan fuera del rango de 8 a 16 créditos (totales de 0, 1, 3, 4, 5 y 7). `horarios_finales.json` contiene las **17** restantes.
+
+**3. Etapa 3 (Prolog).** Con la política por defecto (`max_cursos_area(2)`, balance al 100 %, cuatro pares incompatibles) el veredicto de cada combinación es:
+
+| Id | Selecciones | Créditos | ¿Cumple? | Razón |
+|:-:|---|:-:|:-:|---|
+| 1 | `CE1107-G1`, `MA1102-G1`, `CE1105-G1`, `CS1502-G1` | 12 | No | Cursos incompatibles: CE1107 y CE1105 |
+| 2 | `CE1107-G1`, `MA1102-G1`, `CE1105-G1` | 11 | No | Cursos incompatibles: CE1107 y CE1105 |
+| 3 | `CE1107-G1`, `MA1102-G1`, `CS1502-G1` | 9 | Sí | Ninguna |
+| 4 | `CE1107-G1`, `MA1102-G1` | 8 | Sí | Ninguna |
+| 5 | `CE1107-G1`, `CE1105-G1`, `CS1502-G1` | 8 | No | Cursos incompatibles: CE1107 y CE1105 |
+| 6 | `CE1107-G2`, `MA1102-G1`, `MA1403-G1`, `CS1502-G1` | 13 | Sí | Ninguna |
+| 7 | `CE1107-G2`, `MA1102-G1`, `MA1403-G1` | 12 | Sí | Ninguna |
+| 8 | `CE1107-G2`, `MA1102-G1`, `CS1502-G1` | 9 | Sí | Ninguna |
+| 9 | `CE1107-G2`, `MA1102-G1` | 8 | Sí | Ninguna |
+| 10 | `CE1107-G2`, `MA1403-G1`, `CS1502-G1` | 9 | Sí | Ninguna |
+| 11 | `CE1107-G2`, `MA1403-G1` | 8 | Sí | Ninguna |
+| 12 | `MA1102-G1`, `MA1403-G1`, `CE1105-G1`, `CS1502-G1` | 12 | Sí | Ninguna |
+| 13 | `MA1102-G1`, `MA1403-G1`, `CE1105-G1` | 11 | Sí | Ninguna |
+| 14 | `MA1102-G1`, `MA1403-G1`, `CS1502-G1` | 9 | Sí | Ninguna |
+| 15 | `MA1102-G1`, `MA1403-G1` | 8 | Sí | Ninguna |
+| 16 | `MA1102-G1`, `CE1105-G1`, `CS1502-G1` | 8 | Sí | Ninguna |
+| 17 | `MA1403-G1`, `CE1105-G1`, `CS1502-G1` | 8 | Sí | Ninguna |
+
+**Resultado:** 17 objetos en `resultado_politicas.json`, **14 aprobados y 3 rechazados** (ids 1, 2 y 5), todos por el par incompatible `CE1107`–`CE1105` (el par declarado a propósito en [15.3](#153-pares-declarados-incompatibles)).
+
+**Qué muestra este ejemplo sobre las reglas.**
+
+- **Límite por área en su frontera.** Las combinaciones 6, 7 y 12 a 15 incluyen `MA1102` y `MA1403`, dos cursos de `Matemáticas`; como la comparación es `2 > 2` (falsa), se aprueban. Con `max_cursos_area(1)` se rechazarían.
+- **Balance con una sola carrera.** Todas las combinaciones son 100 % de Computadores: `100 > 100` es falso y el balance no se dispara (sección [15.6](#156-caso-límite-real-una-sola-carrera-y-combinación-de-0-créditos)).
+- **Un solo motivo por combinación.** Las combinaciones 1, 2 y 5 tienen solo la incompatibilidad como violación; el caso en que el orden de las reglas cambia la razón se reproduce en [15.4](#154-orden-de-las-reglas-y-un-caso-donde-cambia-la-razón).
+- **La combinación vacía no llega a Prolog** con este rango, porque 0 créditos queda por debajo de `min_credits` (8).
 
 ---
 
@@ -1680,9 +2127,9 @@ L = ['FI1101'-'FI1105', 'PI2609'-'IB2113', 'CI1407'-'CI1106', 'CE1105'-'CE1107',
 **Ejemplos con `rompe_incompatibilidad/3`:**
 
 ```prolog
-?- Lista = [ curso('CE1105', 1, 4, 'Ingeniería en Computadores', 'Computadores'),
+?- Lista = [ curso('CE1105', 1, 3, 'Ingeniería en Computadores', 'Computadores'),
              curso('CE1107', 1, 4, 'Ingeniería en Computadores', 'Computadores'),
-             curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemática') ].
+             curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemáticas') ].
 
 % (+,-,-) Generar todos los pares incompatibles de la lista
 ?- rompe_incompatibilidad(Lista, A, B).
@@ -1698,15 +2145,15 @@ A = 'CE1107', B = 'CE1105'.
 
 ```prolog
 ?- C = combinacion(1, 8, [ curso('CE1107', 1, 4, 'Ingeniería en Computadores', 'Computadores'),
-                           curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemática') ]).
+                           curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemáticas') ]).
 
 % (+,+) ¿Está este curso en la combinación?
-?- curso_en_combinacion(curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemática'), C).   % true
+?- curso_en_combinacion(curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemáticas'), C).   % true
 
 % (-,+) Generar cada curso de la combinación
 ?- curso_en_combinacion(Curso, C).
 Curso = curso('CE1107', 1, 4, 'Ingeniería en Computadores', 'Computadores') ;
-Curso = curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemática').
+Curso = curso('MA1102', 1, 4, 'Ingeniería en Computadores', 'Matemáticas').
 
 % Código conocido: obtener grupo y área
 ?- miembro_curso_combinacion('CE1107', Grupo, Area, C).
@@ -1717,12 +2164,12 @@ Grupo = 1, Area = 'Computadores'.
 
 ```prolog
 % (+,+,-,-) Diagnóstico
-?- evaluar_combinacion(Lista, 12, Estado, Razon).
+?- evaluar_combinacion(Lista, 11, Estado, Razon).
 Estado = rechazada, Razon = incompatibilidad('CE1105', 'CE1107').
 
 % (+,+,+,+) Verificación de un veredicto concreto
-?- evaluar_combinacion(Lista, 12, rechazada, incompatibilidad('CE1105', 'CE1107')).   % true
-?- evaluar_combinacion(Lista, 12, aprobada, ninguna).                                 % false
+?- evaluar_combinacion(Lista, 11, rechazada, incompatibilidad('CE1105', 'CE1107')).   % true
+?- evaluar_combinacion(Lista, 11, aprobada, ninguna).                                 % false
 ```
 
 > [!NOTE]

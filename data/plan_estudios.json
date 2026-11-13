@@ -27,7 +27,7 @@
     "credits": 3,
     "semester": 1,
     "career": "Ingeniería en Computadores",
-    "area": "Computación",
+    "area": "Computadores",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -139,7 +139,7 @@
     "credits": 1,
     "semester": 1,
     "career": "Ingeniería en Computadores",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [],
     "corequisites": [
       "QU1106"
@@ -163,7 +163,7 @@
     "credits": 3,
     "semester": 1,
     "career": "Ingeniería en Computadores",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [],
     "corequisites": [
       "QU1102"
@@ -231,7 +231,7 @@
     "credits": 4,
     "semester": 2,
     "career": "Ingeniería en Computadores",
-    "area": "Computación",
+    "area": "Computadores",
     "prerequisites": [
       "CE1101",
       "CE1104",
@@ -286,7 +286,7 @@
     "credits": 2,
     "semester": 2,
     "career": "Ingeniería en Computadores",
-    "area": "Humanidades",
+    "area": "Idiomas",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -308,7 +308,7 @@
     "credits": 1,
     "semester": 2,
     "career": "Ingeniería en Computadores",
-    "area": "Humanidades",
+    "area": "Ciencias sociales",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -424,7 +424,7 @@
     "credits": 4,
     "semester": 3,
     "career": "Ingeniería en Computadores",
-    "area": "Computación",
+    "area": "Computadores",
     "prerequisites": [
       "CE1103",
       "CE1105"
@@ -449,7 +449,7 @@
     "credits": 2,
     "semester": 3,
     "career": "Ingeniería en Computadores",
-    "area": "Humanidades",
+    "area": "Ciencias sociales",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -496,7 +496,7 @@
     "credits": 0,
     "semester": 3,
     "career": "Ingeniería en Computadores",
-    "area": "Humanidades",
+    "area": "Humanística",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -594,7 +594,7 @@
     "credits": 3,
     "semester": 4,
     "career": "Ingeniería en Computadores",
-    "area": "Computación",
+    "area": "Computadores",
     "prerequisites": [
       "CE2103"
     ],
@@ -618,7 +618,7 @@
     "credits": 1,
     "semester": 4,
     "career": "Ingeniería en Computadores",
-    "area": "Electrónica",
+    "area": "Computadores",
     "prerequisites": [
       "FI1202"
     ],
@@ -692,7 +692,7 @@
     "credits": 2,
     "semester": 4,
     "career": "Ingeniería en Computadores",
-    "area": "Matemáticas",
+    "area": "Producción Industrial",
     "prerequisites": [
       "MA2104"
     ],
@@ -716,7 +716,7 @@
     "credits": 3,
     "semester": 4,
     "career": "Ingeniería en Computadores",
-    "area": "Gestión",
+    "area": "Seguridad Laboral e Higiene Ambiental",
     "prerequisites": [
       "FI1102"
     ],
@@ -784,7 +784,7 @@
     "credits": 4,
     "semester": 5,
     "career": "Ingeniería en Computadores",
-    "area": "Computación",
+    "area": "Computadores",
     "prerequisites": [
       "CE1106"
     ],
@@ -813,7 +813,7 @@
     "credits": 4,
     "semester": 5,
     "career": "Ingeniería en Computadores",
-    "area": "Electrónica",
+    "area": "Computadores",
     "prerequisites": [
       "EL2114",
       "EL2207"
@@ -843,7 +843,7 @@
     "credits": 4,
     "semester": 5,
     "career": "Ingeniería en Computadores",
-    "area": "Computación",
+    "area": "Computadores",
     "prerequisites": [
       "CE2103"
     ],
@@ -902,7 +902,7 @@
     "credits": 4,
     "semester": 6,
     "career": "Ingeniería en Computadores",
-    "area": "Electrónica",
+    "area": "Computadores",
     "prerequisites": [
       "CE1109"
     ],
@@ -931,7 +931,7 @@
     "credits": 3,
     "semester": 6,
     "career": "Ingeniería en Computadores",
-    "area": "Matemáticas",
+    "area": "Computadores",
     "prerequisites": [
       "CE1101",
       "MA2104"
@@ -961,7 +961,7 @@
     "credits": 3,
     "semester": 6,
     "career": "Ingeniería en Computadores",
-    "area": "Electrónica",
+    "area": "Computadores",
     "prerequisites": [
       "CE1109",
       "CE3201"
@@ -1053,7 +1053,7 @@
     "credits": 2,
     "semester": 6,
     "career": "Ingeniería en Computadores",
-    "area": "Humanidades",
+    "area": "Idiomas",
     "prerequisites": [
       "EL2114"
     ],
@@ -1128,7 +1128,7 @@
     "credits": 4,
     "semester": 8,
     "career": "Ingeniería en Computadores",
-    "area": "Gestión",
+    "area": "Administración de Empresas",
     "prerequisites": [
       "CS2101"
     ],
@@ -1201,7 +1201,7 @@
     "credits": 3,
     "semester": 8,
     "career": "Ingeniería en Computadores",
-    "area": "Electiva",
+    "area": "Computadores",
     "prerequisites": [
       "CE4302",
       "CI3203"
@@ -1226,7 +1226,7 @@
     "credits": 2,
     "semester": 8,
     "career": "Ingeniería en Computadores",
-    "area": "Humanidades",
+    "area": "Ciencias sociales",
     "prerequisites": [
       "CS2101"
     ],
@@ -1250,7 +1250,7 @@
     "credits": 0,
     "semester": 0,
     "career": "Ingeniería en Biotecnología",
-    "area": "Básicas",
+    "area": "Idiomas",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -1272,7 +1272,7 @@
     "credits": 2,
     "semester": 0,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Idiomas",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -1342,7 +1342,7 @@
     "credits": 2,
     "semester": 1,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Idiomas",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -1364,7 +1364,7 @@
     "credits": 1,
     "semester": 1,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Ciencias sociales",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -1455,7 +1455,7 @@
     "credits": 1,
     "semester": 1,
     "career": "Ingeniería en Biotecnología",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [],
     "corequisites": [
       "QU1106"
@@ -1479,7 +1479,7 @@
     "credits": 3,
     "semester": 1,
     "career": "Ingeniería en Biotecnología",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [],
     "corequisites": [
       "QU1102"
@@ -1525,7 +1525,7 @@
     "credits": 1,
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Idiomas",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -1547,7 +1547,7 @@
     "credits": 2,
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Idiomas",
     "prerequisites": [
       "CI0200",
       "CI0202"
@@ -1572,7 +1572,7 @@
     "credits": 3,
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
-    "area": "Matemáticas",
+    "area": "Biotecnología",
     "prerequisites": [
       "MA0101"
     ],
@@ -1596,7 +1596,7 @@
     "credits": 3,
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "BI1101",
       "BI1102"
@@ -1623,7 +1623,7 @@
     "credits": 1,
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "BI1101",
       "BI1102"
@@ -1674,7 +1674,7 @@
     "credits": 1,
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [
       "QU1102",
       "QU1106"
@@ -1701,7 +1701,7 @@
     "credits": 3,
     "semester": 2,
     "career": "Ingeniería en Biotecnología",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [
       "QU1102",
       "QU1106"
@@ -1750,7 +1750,7 @@
     "credits": 2,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Idiomas",
     "prerequisites": [
       "CI1202"
     ],
@@ -1774,7 +1774,7 @@
     "credits": 2,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Ciencias sociales",
     "prerequisites": [
       "CI1107"
     ],
@@ -1798,7 +1798,7 @@
     "credits": 3,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB2203",
       "IB2204"
@@ -1825,7 +1825,7 @@
     "credits": 2,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB2203",
       "IB2204"
@@ -1852,7 +1852,7 @@
     "credits": 1,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "BI1101",
       "BI1102"
@@ -1879,7 +1879,7 @@
     "credits": 3,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "BI1101",
       "BI1102"
@@ -1906,7 +1906,7 @@
     "credits": 3,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [
       "QU1107"
     ],
@@ -1932,7 +1932,7 @@
     "credits": 2,
     "semester": 3,
     "career": "Ingeniería en Biotecnología",
-    "area": "Ciencias Básicas",
+    "area": "Química",
     "prerequisites": [
       "QU1104"
     ],
@@ -1980,7 +1980,7 @@
     "credits": 0,
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Humanística",
     "prerequisites": [],
     "corequisites": [],
     "groups": [
@@ -2027,7 +2027,7 @@
     "credits": 3,
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB2113"
     ],
@@ -2053,7 +2053,7 @@
     "credits": 3,
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB2302",
       "IB2304"
@@ -2078,7 +2078,7 @@
     "credits": 3,
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
-    "area": "Agrícola",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB2205",
       "IB2211"
@@ -2105,7 +2105,7 @@
     "credits": 2,
     "semester": 4,
     "career": "Ingeniería en Biotecnología",
-    "area": "Agrícola",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB2205",
       "IB2211"
@@ -2186,7 +2186,7 @@
     "credits": 2,
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Ciencias sociales",
     "prerequisites": [
       "CS1502"
     ],
@@ -2210,7 +2210,7 @@
     "credits": 3,
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "BI1101",
       "BI1102",
@@ -2238,7 +2238,7 @@
     "credits": 2,
     "semester": 5,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "BI1101",
       "BI1102",
@@ -2380,7 +2380,7 @@
     "credits": 3,
     "semester": 6,
     "career": "Ingeniería en Biotecnología",
-    "area": "Gestión",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB3404",
       "IB3405"
@@ -2405,7 +2405,7 @@
     "credits": 3,
     "semester": 6,
     "career": "Ingeniería en Biotecnología",
-    "area": "Biología",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB2105",
       "IB2106"
@@ -2450,7 +2450,7 @@
     "credits": 3,
     "semester": 6,
     "career": "Ingeniería en Biotecnología",
-    "area": "Agrícola",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB3404",
       "IB3405"
@@ -2713,7 +2713,7 @@
     "credits": 2,
     "semester": 7,
     "career": "Ingeniería en Biotecnología",
-    "area": "Humanidades",
+    "area": "Ciencias sociales",
     "prerequisites": [
       "CS3401"
     ],
@@ -2870,7 +2870,7 @@
     "credits": 4,
     "semester": 8,
     "career": "Ingeniería en Biotecnología",
-    "area": "Gestión",
+    "area": "Administración de Empresas",
     "prerequisites": [
       "IB3101"
     ],
@@ -2894,7 +2894,7 @@
     "credits": 3,
     "semester": 8,
     "career": "Ingeniería en Biotecnología",
-    "area": "Gestión",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB4301",
       "IB4501"
@@ -2969,7 +2969,7 @@
     "credits": 3,
     "semester": 8,
     "career": "Ingeniería en Biotecnología",
-    "area": "Electiva",
+    "area": "Biotecnología",
     "prerequisites": [
       "IB4601"
     ],
