@@ -23,11 +23,18 @@
 *.bin
 cemestre_c
 
-# Directorios de compilación generados automáticamente
+# Directorios de compilación y empaquetado generados automáticamente
 build/
 bin/
+dist/
 out/
 cmake-build-*/
+etapa4_java/bin/
+etapa4_java/dist/
+
+# Archivos temporales residuales
+sources.txtjavac
+etapa4_java/sources.txtjavac
 
 # ==========================================================
 # Archivos temporales y compilados de Racket / DrRacket
