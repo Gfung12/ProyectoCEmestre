@@ -1,28 +1,30 @@
 package com.cemestre.service;
 
 import com.cemestre.model.CombinacionEval;
+import com.cemestre.service.filter.FiltroCombinacion;
+import com.cemestre.service.filter.FiltroEstadoPoliticas;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FiltroService {
 
+    public List<CombinacionEval> filtrar(List<CombinacionEval> combinaciones, FiltroCombinacion filtro) {
+        if (combinaciones == null || filtro == null) {
+            return new ArrayList<>();
+        }
+        return filtro.aplicar(combinaciones);
+    }
+
     public List<CombinacionEval> filtrarAprobadas(List<CombinacionEval> combinaciones) {
-        if (combinaciones == null) return new ArrayList<>();
-        return combinaciones.stream()
-                .filter(CombinacionEval::isCumplePoliticas)
-                .collect(Collectors.toList());
+        return filtrar(combinaciones, new FiltroEstadoPoliticas(true));
     }
 
     public List<CombinacionEval> filtrarRechazadas(List<CombinacionEval> combinaciones) {
-        if (combinaciones == null) return new ArrayList<>();
-        return combinaciones.stream()
-                .filter(c -> !c.isCumplePoliticas())
-                .collect(Collectors.toList());
+        return filtrar(combinaciones, new FiltroEstadoPoliticas(false));
     }
 
     public List<CombinacionEval> filtrarPorEstado(List<CombinacionEval> combinaciones, boolean soloAprobadas) {
-        return soloAprobadas ? filtrarAprobadas(combinaciones) : filtrarRechazadas(combinaciones);
+        return filtrar(combinaciones, new FiltroEstadoPoliticas(soloAprobadas));
     }
 }

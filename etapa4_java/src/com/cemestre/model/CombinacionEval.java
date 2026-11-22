@@ -33,18 +33,22 @@ public class CombinacionEval {
         return Collections.unmodifiableList(cursos);
     }
 
+    public List<ElementoHorario> getElementosComoBase() {
+        return Collections.unmodifiableList(new ArrayList<>(cursos));
+    }
+
     public List<BloqueHorario> obtenerTodosLosBloques() {
         List<BloqueHorario> todos = new ArrayList<>();
-        for (CursoEval curso : cursos) {
-            todos.addAll(curso.getBloques());
+        for (ElementoHorario elemento : getElementosComoBase()) {
+            todos.addAll(elemento.getBloquesAsociados());
         }
         return todos;
     }
 
     public int obtenerTotalCreditos() {
         int total = 0;
-        for (CursoEval curso : cursos) {
-            total += curso.getCreditos();
+        for (ElementoHorario elemento : getElementosComoBase()) {
+            total += elemento.getCreditosAportados();
         }
         return total;
     }

@@ -22,9 +22,21 @@ public class OrdenMenosDias implements CriterioOrdenamiento {
     public int contarDiasUnicos(CombinacionEval combinacion) {
         Set<String> dias = new HashSet<>();
         for (BloqueHorario bloque : combinacion.obtenerTodosLosBloques()) {
-            dias.add(bloque.getDia());
+            dias.add(normalizarDia(bloque.getDia()));
         }
         return dias.size();
+    }
+
+    private String normalizarDia(String dia) {
+        if (dia == null) {
+            return "";
+        }
+        return dia.trim().toUpperCase()
+                .replace('Á', 'A')
+                .replace('É', 'E')
+                .replace('Í', 'I')
+                .replace('Ó', 'O')
+                .replace('Ú', 'U');
     }
 
     @Override
